@@ -73,7 +73,6 @@ Java不同于一般的编译语言或解释型语言。它首先将源代码编�
 ```java
 import java.applet.Applet;
 import java.awt.*;
-
 public class HelloWorld extends Applet {
     g.drawString("Hello, world!", 20,10);
   }
@@ -81,7 +80,7 @@ public class HelloWorld extends Applet {
 ```
 ```html
 <HTML><BODY>
-<P>Here it is: 
+<P>My first Java applet says: 
 <APPLET code="HelloWorld.class" WIDTH="200" HEIGHT="40">
 </APPLET></P>
 </BODY></HTML>
@@ -106,8 +105,17 @@ public class HelloWorld extends Applet {
 
 # 为什么要学Java
 
+缺学分
+找工作
+交朋友
+...
 
-- Java应用广泛：可以写桌面、可以写Android、可以写服务端、可以写企业级业务、可以写互联网业务...
+
+---
+
+# Java应用广泛
+
+- Java可以写桌面、可以写Android、可以写服务端、可以写企业级业务、可以写互联网业务...
 - Java是在开发效率、开发门槛、性能、跨平台这几方面平衡教（或最）好的语言
 - Java是一个门槛低但上限也很高的语言
 
