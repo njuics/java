@@ -37,6 +37,8 @@ Java是一种广泛使用的计算机编程语言，拥有跨平台、面向对�
 ---
 # 历史
 
+
+
 ![bg 80% right:30%](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sun-Logo.svg/440px-Sun-Logo.svg.png)
 
   任职于Sun微系统的詹姆斯·高斯林等人于1990年代初开发新型语言Oak，目标设置在家用电器等小型系统的编程语言，应用在电视机、电话、闹钟、烤面包机等家用电器的控制和通信，后该项目被放弃了该项计划。
@@ -123,13 +125,58 @@ public class HelloWorld extends Applet {
 
 # 怎么学Java
 
+<style>
+video {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<video height="500px" controls>
+  <source src="https://cdn.njuics.cn/java20/demo1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ---
+
+# 怎么学Java
+
+<style>
+video {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<video height="500px" controls>
+  <source src="https://cdn.njuics.cn/java20/demo2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
+# 怎么学Java
+
+<style>
+video {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<video height="500px" controls>
+  <source src="https://cdn.njuics.cn/java20/demo3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 
 # 前导课程要求
 
 - 至少一门高级程序设计语言
 - 如果C++学得很好，特别是面向对象编程思想领悟到位，建议不选
-- 不接受免修不免考
+- **不接受免修不免考**
  
 ![bg 90% right:55%](https://st.depositphotos.com/1756445/4385/i/950/depositphotos_43853619-stock-photo-word-cloud-programming-languages-or.jpg)
 
@@ -140,6 +187,8 @@ public class HelloWorld extends Applet {
 《On Java 8》 by Bruce Eckel
 
 https://github.com/LingCoder/OnJava8
+
+
 
 ![bg right:50% 60%](images/onjava8.png)
 
@@ -175,4 +224,11 @@ https://www.tutorialspoint.com/compile_java8_online.php
 
 # 交个朋友
 
-![bg 30%](images/qq.png)
+- 交流
+- 签到
+- 答疑
+- 民调
+- 考试
+- ...
+
+![bg right:40%](images/qq.png)
