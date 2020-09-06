@@ -107,27 +107,12 @@ public class HelloWorld extends Applet {
 
 # 为什么要学Java
 
-缺学分
 找工作
+缺学分
 交朋友
 ...
 
-
 ---
-
-# 去年情况
-
-|&nbsp;&nbsp;&nbsp;&nbsp;分数段&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;人数&nbsp;&nbsp;|&nbsp;&nbsp;比例&nbsp;&nbsp;|
-|:--:|--:|--:|
-|100-90|11|18%|
-|89-80|16|27%|
-|79-70|14|23%|
-|69-60|11|18%|
-|59-0|8|14%|
-
-
----
-
 
 # Java应用广泛
 
@@ -137,12 +122,37 @@ public class HelloWorld extends Applet {
 
 ---
 
+
 <iframe src="https://madnight.github.io/githut/#/pull_requests/2020/2" width=100% height="100%"></iframe>
 
 ---
 
 
-# 作业
+# Java Editions
+- Java Standard Edition (J2SE), to develop client-side standalone applications or applets
+- Java Enterprise Edition (J2EE), to develop server-side applications such as Java servlets and Java ServerPages
+- Java Micro Edition (J2ME), to develop applications for mobile devices such as cell phones
+
+
+
+---
+
+# 本课程去年考试情况
+
+|&nbsp;&nbsp;&nbsp;&nbsp;分数段&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;人数&nbsp;&nbsp;|&nbsp;&nbsp;比例&nbsp;&nbsp;|
+|:--:|--:|--:|
+|100-90|11|18%|
+|89-80|16|27%|
+|79-70|14|23%|
+|69-60|11|18%|
+|59-0|8|14%|
+
+[去年试卷](https://www.zhihu.com/question/392342294)
+
+---
+
+
+# 课程作业
 
 日常作业：葫芦娃系列
 大作业：葫芦娃大战妖精
@@ -214,6 +224,19 @@ video {
 
 ---
 
+# 交个朋友
+
+- 交流
+- 签到
+- 答疑
+- 民调
+- 考试
+- ...
+
+![bg right:40%](https://cdn.njuics.cn/java20/qq.png)
+
+---
+
 
 # 前导课程要求
 
@@ -235,19 +258,7 @@ video {
 - 等等
 
 
-
----
-
-# 交个朋友
-
-- 交流
-- 签到
-- 答疑
-- 民调
-- 考试
-- ...
-
-![bg right:40%](images/qq.png)
+![bg right:50% 100%](https://previews.123rf.com/images/olechowski/olechowski1311/olechowski131100054/23796130-big-data-concept-in-word-tag-cloud-on-white-background.jpg)
 
 ---
 
@@ -256,7 +267,6 @@ video {
 ![bg right:50%](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 https://njuics.github.io/java20
-
 
 ---
 
@@ -267,22 +277,85 @@ https://njuics.github.io/java20
 https://github.com/LingCoder/OnJava8
 
 
+> 讲课的目的是对书本内容进行提要，听课并不能个替代你自己读书的过程。
 
-![bg right:50% 60%](images/onjava8.png)
+![bg right:50% 60%](https://cdn.njuics.cn/java20/onjava8.png)
+
 
 
 ---
 
+# 大纲 -I
+
+
+
+1. 语言基础 (基本数据类型, 运算符, 控制流）
+2. 面向对象I （抽象、类、接口、封装、继承、多态等)
+3. 面向对象II (初始化与清理、访问权限、内部类等)
+4. 设计原则 (SOLID)
+
+
+--- 
+
+# 大纲 -II
+
+5. 类加载和自省
+6. 异常处理
+7. 集合类型
+8. 泛型
+9. 标注和测试（Annotations/Testing）
+10. 工程工具（Maven/Gradle/CI）
+
+---
+
+# 大纲 -III
+
+11. 文件与输入输出（NIO）
+12. 流式编程 (Stream)
+13. 函数式编程
+14. 并发编程
+15. 图形化（JavaFX）
+16. 设计模式（Design Pattern）
+
+
+---
+
+# 分工
+
+:man:
+- 1/2/3/5/8/9/10/13 
+
+:woman:
+- 4/6/7/11/12/14/15/16
+
+
+---
+
+# Hello World
+
+Hello, World是指在电脑屏幕显示“Hello, World!”（你好，世界！）字符串的计算机程序。相关的程序通常都是每种电脑编程语言最基本、最简单的程序，也会用作示范一个编程语言如何运作[1]。同时它亦可以用来确认一个编程语言的编译器、程序开发环境及运行环境是否已经安装妥当。
+
+
+![bg left](https://upload.wikimedia.org/wikipedia/commons/2/21/Hello_World_Brian_Kernighan_1978.jpg)
+
+
+----
+
 # Java SDK
 
+- JDK 1.02 (1995)
+- Java 2 SDK v 1.2 (a.k.a JDK 1.2, 1998)
+- Java 2 SDK v 1.4 (a.k.a JDK 1.4, 2002)
+- ...
+- Java [8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html), 9, 10, 11, 12, [14](https://docs.oracle.com/en/java/javase/14/install/overview-jdk-installation.html)
 
 ![bg right:50%](https://s3.shunyafoundation.com/s3/1578452c3f66d8fd0d04d5d195328ae1359d8caa/jdk-jvm.png)
 
-https://docs.oracle.com/en/java/javase/14/install/overview-jdk-installation.html
 
 [Oracle JDK vs. OpenJDK](https://www.baeldung.com/oracle-jdk-vs-openjdk)
 
 ---
+
 # VS Code + Java Extension Pack
 
 <style>
@@ -311,14 +384,13 @@ $ javac HelloWorld.java
 $ java -Xmx128M -Xms16M HelloWorld
 Hello World
 ```
+---
 
+# Playground
 https://www.tutorialspoint.com/compile_java8_online.php
 
+<iframe src="https://www.tutorialspoint.com/compile_java8_online.php" width=100% height="70%"></iframe>
 
 ---
 
-
-
----
-
-
+![bg 50%](https://www.desicomments.com/wp-content/uploads/2017/02/Thank-You-Image.png)
