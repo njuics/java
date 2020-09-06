@@ -115,6 +115,20 @@ public class HelloWorld extends Applet {
 
 ---
 
+# 去年情况
+
+|&nbsp;&nbsp;&nbsp;&nbsp;分数段&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;人数&nbsp;&nbsp;|&nbsp;&nbsp;比例&nbsp;&nbsp;|
+|:--:|--:|--:|
+|100-90|11|18%|
+|89-80|16|27%|
+|79-70|14|23%|
+|69-60|11|18%|
+|59-0|8|14%|
+
+
+---
+
+
 # Java应用广泛
 
 - Java可以写桌面、可以写Android、可以写服务端、可以写企业级业务、可以写互联网业务...
@@ -123,7 +137,38 @@ public class HelloWorld extends Applet {
 
 ---
 
-# 怎么学Java
+<iframe src="https://madnight.github.io/githut/#/pull_requests/2020/2" width=100% height="100%"></iframe>
+
+---
+
+
+# 作业
+
+日常作业：葫芦娃系列
+大作业：葫芦娃大战妖精
+
+
+![bg right:50% 150%](https://img.dujin.org/uploads/2019/05/huluxiongdi.jpg)
+
+
+---
+
+![bg fit](https://njuics.github.io/java-2019/content/images/1/1.png)
+
+
+---
+
+![bg fit](https://njuics.github.io/java-2019/content/images/1/tang.gif)
+
+---
+
+![bg fit](https://njuics.github.io/java-2019/content/images/1/lu.gif)
+
+
+---
+
+
+
 
 <style>
 video {
@@ -132,14 +177,13 @@ video {
 }
 </style>
 
-<video height="500px" controls>
+<video height="600px" controls>
   <source src="https://cdn.njuics.cn/java20/demo1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 ---
 
-# 怎么学Java
 
 <style>
 video {
@@ -148,14 +192,13 @@ video {
 }
 </style>
 
-<video height="500px" controls>
+<video height="600px" controls>
   <source src="https://cdn.njuics.cn/java20/demo2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 ---
 
-# 怎么学Java
 
 <style>
 video {
@@ -164,7 +207,7 @@ video {
 }
 </style>
 
-<video height="500px" controls>
+<video height="600px" controls>
   <source src="https://cdn.njuics.cn/java20/demo3.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -179,6 +222,41 @@ video {
 - **不接受免修不免考**
  
 ![bg 90% right:55%](https://st.depositphotos.com/1756445/4385/i/950/depositphotos_43853619-stock-photo-word-cloud-programming-languages-or.jpg)
+
+
+---
+
+# 后续课程
+
+- 软件工程综合实验
+- 大数据及大数据综合实验
+- 软件体系结构
+- 设计模式
+- 等等
+
+
+
+---
+
+# 交个朋友
+
+- 交流
+- 签到
+- 答疑
+- 民调
+- 考试
+- ...
+
+![bg right:40%](images/qq.png)
+
+---
+
+# 课程网站
+
+![bg right:50%](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+https://njuics.github.io/java20
+
 
 ---
 
@@ -195,12 +273,29 @@ https://github.com/LingCoder/OnJava8
 
 ---
 
-# Installation
+# Java SDK
+
+
+![bg right:50%](https://s3.shunyafoundation.com/s3/1578452c3f66d8fd0d04d5d195328ae1359d8caa/jdk-jvm.png)
 
 https://docs.oracle.com/en/java/javase/14/install/overview-jdk-installation.html
 
----
+[Oracle JDK vs. OpenJDK](https://www.baeldung.com/oracle-jdk-vs-openjdk)
 
+---
+# VS Code + Java Extension Pack
+
+<style>
+img {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+![height:500px](https://raw.githubusercontent.com/redhat-developer/vscode-java/master/images/vscode-java.0.0.1.gif)
+
+
+---
 
 # Hello world
 
@@ -212,8 +307,8 @@ public class HelloWorld{
 }
 ```
 ```bash
-$javac HelloWorld.java
-$java -Xmx128M -Xms16M HelloWorld
+$ javac HelloWorld.java
+$ java -Xmx128M -Xms16M HelloWorld
 Hello World
 ```
 
@@ -222,13 +317,8 @@ https://www.tutorialspoint.com/compile_java8_online.php
 
 ---
 
-# 交个朋友
 
-- 交流
-- 签到
-- 答疑
-- 民调
-- 考试
-- ...
 
-![bg right:40%](images/qq.png)
+---
+
+
