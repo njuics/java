@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTBMMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMzIgOTBsNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDBsMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwbDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwMS01LTVWMjBhNSA1IDAgMDE1LTVoNjBhNSA1IDAgMDE1IDV2NU0zMCA4NWg2MCIvPjxyZWN0IHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIi8+PHJlY3QgY2xhc3M9ImEiIHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNNDAgNTBoNDBNNDAgNjBoMzAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{-webkit-animation-name:__bespoke_marp__!important;animation-name:__bespoke_marp__!important}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;z-index:1;will-change:transform}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{flex:0 0 0;background:#0288d1;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{font-family:Helvetica,Arial,sans-serif;height:100%;left:0;position:absolute;top:0;width:100%;display:grid;grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;grid-template-areas:"current next" "current note" "info    note"}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;position:relative;overflow:hidden}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;top:20px;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{margin:20px;width:calc(100% - 40px);height:calc(100% - 40px);box-sizing:border-box;font-size:1.1em;overflow:auto;padding-right:3px;white-space:pre-wrap;word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,93.3%,.5) transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93.3%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{display:block;box-sizing:border-box;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section .hljs{display:block;overflow-x:auto;padding:.5em;background:#000;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-comment,div#p>svg>foreignObject>section .hljs-quote{color:#aeaeae;font-style:italic}div#p>svg>foreignObject>section .hljs-keyword,div#p>svg>foreignObject>section .hljs-selector-tag,div#p>svg>foreignObject>section .hljs-type{color:#e28964}div#p>svg>foreignObject>section .hljs-string{color:#65b042}div#p>svg>foreignObject>section .hljs-subst{color:#daefa3}div#p>svg>foreignObject>section .hljs-link,div#p>svg>foreignObject>section .hljs-regexp{color:#e9c062}div#p>svg>foreignObject>section .hljs-name,div#p>svg>foreignObject>section .hljs-section,div#p>svg>foreignObject>section .hljs-tag,div#p>svg>foreignObject>section .hljs-title{color:#89bdff}div#p>svg>foreignObject>section .hljs-class .hljs-title,div#p>svg>foreignObject>section .hljs-doctag{text-decoration:underline}div#p>svg>foreignObject>section .hljs-bullet,div#p>svg>foreignObject>section .hljs-number,div#p>svg>foreignObject>section .hljs-symbol{color:#3387cc}div#p>svg>foreignObject>section .hljs-params,div#p>svg>foreignObject>section .hljs-template-variable,div#p>svg>foreignObject>section .hljs-variable{color:#3e87e3}div#p>svg>foreignObject>section .hljs-attribute{color:#cda869}div#p>svg>foreignObject>section .hljs-meta{color:#8996a8}div#p>svg>foreignObject>section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#p>svg>foreignObject>section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-selector-class{color:#9b703f}div#p>svg>foreignObject>section .hljs-selector-id{color:#8b98ab}div#p>svg>foreignObject>section .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section .hljs-strong{font-weight:700}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:580px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin:.5em 0 0}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{font-weight:inherit}div#p>svg>foreignObject>section h1{font-size:1.8em}div#p>svg>foreignObject>section h2{font-size:1.5em}div#p>svg>foreignObject>section h3{font-size:1.3em}div#p>svg>foreignObject>section h4{font-size:1.1em}div#p>svg>foreignObject>section h5{font-size:1em}div#p>svg>foreignObject>section h6{font-size:.9em}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:1em 0 0}div#p>svg>foreignObject>section ol>li,div#p>svg>foreignObject>section ul>li{margin:.3em 0 0}div#p>svg>foreignObject>section ol>li>p,div#p>svg>foreignObject>section ul>li>p{margin:.6em 0 0}div#p>svg>foreignObject>section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#p>svg>foreignObject>section pre{display:block;margin:1em 0 0;min-height:1em;overflow:visible}div#p>svg>foreignObject>section pre code{box-sizing:border-box;margin:0;min-width:100%;padding:.5em;font-size:.7em}div#p>svg>foreignObject>section pre code svg[data-marp-fitting=svg]{max-height:calc(580px - 1em)}div#p>svg>foreignObject>section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#p>svg>foreignObject>section blockquote:before{top:0;left:0}div#p>svg>foreignObject>section blockquote:after{right:0;bottom:0;transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#p>svg>foreignObject>section mark{background:transparent}div#p>svg>foreignObject>section table{border-spacing:0;border-collapse:collapse;margin:1em 0 0}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{padding:.2em .4em;border-width:1px;border-style:solid}div#p>svg>foreignObject>section{background-image:linear-gradient(135deg,hsla(0,0%,53.3%,0),hsla(0,0%,53.3%,.02) 50%,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.05));font-size:35px;font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;height:720px;line-height:1.35;letter-spacing:1.25px;padding:70px;width:1280px;word-wrap:break-word;color:#455a64;background-color:#fff8e1}div#p>svg>foreignObject>section{--marpit-root-font-size:35px}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#p>svg>foreignObject>section a,div#p>svg>foreignObject>section mark{color:#0288d1}div#p>svg>foreignObject>section code{background:#6a7a7d;color:#fff8e1}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{color:#0288d1}div#p>svg>foreignObject>section pre>code{background:#455a64}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header,div#p>svg>foreignObject>section section:after{color:#6a7a7d}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{border-color:#455a64}div#p>svg>foreignObject>section table thead th{background:#455a64;color:#fff8e1}div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) td,div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) th{background:rgba(69,90,100,.1)}div#p>svg>foreignObject>section.invert{color:#fff8e1;background-color:#455a64}div#p>svg>foreignObject>section.invert a,div#p>svg>foreignObject>section.invert mark{color:#81d4fa}div#p>svg>foreignObject>section.invert code{background:#dad8c8;color:#455a64}div#p>svg>foreignObject>section.invert h1 strong,div#p>svg>foreignObject>section.invert h2 strong,div#p>svg>foreignObject>section.invert h3 strong,div#p>svg>foreignObject>section.invert h4 strong,div#p>svg>foreignObject>section.invert h5 strong,div#p>svg>foreignObject>section.invert h6 strong{color:#81d4fa}div#p>svg>foreignObject>section.invert pre>code{background:#fff8e1}div#p>svg>foreignObject>section.invert blockquote:after,div#p>svg>foreignObject>section.invert blockquote:before,div#p>svg>foreignObject>section.invert footer,div#p>svg>foreignObject>section.invert header,div#p>svg>foreignObject>section.invert section:after{color:#dad8c8}div#p>svg>foreignObject>section.invert table td,div#p>svg>foreignObject>section.invert table th{border-color:#fff8e1}div#p>svg>foreignObject>section.invert table thead th{background:#fff8e1;color:#455a64}div#p>svg>foreignObject>section.invert table tbody>tr:nth-child(odd) td,div#p>svg>foreignObject>section.invert table tbody>tr:nth-child(odd) th{background:rgba(255,248,225,.1)}div#p>svg>foreignObject>section.gaia{color:#fff8e1;background-color:#0288d1}div#p>svg>foreignObject>section.gaia a,div#p>svg>foreignObject>section.gaia mark{color:#81d4fa}div#p>svg>foreignObject>section.gaia code{background:#cce2de;color:#0288d1}div#p>svg>foreignObject>section.gaia h1 strong,div#p>svg>foreignObject>section.gaia h2 strong,div#p>svg>foreignObject>section.gaia h3 strong,div#p>svg>foreignObject>section.gaia h4 strong,div#p>svg>foreignObject>section.gaia h5 strong,div#p>svg>foreignObject>section.gaia h6 strong{color:#81d4fa}div#p>svg>foreignObject>section.gaia pre>code{background:#fff8e1}div#p>svg>foreignObject>section.gaia blockquote:after,div#p>svg>foreignObject>section.gaia blockquote:before,div#p>svg>foreignObject>section.gaia footer,div#p>svg>foreignObject>section.gaia header,div#p>svg>foreignObject>section.gaia section:after{color:#cce2de}div#p>svg>foreignObject>section.gaia table td,div#p>svg>foreignObject>section.gaia table th{border-color:#fff8e1}div#p>svg>foreignObject>section.gaia table thead th{background:#fff8e1;color:#0288d1}div#p>svg>foreignObject>section.gaia table tbody>tr:nth-child(odd) td,div#p>svg>foreignObject>section.gaia table tbody>tr:nth-child(odd) th{background:rgba(255,248,225,.1)}div#p>svg>foreignObject>section.lead{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.lead h4,div#p>svg>foreignObject>section.lead h5,div#p>svg>foreignObject>section.lead h6{text-align:center}div#p>svg>foreignObject>section.lead h1 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h2 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h3 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h4 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h5 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h6 svg[data-marp-fitting=svg]{--preserve-aspect-ratio:xMidYMid meet}div#p>svg>foreignObject>section.lead p{text-align:center}div#p>svg>foreignObject>section.lead blockquote>h1,div#p>svg>foreignObject>section.lead blockquote>h2,div#p>svg>foreignObject>section.lead blockquote>h3,div#p>svg>foreignObject>section.lead blockquote>h4,div#p>svg>foreignObject>section.lead blockquote>h5,div#p>svg>foreignObject>section.lead blockquote>h6,div#p>svg>foreignObject>section.lead blockquote>p{text-align:left}div#p>svg>foreignObject>section.lead blockquote svg[data-marp-fitting=svg]:not([data-marp-fitting-math]){--preserve-aspect-ratio:xMinYMin meet}div#p>svg>foreignObject>section.lead ol>li>p,div#p>svg>foreignObject>section.lead ul>li>p{text-align:left}div#p>svg>foreignObject>section.lead table{margin-left:auto;margin-right:auto}div#p>svg>foreignObject>section:after,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#p>svg>foreignObject>section:after{--marpit-root-font-size:66%}div#p>svg>foreignObject>section header{top:0}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{left:0;right:0}div#p>svg>foreignObject>section footer{bottom:0}div#p>svg>foreignObject>section:after{right:0;bottom:0;font-size:80%}div#p>svg>foreignObject>section:after{--marpit-root-font-size:80%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="1" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--class:lead;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="1" data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="1" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--class:lead;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Java高级程序设计</h1>
+<h2>语言基础</h2>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="lead" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="1" data-marpit-pagination-total="39"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>标识符</h1>
+<ul>
+<li>程序中要用到许多名字，诸如类、对象、变量、方法等。标识符就是用来标识它们的唯一性和存在性的名字。</li>
+<li>标识符的长度是任意的,标识符分为两类：
+<ul>
+<li>保留字：是Java预定义的标识符，具有特定的含义，又称关键字。</li>
+<li>用户定义标识符：是程序设计者根据自己的需要为定义的类、对象、变量、方法等的命名。</li>
+</ul>
+</li>
+<li>Java采用Unicode字符集，由16位构成，可以记录表达任何人类语言。</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>用户自定义标识符的定义规则</h1>
+<ul>
+<li>以字母、下划线或符开头的字母、下划线、数字、符的序列。</li>
+<li>一些由开发环境自动生成的名称中会带有符或下划线，因此虽然规则允许，但是自定义的变量名称中应尽量避免使用符或下划线。</li>
+<li>标识符区分大小写。</li>
+<li>标识符不能与保留字同名。</li>
+<li>标识符遵守先定义后使用的原则。</li>
+<li>虽然<code>true</code>、<code>false</code>和<code>null</code>并不是关键字，但其代表的是值，也不可以用。</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>分隔符</h1>
+<ul>
+<li>规定任意两个相邻标识符、数、保留字或两个语句之间必须至少有一个分隔符，以便编译程序能识别：
+<ul>
+<li>空白分隔符：空格、TAB、换行符与回车符</li>
+<li>普通分隔符:
+<ul>
+<li><code>{ }</code> 用来定义复合语句、类体、方法体以及进行数组的初始化等</li>
+<li><code>;</code> 表示一条语句的结束。</li>
+<li><code>:</code> 有些地方会用到，你自会知道。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>注释</h1>
+<p>注释用来对程序中的代码做出解释。注释部分对程序的执行不产生任何影响，可增加程序的可读性，有利于程序的修改、调试、交流。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// 这是一个单行注释             </span>
+<span class="hljs-comment">/* 这是也是注释 *／
+/*
+  这是还是注释
+  可以多行
+*／
+
+/**
+ * 这也是多行注释
+ * 但称为说明注释，跟代码文档相关
+ */</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>数据类型</h1>
+<ul>
+<li>基本数据类型</li>
+<li>复合数据类型</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>基本数据类型</h1>
+<h3>数值型</h3>
+<ul>
+<li>字节型：<code>byte</code>，短整型：<code>short</code>，整型：<code>int</code>，长整型：<code>long</code></li>
+<li>单精度：<code>float</code>，双精度：<code>double</code></li>
+<li>字符型：<code>char</code></li>
+<li>布尔型：<code>boolean</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h6>数据存储空间大小</h6>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:center">内存字节数</th>
+<th style="text-align:right">数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td style="text-align:center">1</td>
+<td style="text-align:right"><code>-128</code>～<code>127</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td style="text-align:center">2</td>
+<td style="text-align:right"><code>-32768</code>～<code>32767</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td style="text-align:center">4</td>
+<td style="text-align:right"><code>-2147483648</code>～<code>2147483647</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">whatever</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">who cares</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">holy crap</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td style="text-align:center">2</td>
+<td style="text-align:right"><code>\u0000</code>~<code>\uFFFF</code></td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td style="text-align:center">1</td>
+<td style="text-align:right"><code>true</code> or <code>false</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>SizeOf</h1>
+<p>在C/C++中，经常需要用到<code>sizeof()</code>方法来获取数据项被分配的字节数，原因是为了移植性，不同数据在不同机器上可能有不同的大小。Java不需要<code>sizeof()</code>方法来满足这种需求，因为所有类型的大小在不同平台上是相同的。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sizeOf</span><span class="hljs-params">()</span> </span>{  
+    System.out.println(<span class="hljs-string">&quot;Integer: &quot;</span> + Integer.SIZE/<span class="hljs-number">8</span>);           <span class="hljs-comment">// 4  </span>
+    System.out.println(<span class="hljs-string">&quot;Short: &quot;</span> + Short.SIZE/<span class="hljs-number">8</span>);               <span class="hljs-comment">// 2</span>
+    System.out.println(<span class="hljs-string">&quot;Long: &quot;</span> + Long.SIZE/<span class="hljs-number">8</span>);                 <span class="hljs-comment">// 8  </span>
+    System.out.println(<span class="hljs-string">&quot;Byte: &quot;</span> + Byte.SIZE/<span class="hljs-number">8</span>);                 <span class="hljs-comment">// 1  </span>
+    System.out.println(<span class="hljs-string">&quot;Character: &quot;</span> + Character.SIZE/<span class="hljs-number">8</span>);       <span class="hljs-comment">// 2  </span>
+    System.out.println(<span class="hljs-string">&quot;Float: &quot;</span> + Float.SIZE/<span class="hljs-number">8</span>);               <span class="hljs-comment">// 4  </span>
+    System.out.println(<span class="hljs-string">&quot;Double: &quot;</span> + Double.SIZE/<span class="hljs-number">8</span>);             <span class="hljs-comment">// 8  </span>
+}  
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>常量</h2>
+<ul>
+<li>常量是指在程序运行过程中其值不变的量</li>
+<li>常量通过用关键字<code>final</code>来实现声明</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> WIDTH=<span class="hljs-number">100</span>;
+</span></span></foreignObject></svg></code></pre>
+<p>此处<code>100</code>称为字面值(Literal)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>Underscore</h1>
+<p>In Java SE 7 and later, any number of underscore characters <code>_</code> can appear anywhere between digits in a numerical literal. This feature enables you, for example, to separate groups of digits in numeric literals, which can improve the readability of your code.</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">long</span> creditCardNumber = <span class="hljs-number">1234_5678_9012_3456L</span>;
+</span></span></foreignObject></svg></code></pre>
+<p><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html">https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>变量</h2>
+<ul>
+<li>变量用来存放指定类型的数据，其值在程序运行过程中是可变的。</li>
+<li>使用一个变量之前必须先声明它。一方面给该变量分配内存空间，另一方面防止在以后使用此变量时因错误输入而对不存在的变量进行操作。</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">int</span> a;
+<span class="hljs-keyword">boolean</span> found=<span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">float</span> b=<span class="hljs-number">0f</span>,c,d=<span class="hljs-number">1.3f</span>;
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>变量作用域</h2>
+<ul>
+<li>变量有一定的生存期和有效范围，变量的作用域指明可访问该变量的一段代码
+<ul>
+<li>全局变量：可以在整个类中被访问；</li>
+<li>局部变量：在方法或方法的一个代码块中声明，它的作用域为它所在的代码块；</li>
+<li>类变量：在类中声明，而不是类的某个方法中声明，作用域为整个类；</li>
+<li>方法参数（变量）：作用域为传递给的那个方法；</li>
+<li>异常处理参数：传递给异常处理代码，作用域是异常处理部分。</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>运算符</h2>
+<ul>
+<li>程序中用来处理数据、表示数据运算、赋值和比较的符号称为运算符，参与运算的数据称为操作数。
+<ul>
+<li>算术运算符：<code>+</code>,<code>-</code>,<code>*</code>,<code>/</code>,<code>%</code>,<code>++</code>,<code>--</code>...</li>
+<li>比较运算符: <code>&gt;</code>,<code>&lt;</code>,<code>==</code>,<code>!=</code>,<code>&gt;=</code>...</li>
+<li>逻辑运算符：<code>!</code>,<code>&amp;</code>,<code>|</code>,<code>^</code>,<code>&amp;&amp;</code>,<code>||</code>...</li>
+<li>位运算符: <code>~</code>,<code>&amp;</code>,<code>|</code>,<code>^</code>,<code>&lt;&lt;</code>,<code>&gt;&gt;</code>,<code>&gt;&gt;&gt;</code></li>
+<li>条件运算符：<code>?:</code></li>
+<li>赋值运算符：<code>=</code>,<code>+=</code>,<code>-=</code>,<code>/=</code>...</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>表达式（Expression）</h2>
+<ul>
+<li>表达式是由操作数和运算符按照一定的语法形式组成的符号序列，计算出单一值。</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>a=<span class="hljs-number">0</span>
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>value1==value2
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-number">1</span> * <span class="hljs-number">2</span> * <span class="hljs-number">3</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>语句（Statement）</h2>
+<ul>
+<li>表达式加上“<code>;</code>”构成语句（表达式语句）</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>a=<span class="hljs-number">0</span>;
+</span></span></foreignObject></svg></code></pre>
+<ul>
+<li>还有另外几种语句：声明语句、控制流语句、方法调用语句等</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">int</span> cadence = <span class="hljs-number">0</span>;
+anArray[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>;
+System.out.println(<span class="hljs-string">&quot;Element 1 at index 0: &quot;</span> + anArray[<span class="hljs-number">0</span>]);
+
+<span class="hljs-keyword">int</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>; <span class="hljs-comment">// result is now 3</span>
+<span class="hljs-keyword">if</span> (value1 == value2)
+    System.out.println(<span class="hljs-string">&quot;value1 == value2&quot;</span>);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>块（Block）</h2>
+<ul>
+<li>块是位于成对大括号之间的零个或多个语句的语句组，可以在允许使用单一语句的任何位置使用块。</li>
+</ul>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BlockDemo</span> </span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+          <span class="hljs-keyword">boolean</span> condition = <span class="hljs-keyword">true</span>;
+          <span class="hljs-keyword">if</span> (condition) { <span class="hljs-comment">// begin block 1</span>
+               System.out.println(<span class="hljs-string">&quot;Condition is true.&quot;</span>);
+          } <span class="hljs-comment">// end block one</span>
+          <span class="hljs-keyword">else</span> { <span class="hljs-comment">// begin block 2</span>
+               System.out.println(<span class="hljs-string">&quot;Condition is false.&quot;</span>);
+          } <span class="hljs-comment">// end block 2</span>
+     }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>编码规范</h1>
+<ul>
+<li>规范原则
+<ul>
+<li>尽量使用完整的英文描述符；</li>
+<li>采用大小写混合使名字可读，采用适用于相关领域的术语；</li>
+<li>尽量少用缩写，若已使用尽量明智，且在整个文件或工程中通用；</li>
+<li>避免使用长的和类似的名字，或仅仅是大小写不同的名字；</li>
+<li>除静态常量外，尽量少用下划线。</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>约定细则 - I</h1>
+<ul>
+<li>源文件命名规则
+<ul>
+<li>源程序中包含有公共类的定义，源文件名必须与该公共类的名字一致。在一个源程序中至多只能有一个公共类的定义；</li>
+<li>源程序中不包含公共类，则该文件名只要和某个类名字相同即可；</li>
+<li>源程序中有多个类的定义，编译时将会为每个类生成一个class文件</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>约定细则 - II</h1>
+<ul>
+<li>包：包名是全小写的名词，中间可以由点分隔开，如<code>java.awt.event</code></li>
+<li>类／接口：类／接口名首字母大写，若由多个单词合成一个类名，要求每个单词的字母也要大写，如<code>MyFirstJava</code></li>
+<li>方法：由多个单词组成的方法名首字母小写，中间的每个单词首字母大写，如<code>isButtonPressed</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>约定细则 - III</h1>
+<ul>
+<li>变量： 一般全小写，如<code>length</code></li>
+<li>常量：一般全大写，如果由多个单词组成则中间用下划线相连。如果是对象类型的常量，则是大小写混合，由大写字母把单词隔开，如<code>STR_LENGTH</code></li>
+<li>组件：使用完整的英文描述来说明组件的用途，尾部应该加上组件类型，如<code>okButton</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h3>示例</h3>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">/*
+Find Largest and Smallest Number in an Array Example
+*/</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FindLargestSmallestNumber</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+                <span class="hljs-comment">//array of 10 numbers</span>
+                <span class="hljs-keyword">int</span> numbers[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">32</span>,<span class="hljs-number">43</span>,<span class="hljs-number">53</span>,<span class="hljs-number">54</span>,<span class="hljs-number">32</span>,<span class="hljs-number">65</span>,<span class="hljs-number">63</span>,<span class="hljs-number">98</span>,<span class="hljs-number">43</span>,<span class="hljs-number">23</span>};
+                <span class="hljs-comment">//assign first element of an array to largest and smallest</span>
+                <span class="hljs-keyword">int</span> smallest = numbers[<span class="hljs-number">0</span>], largetst = numbers[<span class="hljs-number">0</span>];
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>; i&lt; numbers.length; i++){
+                        <span class="hljs-keyword">if</span>(numbers[i] &gt; largetst)
+                                largetst = numbers[i];
+                        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[i] &lt; smallest)
+                                smallest = numbers[i];
+                }
+                System.out.println(<span class="hljs-string">&quot;Largest Number is : &quot;</span> + largetst);
+                System.out.println(<span class="hljs-string">&quot;Smallest Number is : &quot;</span> + smallest);
+        }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>控制流</h1>
+<ul>
+<li>Java 使用了 C 的所有执行控制语句，因此对于熟悉 C/C++ 编程的人来说，这部分内容轻车熟路。大多数面向过程编程语言都有共通的某种控制语句。在 Java 中，涉及的关键字包括 <code>if-else</code>，<code>while</code>，<code>do-while</code>，<code>for</code>，<code>return</code>，<code>break</code> 和<code>switch</code>。</li>
+<li>Java 并不支持的<code>goto</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>true</code>和<code>false</code></h1>
+<p>所有的条件语句都利用条件表达式的“真”或“假”来决定执行路径。举例：<br />
+<code>a == b</code>。它利用了条件表达式 <code>==</code> 来比较 <code>a</code> 与 <code>b</code> 的值是否相等。 该表达式返回 <code>true</code> 或 <code>false</code>。代码示例：</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// control/TrueFalse.java</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TrueFalse</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		System.out.println(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>);
+		System.out.println(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>);
+	}
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>if-else</code></h1>
+<p><code>if-else</code> 语句是控制程序执行流程最基本的形式。 其中 <code>else</code> 是可选的，因此可以有两种形式的 <code>if</code>。代码示例：</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">if</span>(Boolean-expression) 
+	“statement” 
+</span></span></foreignObject></svg></code></pre>
+<p>或</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">if</span>(Boolean-expression) 
+	“statement”
+<span class="hljs-keyword">else</span>
+  “statement”
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>例</h1>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IfElse</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">int</span> testval, <span class="hljs-keyword">int</span> target)</span> </span>{
+    <span class="hljs-keyword">if</span>(testval &gt; target)
+      result = +<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(testval &lt; target) 
+      result = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">else</span>
+      result = <span class="hljs-number">0</span>;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    test(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>); System.out.println(result);
+    test(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>); System.out.println(result);
+    test(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>); System.out.println(result);
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="27" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>控制语句（迭代语句）</h1>
+<p><code>while</code>，<code>do-while</code> 和 <code>for</code> 用来控制循环语句（有时也称迭代语句）。</p>
+<p>只有控制循环的布尔表达式计算结果为 <code>false</code>，循环语句才会停止。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="28" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>while</code></h1>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">while</span>(Boolean-expression) 
+  statement
+</span></span></foreignObject></svg></code></pre>
+<p>执行语句会在每一次循环前，判断布尔表达式返回值是否为 <code>true</code>。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="29" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>do-while</code></h1>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-function"><span class="hljs-keyword">do</span> 
+	statement
+<span class="hljs-title">while</span><span class="hljs-params">(Boolean-expression)</span></span>;
+</span></span></foreignObject></svg></code></pre>
+<p><code>while</code> 和 <code>do-while</code> 之间的唯一区别?</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>for</code></h1>
+<p><code>for</code>循环可能是最常用的迭代形式。 该循环在第一次迭代之前执行初始化。随后，它会执行布尔表达式，并在每次迭代结束时，进行某种形式的步进。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">for</span>(initialization; Boolean-expression; step)
+  statement
+</span></span></foreignObject></svg></code></pre>
+<p>初始化表达式、布尔表达式，或者步进运算都可以为空。每次迭代之前都会判断布尔表达式的结果是否成立，一旦为 <code>false</code>，则跳出 <code>for</code> 循环体并继续执行后面代码。 每次循环结束时，都会执行一次步进。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="31" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1>例</h1>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListCharacters</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">char</span> c = <span class="hljs-number">0</span>; c &lt; <span class="hljs-number">128</span>; c++)
+      <span class="hljs-keyword">if</span>(Character.isLowerCase(c))
+        System.out.println(<span class="hljs-string">&quot;value: &quot;</span> + (<span class="hljs-keyword">int</span>)c +
+          <span class="hljs-string">&quot; character: &quot;</span> + c);
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="32" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>逗号操作符</h2>
+<p>在 Java 中逗号运算符（这里并非指我们平常用于分隔定义和方法参数的逗号分隔符）仅有一种用法：在 <code>for</code> 循环的初始化和步进控制中定义多个变量。我们可以使用逗号分隔多个语句，并按顺序计算这些语句。<strong>注意</strong>：要求定义的变量类型相同。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommaOperator</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, j = i + <span class="hljs-number">10</span>; i &lt; <span class="hljs-number">5</span>; i++, j = i * <span class="hljs-number">2</span>) {
+      System.out.println(<span class="hljs-string">&quot;i = &quot;</span> + i + <span class="hljs-string">&quot; j = &quot;</span> + j);
+    }
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="33" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>for-in</code> 语法</h1>
+<p>Java 5 引入了更为简洁的“增强版<code>for</code>循环”语法来操纵数组和集合，<code>for-in</code>无需你去创建<code>int</code>** `变量和步进来控制循环计数。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ForInFloat</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    Random rand = <span class="hljs-keyword">new</span> Random(<span class="hljs-number">47</span>);
+    <span class="hljs-keyword">float</span>[] f = <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[<span class="hljs-number">10</span>];
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+      f[i] = rand.nextFloat();
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">float</span> x : f)
+      System.out.println(x);
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="34" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>return</code></h1>
+<p>在 Java 中有几个关键字代表无条件分支，这意味无需任何测试即可发生。这些关键字包括 <code>return</code>，<code>break</code>，<code>continue</code> 和跳转到带标签语句的方法。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestWithReturn</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">int</span> testval, <span class="hljs-keyword">int</span> target)</span> </span>{
+    <span class="hljs-keyword">if</span>(testval &gt; target)
+      <span class="hljs-keyword">return</span> +<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">if</span>(testval &lt; target)
+      <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// Match</span>
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="35" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>break</code> 和 <code>continue</code></h1>
+<p>在任何迭代语句的主体内，都可以使用 <code>break</code> 和 <code>continue</code> 来控制循环的流程。 其中，<code>break</code> 表示跳出当前循环体。而 <code>continue</code> 表示停止本次循环，开始下一次循环。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>switch</h2>
+<p><code>switch</code> 有时也被划归为一种选择语句。根据整数表达式的值，<code>switch</code> 语句可以从一系列代码中选出一段去执行。它的格式如下：</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">switch</span>(integral-selector) {
+	<span class="hljs-keyword">case</span> integral-value1 : statement; <span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value2 : statement;	<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value3 : statement;	<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value4 : statement;	<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value5 : statement;	<span class="hljs-keyword">break</span>;
+	<span class="hljs-comment">// ...</span>
+	<span class="hljs-keyword">default</span>: statement;
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="37" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h1><code>switch</code> 字符串</h1>
+<p>Java 7 增加了在字符串上 <code>switch</code> 的用法。</p>
+<pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringSwitch</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    String color = <span class="hljs-string">&quot;red&quot;</span>;
+    <span class="hljs-keyword">switch</span>(color) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;red&quot;</span>:
+        System.out.println(<span class="hljs-string">&quot;RED&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">default</span>:
+        System.out.println(<span class="hljs-string">&quot;Unknown&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    }
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="38" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
+<h2>参考</h2>
+<p>Language Basics</p>
+<p><small> <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html</a></small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="39" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://www.desicomments.com/wp-content/uploads/2017/02/Thank-You-Image.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="39" data-marpit-pagination-total="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="content"></section>
+<script>!function(){"use strict";let t=void 0;function e(e){let r=!1;Array.from(document.querySelectorAll("svg[data-marpit-svg]"),i=>{const{children:o,clientHeight:n,clientWidth:a,viewBox:s}=i;i.style.transform||(i.style.transform="translateZ(0)");const l=e||window!==window.parent&&window.parent.marpitSVGPolyfillZoomFactor||i.currentScale||1;t!==l&&(t=l,r=l);const c=s.baseVal.width/l,d=s.baseVal.height/l,p=Math.min(n/d,a/c);for(let t=0;t<o.length;t+=1){const{style:e}=o[t].firstChild;e.position||(e.position="fixed"),e.transformOrigin||(e.transformOrigin="0 0"),e.transform=`scale(${p}) translateZ(0)`}}),!1!==r&&Object.defineProperty(window,"marpitSVGPolyfillZoomFactor",{configurable:!0,value:r})}const r=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function i(t=!0){for(const t of"Apple Computer, Inc."===navigator.vendor?[e]:[])t();Array.from(document.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{var e;const i=t.firstChild,o=i.firstChild,{scrollWidth:n,scrollHeight:a}=o;let s,l=1;if(t.hasAttribute("data-marp-fitting-code")&&(s=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(s=t.parentElement),s){const t=getComputedStyle(s),e=Math.ceil(s.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(l=e)}const c=Math.max(n,l),d=Math.max(a,1),p=`0 0 ${c} ${d}`;r(i,"width",""+c),r(i,"height",""+d),r(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),r(t,"viewBox",p)&&t.classList.toggle("__reflow__")}),t&&window.requestAnimationFrame(()=>i(t))}!function(){if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");window.marpCoreBrowserScript?console.warn("Marp Core's browser script has already executed."):(Object.defineProperty(window,"marpCoreBrowserScript",{value:!0}),i())}()}();
+</script></foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="39" data-marpit-pagination-total="39"></section></foreignObject></svg></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach(e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")}),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))})}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}}),e.on("prev",({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)}),a(0,0)}var r=function(e,t,n){return e(n={path:t,exports:{},require:function(e,t){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==t&&n.path)}},n.exports),n.exports}((function(e){
+/*!
+* screenfull
+* v5.0.2 - 2020-02-13
+* (c) Sindre Sorhus; MIT License
+*/
+!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,a=n.length,s={};r<a;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)s[n[0][r]]=e[r];return s}return!1}(),a={change:r.fullscreenchange,error:r.fullscreenerror},s={request:function(e){return new Promise(function(n,a){var s=function(){this.off("change",s),n()}.bind(this);this.on("change",s);var i=(e=e||t.documentElement)[r.requestFullscreen]();i instanceof Promise&&i.then(s).catch(a)}.bind(this))},exit:function(){return new Promise(function(e,n){if(this.isFullscreen){var a=function(){this.off("change",a),e()}.bind(this);this.on("change",a);var s=t[r.exitFullscreen]();s instanceof Promise&&s.then(a).catch(n)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=a[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=a[e];r&&t.removeEventListener(r,n,!1)},raw:r};r?(Object.defineProperties(s,{isFullscreen:{get:function(){return Boolean(t[r.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[r.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(t[r.fullscreenEnabled])}}}),n?e.exports=s:window.screenfull=s):n?e.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}()}));function a(e){e.fullscreen=()=>{r.isEnabled&&r.toggle(document.body)},document.addEventListener("keydown",t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!r.isEnabled||(e.fullscreen(),t.preventDefault())})}function s(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout(()=>{t.parent.classList.add("bespoke-marp-inactive"),t.fire("marp-inactive")},e),t.parent.classList.contains("bespoke-marp-inactive")&&(t.parent.classList.remove("bespoke-marp-inactive"),t.fire("marp-active"))}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const i=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function o(e){e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(i.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})}function l(e){window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}})}var c;function d({interval:e=200}={}){return t=>{document.addEventListener("keydown",e=>{if(32===e.which&&e.shiftKey)t.prev();else if(33===e.which||37===e.which||38===e.which)t.prev({fragment:!e.shiftKey});else if(32!==e.which||e.shiftKey)if(34===e.which||39===e.which||40===e.which)t.next({fragment:!e.shiftKey});else if(35===e.which)t.slide(t.slides.length-1,{fragment:-1});else{if(36!==e.which)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,a=0;t.parent.addEventListener("wheel",s=>{let i=!1;const o=(e,t)=>{e&&(i=i||function(e,t){return function(e,t){const n=t===c.X?"Width":"Height";return e["client"+n]<e["scroll"+n]}(e,t)&&function(e,t){const{overflow:n}=e,r=e["overflow"+t];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&o(e.parentElement,t)};if(0!==s.deltaX&&o(s.target,c.X),0!==s.deltaY&&o(s.target,c.Y),i)return;s.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const l=Date.now()-a<e,d=Math.sqrt(Math.pow(s.deltaX,2)+Math.pow(s.deltaY,2)),u=d<=n;if(n=d,l||u)return;let f;(s.deltaX>0||s.deltaY>0)&&(f="next"),(s.deltaX<0||s.deltaY<0)&&(f="prev"),f&&(t[f](),a=Date.now())})}}!function(e){e.X="X",e.Y="Y"}(c||(c={}));const u=(...e)=>history.replaceState(...e);var f;!function(e){e.Normal="",e.Presenter="presenter",e.Next="next"}(f||(f={}));const m=(e,{protocol:t,host:n,pathname:r,hash:a}=location)=>{const s=e.toString();return`${t}//${n}${r}${s?"?":""}${s}${a}`},p=()=>{switch(document.body.getAttribute("data-bespoke-view")){case f.Normal:return f.Normal;case f.Presenter:return f.Presenter;case f.Next:return f.Next;default:throw new Error("View mode is not assigned.")}},h=e=>new URLSearchParams(location.search).get(e),g=(e,t={})=>{const n=Object.assign({location:location,setter:u},t),r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter(null,document.title,m(r,n.location))}catch(e){console.error(e)}},v={available:(()=>{try{return localStorage.setItem("bespoke-marp","bespoke-marp"),localStorage.removeItem("bespoke-marp"),!0}catch(e){return console.warn("Warning: Using localStorage is restricted in the current host so some features may not work."),!1}})(),get:e=>{try{return localStorage.getItem(e)}catch(e){return null}},set:(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},remove:e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}}};function b(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return r.isEnabled||n("fullscreen",e=>e.style.display="none"),v.available||n("presenter",e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."}),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next({fragment:!t.shiftKey});break;case"prev":e.prev({fragment:!t.shiftKey});break;case"fullscreen":"function"==typeof e.fullscreen&&r.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:a})=>{n("prev",e=>e.disabled=0===t&&0===a),n("next",n=>n.disabled=t===e.slides.length-1&&a===r.length-1)}),e.on("marp-active",()=>t.removeAttribute("aria-hidden")),e.on("marp-inactive",()=>t.setAttribute("aria-hidden","true")),r.isEnabled&&r.onchange(()=>n("fullscreen",e=>e.classList.toggle("exit",r.isEnabled&&r.isFullscreen)))}}function w(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,"bespoke-marp-presenter-"+this.syncKey,`width=${e},height=${t},menubar=no,toolbar=no`)}function y(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}var x=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let E=e=>String(e).replace(/[&<>"']/g,e=>`&${k[e]};`),k={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},L="dangerouslySetInnerHTML",S={className:"class",htmlFor:"for"},I={};function P(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==L&&(r+=` ${S[e]?S[e]:E(e)}="${E(t[e])}"`);r+=">"}if(-1===x.indexOf(e)){if(t[L])r+=t[L].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===I[e]?e:E(e)}r+=e?`</${e}>`:""}return I[r]=!0,r}const M=({children:e})=>P(null,null,...e),N="bespoke-marp-presenter-container",F="bespoke-marp-presenter-next",O="bespoke-marp-presenter-next-container",q="bespoke-marp-presenter-note-container",C="bespoke-marp-presenter-info-container",T="bespoke-marp-presenter-info-page",A="bespoke-marp-presenter-info-page-text",K="bespoke-marp-presenter-info-page-prev",$="bespoke-marp-presenter-info-page-next",j="bespoke-marp-presenter-info-time",D="bespoke-marp-presenter-info-timer";function R(e){const{title:t}=document;document.title="[Presenter view]"+(t?" - "+t:"");const n={},r=e=>(n[e]=n[e]||document.querySelector("."+e),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=N,t.appendChild(e),t.insertAdjacentHTML("beforeend",P(M,null,P("div",{class:O},P("iframe",{class:F,src:"?view=next"})),P("div",{class:q}),P("div",{class:C},P("div",{class:T},P("button",{class:K,tabindex:"-1",title:"Previous"},"Previous"),P("span",{class:A}),P("button",{class:$,tabindex:"-1",title:"Next"},"Next")),P("time",{class:j,title:"Current time"}),P("div",{class:D})))),t})(e.parent)),(e=>{r(O).addEventListener("click",()=>e.next());const t=r(F),n=(a=t,(e,t)=>{var n;return null===(n=a.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var a;t.addEventListener("load",()=>{r(O).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>n(e,t))});const s=document.querySelectorAll(".bespoke-marp-note");s.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(q).appendChild(e)}),e.on("activate",()=>s.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide()))),e.on("activate",({index:t})=>{r(A).textContent=`${t+1} / ${e.slides.length}`});const i=r(K),o=r($);i.addEventListener("click",t=>{i.blur(),e.prev({fragment:!t.shiftKey})}),o.addEventListener("click",t=>{o.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{i.disabled=0===t&&0===r,o.disabled=t===e.slides.length-1&&r===n.length-1});const l=()=>r(j).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function U(e){const t=p();return t===f.Next&&e.appendChild(document.createElement("span")),e=>{t===f.Normal&&function(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:w},presenterUrl:{enumerable:!0,get:y}}),v.available&&document.addEventListener("keydown",t=>{80!==t.which||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})}(e),t===f.Presenter&&R(e),t===f.Next&&function(e){const t=t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let a=Number.parseInt(t,10),s=Number.parseInt(n,10)+1;s>=e.fragments[a].length&&(a+=1,s=0),e.slide(a,{fragment:s})}};window.addEventListener("message",t),e.on("destroy",()=>window.removeEventListener("message",t))}(e)}}function V(e){e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})}const X=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function Y(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},a=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:a}=e,s=Math.max(0,Math.min(t,a.length-1)),i=Math.max(0,Math.min(n||0,r[s].length-1));s===e.slide()&&i===e.fragmentIndex||e.slide(s,{fragment:i})})((X(location.hash.slice(1))||1)-1,t.fragment?X(h("f")||""):null)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||g({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:"#"+(e+1)}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{a(),window.addEventListener("hashchange",()=>r(()=>{a({fragment:!1}),g({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>a())}),n=!1},0)}}function B(e={}){const t=e.key||((e=21)=>{let t="",n=crypto.getRandomValues(new Uint8Array(e));for(;e--;){let r=63&n[e];t+=r<36?r.toString(36):r<62?(r-26).toString(36).toUpperCase():r<63?"_":"-"}return t})(),n="bespoke-marp-sync-"+t,r=()=>{const e=v.get(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=r(),a=Object.assign(Object.assign({},t),e(t));return v.set(n,JSON.stringify(a)),a};return a(e=>({reference:(e.reference||0)+1})),e=>{Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let s=!0;setTimeout(()=>{e.on("fragment",e=>{s&&a(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),r=JSON.parse(t.newValue);if(n.index!==r.index||n.fragmentIndex!==r.fragmentIndex)try{s=!1,e.slide(r.index,{fragment:r.fragmentIndex})}finally{s=!0}}}),e.on("destroy",()=>{const{reference:e}=r();void 0===e||e<=1?v.remove(n):a(()=>({reference:e-1}))})}}function z({slope:e=Math.tan(-35*Math.PI/180),swipeThreshold:t=30}={}){return n=>{let r;const a=n.parent,s=e=>{const t=a.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};a.addEventListener("touchstart",e=>{r=1===e.touches.length?s(e.touches[0]):void 0},{passive:!0}),a.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),n=t.x-r.x,a=t.y-r.y;r.delta=Math.sqrt(Math.pow(Math.abs(n),2)+Math.pow(Math.abs(a),2)),r.radian=Math.atan2(n,a)}else r=void 0}),a.addEventListener("touchend",a=>{if(r){if(r.delta&&r.delta>=t&&r.radian){let t=r.radian-e;t=(t+Math.PI)%(2*Math.PI)-Math.PI,n[t<0?"next":"prev"](),a.stopPropagation()}r=void 0}},{passive:!0})}}
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */function H(e,t,n,r){return new(n||(n=Promise))((function(a,s){function i(e){try{l(r.next(e))}catch(e){s(e)}}function o(e){try{l(r.throw(e))}catch(e){s(e)}}function l(e){var t;e.done?a(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(i,o)}l((r=r.apply(e,t||[])).next())}))}let W=void 0;const J=()=>(void 0===W&&(W="wakeLock"in navigator&&navigator.wakeLock),W),_=()=>H(void 0,void 0,void 0,(function*(){const e=J();if(e)try{const t=yield e.request("screen");return t.addEventListener("release",()=>{console.debug("[Marp CLI] Wake Lock was released")}),console.debug("[Marp CLI] Wake Lock is active"),t}catch(e){console.warn(e)}return null}));function G(){return H(this,void 0,void 0,(function*(){if(!J())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&_()};return document.addEventListener("visibilitychange",t),document.addEventListener("fullscreenchange",t),e=yield _(),e}))}const Q=[f.Normal,f.Presenter,f.Next];!function(r=document.getElementById("p")){document.body.setAttribute("data-bespoke-view",(()=>{switch(h("view")){case"next":return f.Next;case"presenter":return f.Presenter;default:return f.Normal}})());const i=(e=>{const t=h(e);return g({[e]:void 0}),t})("sync")||void 0,c=!1,u=!0,m=e(r,((...e)=>{const t=Q.findIndex(e=>p()===e);if(t<0)throw new Error("Invalid view");return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[u,u,c],B({key:i})],[[u,u,u],U(r)],[[u,u,c],o],[[u,u,u],t],[[u,c,c],s()],[[u,u,u],l],[[u,u,u],Y({history:!1})],[[u,u,c],d()],[[u,u,c],a],[[u,c,c],V],[[u,u,c],z()],[[u,c,c],b()],[[u,u,u],n],[[u,u,c],G]));window.addEventListener("beforeunload",()=>g({sync:m.syncKey})),window.addEventListener("unload",()=>m.destroy())}()}();</script></body></html>
