@@ -41,7 +41,7 @@ Java是一种广泛使用的计算机编程语言，拥有跨平台、面向对�
 
 ![bg 80% right:30%](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sun-Logo.svg/440px-Sun-Logo.svg.png)
 
-  任职于Sun微系统的詹姆斯·高斯林等人于1990年代初开发新型语言Oak，目标设置在家用电器等小型系统的编程语言，应用在电视机、电话、闹钟、烤面包机等家用电器的控制和通信，后该项目被放弃了该项计划。
+  任职于Sun微系统的詹姆斯·高斯林等人于1990年代初开发新型语言Oak，目标设置在家用电器等小型系统的编程语言，应用在电视机、电话、闹钟、烤面包机等家用电器的控制和通信，后该项目被放弃。
   
   随着1990年代互联网的发展，Sun公司看见Oak在互联网上应用的前景，于1995年5月以Java的名称正式发布。
 
@@ -117,7 +117,7 @@ public class HelloWorld extends Applet {
 # Java应用广泛
 
 - Java可以写桌面、可以写Android、可以写服务端、可以写企业级业务、可以写互联网业务...
-- Java是在开发效率、开发门槛、性能、跨平台这几方面平衡教（或最）好的语言
+- Java是在开发效率、开发门槛、性能、跨平台这几方面平衡较（或最）好的语言
 - Java是一个门槛低但上限也很高的语言
 
 ---
@@ -389,7 +389,7 @@ Hello World
 # Playground
 https://www.tutorialspoint.com/compile_java8_online.php
 
-<iframe src="https://www.tutorialspoint.com/compile_java8_online.php" width=100% height="70%"></iframe>
+<!-- <iframe src="https://www.tutorialspoint.com/compile_java8_online.php" width=100% height="70%"></iframe> -->
 
 ---
 
