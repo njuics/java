@@ -411,8 +411,7 @@ Find Largest and Smallest Number in an Array Example
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
     <span class="hljs-keyword">for</span>(<span class="hljs-keyword">char</span> c = <span class="hljs-number">0</span>; c &lt; <span class="hljs-number">128</span>; c++)
       <span class="hljs-keyword">if</span>(Character.isLowerCase(c))
-        System.out.println(<span class="hljs-string">&quot;value: &quot;</span> + (<span class="hljs-keyword">int</span>)c +
-          <span class="hljs-string">&quot; character: &quot;</span> + c);
+        System.out.println(<span class="hljs-string">&quot;value: &quot;</span> + (<span class="hljs-keyword">int</span>)c + <span class="hljs-string">&quot; character: &quot;</span> + c);
   }
 }
 </span></span></foreignObject></svg></code></pre>
@@ -469,10 +468,10 @@ Find Largest and Smallest Number in an Array Example
 <p><code>switch</code> 有时也被划归为一种选择语句。根据整数表达式的值，<code>switch</code> 语句可以从一系列代码中选出一段去执行。它的格式如下：</p>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">switch</span>(integral-selector) {
 	<span class="hljs-keyword">case</span> integral-value1 : statement; <span class="hljs-keyword">break</span>;
-	<span class="hljs-keyword">case</span> integral-value2 : statement;	<span class="hljs-keyword">break</span>;
-	<span class="hljs-keyword">case</span> integral-value3 : statement;	<span class="hljs-keyword">break</span>;
-	<span class="hljs-keyword">case</span> integral-value4 : statement;	<span class="hljs-keyword">break</span>;
-	<span class="hljs-keyword">case</span> integral-value5 : statement;	<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value2 : statement; <span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value3 : statement; <span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value4 : statement; <span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> integral-value5 : statement; <span class="hljs-keyword">break</span>;
 	<span class="hljs-comment">// ...</span>
 	<span class="hljs-keyword">default</span>: statement;
 }

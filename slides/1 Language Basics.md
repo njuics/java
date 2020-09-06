@@ -413,8 +413,7 @@ public class ListCharacters {
   public static void main(String[] args) {
     for(char c = 0; c < 128; c++)
       if(Character.isLowerCase(c))
-        System.out.println("value: " + (int)c +
-          " character: " + c);
+        System.out.println("value: " + (int)c + " character: " + c);
   }
 }
 ```
@@ -494,10 +493,10 @@ public class TestWithReturn {
 ```java
 switch(integral-selector) {
 	case integral-value1 : statement; break;
-	case integral-value2 : statement;	break;
-	case integral-value3 : statement;	break;
-	case integral-value4 : statement;	break;
-	case integral-value5 : statement;	break;
+	case integral-value2 : statement; break;
+	case integral-value3 : statement; break;
+	case integral-value4 : statement; break;
+	case integral-value5 : statement; break;
 	// ...
 	default: statement;
 }
