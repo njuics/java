@@ -8,6 +8,13 @@ marp: true
 ---
 
 
+<style>
+img {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
 ![bg right:40% 90%](https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png)
 # Java高级程序设计
 
@@ -59,7 +66,7 @@ main:                           ; the program label for the entry point
 
 # Go To Statement
 
-![bg width:80%](https://i.stack.imgur.com/6C1F5.png)
+![bg width:80%](images/goto.png)
 <br><br><br><br><br><br>
  _Edsger Dijkstra, "Go To Statement Considered Harmful",  1968 Communications of the ACM (CACM),_
 
@@ -68,12 +75,14 @@ main:                           ; the program label for the entry point
 
 # 结构化程序设计
 
-结构化程序设计 (Structured programming): 采用子程序、块结构、for循环以及while循环等结构，来取代传统的goto。希望借此来改善计算机程序的明晰性、质量以及开发时间，并且避免写出面条式代码。
-
 结构化编程在1960年代开始发展，Giuseppe Jacopini发表论文说明任何一个有goto指令的程序，可以改为完全不使用goto指令的程序
 
 
 _Corrado Bohm, Giuseppe Jacopini, "Flow diagrams, turing machines and languages with only two formation rules" Comm. ACM, 9(5):366-371, May 1966._
+
+
+采用子程序、块结构、for循环以及while循环等结构，来取代传统的goto。希望借此来改善计算机程序的明晰性、质量以及开发时间，并且避免写出[面条式代码](https://zh.wikipedia.org/zh-hans/%E9%9D%A2%E6%9D%A1%E5%BC%8F%E4%BB%A3%E7%A0%81)。
+
 
 <div style="text-align: center; color:red;">有序控制，降低复杂度。</div>
 
@@ -82,13 +91,6 @@ _Corrado Bohm, Giuseppe Jacopini, "Flow diagrams, turing machines and languages 
  ---
 
 #  过程式程序设计
-
-过程式 (Procedural programming): 派生自结构化编程，主要采取程序调用或函数调用的方式来进行流程控制。流程则由包涵一系列运算步骤的过程，例程，子程序, 方法，或函数来控制，例如Fortran, ALGOL, COBOL and BASIC
-
----
-
-
-## 过程式编程
 
 ```c
 #include <iostream> 
@@ -105,6 +107,18 @@ int sum(int num1, int num2) {
    return result; 
 } 
 ```
+
+
+---
+
+
+# 过程式编程
+
+
+过程式 (Procedural programming): 派生自结构化编程，主要采取程序调用或函数调用的方式来进行流程控制。流程则由包涵一系列运算步骤的过程，例程，子程序, 方法，或函数来控制。
+
+<br>
+
 <div style="text-align: center; color:red;">自顶向下，逐步求精。</div>
 
 ---
@@ -122,7 +136,10 @@ int sum(int num1, int num2) {
 
 ---
 
-# 如何把大象装进冰箱？
+
+## 如何把大象装进冰箱？
+
+![bg right:40% width:100%](https://pic.17qq.com/uploads/iiodhphogjz.jpeg)
 
 为了把大象装进冰箱，需要3个过程。
 
@@ -130,49 +147,59 @@ int sum(int num1, int num2) {
 2. 把大象装进去
 3. 把冰箱门关上
 
-每个过程有一个阶段性的目标，依次完成这些过程，就能把大象装进冰箱。
+每个过程有阶段性的目标，依次完成这些过程，就能把大象装进冰箱。
 
+<br>
 
-<div style="text-align: center; color:red; ">这是面向过程</div>。
+<div style="text-align: center; color:red; ">这是面向过程</div>
 
 ---
 
-# 如何把大象装进冰箱？
+# 如何把大象装进冰箱(OO)？
 
-为了把大象装进冰箱，需要做三个动作（或者叫行为）。
-每个动作有一个执行者，它就是对象。
+做三个动作（行为），每个动作有一个执行者，它就是对象(Object)。
 
 1. 冰箱，你给我把门打开
 2. 大象，你给我钻到冰箱里去
 3. 冰箱，你给我把门关上
 
-每个执行者依次做这些动作，大象就装进了冰箱。
+每个执行者依次动作，大象进了冰箱。<span style="color:red; ">考虑“用什么做”虑, 这是面向对象</span>
 
-<div style="text-align: center; color:red; ">从“用什么做”开始考虑, 这是面向对象</div>
+
+![width:80%](https://s3.narvii.com/image/w6w4xj3ybg7wv5zwv5rt2iz2ohcenklx_hq.jpg)
 
 ---
+
+# 面向过程 vs. 
+# 面向对象
 
 “面向过程”是做一件事，是对机器行为的说明；
 
 “面向对象”是造一堆东西，是对现实中对象的刻画。
 
+![bg right:50% fit](https://5b0988e595225.cdn.sohucs.com/images/20190709/fdc77e7daaa4469d8d549f1c2327bdbd.jpeg)
+
 ---
+# 面向对象编程
+
 
 _“面向对象编程的首要工作就是认识待解决问题所涉及的基本对象和他们间的相互关系”_
 <div align="right"><small>- 徐家福，《对象式程序设计语言》</small></div>
 
 然后通过将这些对象映射到计算机中，实现计算机对现实问题的模拟，得到与应用问题结构对应（一致）的程序系统结构。 <!-- .element: class="fragment" -->
 
-<span style="color:gold">**这样使我们能从问题的角度进行编程**</span> <!-- .element: class="fragment" -->
+<br>
+<div style="text-align:center; color:red"><large>这样使我们能从问题的角度进行编程</large></div> <!-- .element: class="fragment" -->
 
 
 ---
 
+# 历史
 Simula, 1967, Ole-Johan Dahl and Kristen Nygaard
 
 Smalltalk, 1970s, Alan Kay
 
-![AlanKay](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Alan_Kay_%283097597186%29.jpg/1920px-Alan_Kay_%283097597186%29.jpg)  <!-- .element height="40%" width="40%" --> 
+![ bg right:70% height:500px ](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Alan_Kay_%283097597186%29.jpg/1920px-Alan_Kay_%283097597186%29.jpg)  <!-- .element height="40%" width="40%" --> 
 
 ---
 
@@ -181,7 +208,7 @@ Smalltalk, 1970s, Alan Kay
 - Everything is an object.
 - A program is a bunch of objects telling each other what to do, by sending messages.
 
-<span style="color:gold">写程序就是写对象，实现对现实世界的模拟 </span> <!-- .element: class="fragment" -->
+<div style="text-align:center; color:red">写程序就是写对象，实现对现实世界的“模拟” </div> 
 
 ---
 
