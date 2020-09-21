@@ -115,7 +115,10 @@ int sum(int num1, int num2) {
 # 过程式编程
 
 
-过程式 (Procedural programming): 派生自结构化编程，主要采取程序调用或函数调用的方式来进行流程控制。流程则由包涵一系列运算步骤的过程，例程，子程序, 方法，或函数来控制。
+过程式 (Procedural programming)
+
+- 派生自结构化编程，主要采取程序调用或函数调用的方式来进行流程控制
+- 流程则由包涵一系列运算步骤的过程，例程，子程序, 方法，或函数来控制。
 
 <br>
 
@@ -123,12 +126,12 @@ int sum(int num1, int num2) {
 
 ---
 
+# 过程式编程
 
-# 过程式编程的问题
+主要问题
 
-它是面向“解空间”的。
-
-即针对现实中“做什么”的问题直接给出在机器中“怎么做”的解决方案。
+- 它是面向“解空间”的。
+- 即针对现实中“做什么”的问题直接给出在机器中“怎么做”的解决方案。
 
 <br>
 
@@ -186,7 +189,7 @@ int sum(int num1, int num2) {
 _“面向对象编程的首要工作就是认识待解决问题所涉及的基本对象和他们间的相互关系”_
 <div align="right"><small>- 徐家福，《对象式程序设计语言》</small></div>
 
-然后通过将这些对象映射到计算机中，实现计算机对现实问题的模拟，得到与应用问题结构对应（一致）的程序系统结构。 <!-- .element: class="fragment" -->
+然后通过将这些对象映射到计算机中，实现计算机对现实问题的<span style="color:red">模拟</span>，得到与应用问题结构对应（一致）的程序系统结构。 <!-- .element: class="fragment" -->
 
 <br>
 <div style="text-align:center; color:red"><large>这样使我们能从问题的角度进行编程</large></div> <!-- .element: class="fragment" -->
@@ -194,56 +197,106 @@ _“面向对象编程的首要工作就是认识待解决问题所涉及的基�
 
 ---
 
-# 历史
-Simula, 1967, Ole-Johan Dahl and Kristen Nygaard
+# Simula
 
-Smalltalk, 1970s, Alan Kay
+![bg right:30% 90%](images/Simula.png)
 
-![ bg right:70% height:500px ](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Alan_Kay_%283097597186%29.jpg/1920px-Alan_Kay_%283097597186%29.jpg)  <!-- .element height="40%" width="40%" --> 
+- 于1960年代在奥斯陆的挪威电子计算中心（Norwegian Computing Center）开始被发展出来
+- 主要的设计者是Ole-Johan Dahl等，开发出了Simula I与Simula 67两代
+- 它被认为是第一个面向对象编程的编程语言。
+
 
 ---
 
-## 面向对象（Object Oriented）
+# Smalltalk
+<small>1970s, Alan Kay</small>
 
-- Everything is an object.
-- A program is a bunch of objects telling each other what to do, by sending messages.
+第一个成功的面向对象程序设计语言
+
+![ bg right:60% height:400px ](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Alan_Kay_%283097597186%29.jpg/1920px-Alan_Kay_%283097597186%29.jpg)  <!-- .element height="40%" width="40%" --> 
+
+---
+
+## 面向对象（Object Oriented）设计思想
+
+- 万物皆对象。你可以将对象想象成一种特殊的变量。它存储数据，但可以在你对其“发出请求”时执行本身的操作。
+- 程序是一组对象，通过消息传递来告知彼此该做什么。要请求调用一个对象的方法，你需要向该对象发送消息。
+- 每个对象都有自己的存储空间，可容纳其他对象。
+- 每个对象都有一种类型，每个对象都是某个“类”的一个“实例”。
+- 同一类所有对象都能接收相同的消息。一个类最重要的特征就是“能将什么消息发给它？”。
 
 <div style="text-align:center; color:red">写程序就是写对象，实现对现实世界的“模拟” </div> 
 
 ---
 
-## 对象：现实世界中事物的抽象
+# 对象：现实世界中事物的抽象
 
-“你”、“我”、“他／她／它”
+![height:450px](https://pic2.zhimg.com/50/v2-0c6c35cf72ed9b761dd27f57b2bf3671_hd.jpg)
+
+<div style="text-align: right;"><small>https://zhuanlan.zhihu.com/p/38891517</small></div>
+
 
 ---
 
-## 对象 Object
+# Simula中经典问题:“银行出纳员”
 
-Each object has its own memory, and is made up of other objects.
 
+- 出纳员、客户、帐号、交易和货币单位等许多"对象”
+- 每类成员（元素）都具有一些通用的特征：每个帐号都有一定的余额；每名出纳都能接收客户的存款；等等。
+- 每个成员都有自己的状态；每个帐号都有不同的余额；每名出纳都有一个名字。
+- 能用独一无二的实体分别表示出纳员、客户、帐号以及交易。这个实体便是“对象”，而且每个对象都隶属一个特定的“类”，那个类具有自己的通用特征与行为。
+
+<<<<<<< HEAD
 <span style="color:gold">对象属性</span> 
+=======
+
+https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object
+>>>>>>> a69519e5b03f7fd3fddb59cf756081af680a3096
 
 ---
 
-## 对象类型 Class
+## 对象与对象类型
 
+![bg right:50% 80%](https://lingcoder.github.io/OnJava8/images/reader.png)
+- Each object has its own memory, and is made up of other objects. 
 - An object has an interface, determined by its class.
 - Every object has a type (class).
 
+<<<<<<< HEAD
 <span style="color:gold">接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</span> 
 
 “人”
+=======
+<span style="color:red"><small>接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</small></span> 
 
 ---
 
-![](http://www.shuoshuokong.org/uploads/allimg/160919/2-160919104204.jpg)
+## 现实中的例子
 
-“你（对象）不是人（类型）！”
+![bg right:50% 80%](https://i0.wp.com/www.annainchina.com/wp-content/uploads/2017/09/%E4%BD%A0%E6%88%91%E4%BB%962.jpg?fit=960%2C720&ssl=1)
+
+- “你”、“我”都是Object（对象）
+- “你”、“我”的行为方法都一样，所以我们都是"人"这个Class(类型)。
+- If “你”、“我”的行为方法不一样...
+>>>>>>> a69519e5b03f7fd3fddb59cf756081af680a3096
+
+---
+
+# Then
+
+![bg height:500px](https://www.shuoshuokong.org/uploads/allimg/160919/2-160919104204.jpg)
+<br><br>
+<br>
+<br>
+<br>
+<div style="text-align:center; color:red"><large>“你（对象）不是人（类型）！”</div>
+
 
 ---
 
 ## 面向对象编程
+
+Object Oriented Programming in Java
 
 ```java
 class Human {
@@ -256,17 +309,18 @@ Human him, her;
 
 定义类型，声明对象。
 
-Object Oriented Programming in Java
+
+<span style="color:red">但还没有人造出来。</span>
 
 ---
 
-女娲造人
+# 女娲造人
 
-![](http://imgs15.iaweg.com/pic/HTTP2ltZy56Y29vbC5jbi9jb21tdW5pdHkvMDFjNmQ0NTU0NzUyMTIwMDAwMDAyYjAxNzNjZWUxLmpwZwloglog.jpg)  <!-- .element: width="60%" -->
+![bg height:400px](https://njuics.github.io/java-2019/content/images/3/nvwa.jpg)  
 
 ---
 
-## 在代码中造人
+# 在代码中造人
 
 ``` java
 class Human {
@@ -280,9 +334,19 @@ Human me = new Human();
 
 ```
 
+<span style="color:red">定义了类型，声明且创造了对象</span>
+
+
+![bg right:50% height:400px](https://njuics.github.io/java-2019/content/images/3/nvwa.jpg)  
+
+
 ---
 
 ## 稍微详细点
+
+
+造的是个什么样的人？
+
 
 ```java
 class Human {
@@ -297,15 +361,32 @@ class Human {
 }
 ```
 
----
 
-## 你还缺个女娲
-
-## 或者叫“上帝之手”
 
 ---
 
-## run起来
+# 你还缺个女娲或者叫“上帝之手”
+
+换句话说，这两行`new`从在哪里执行呢？
+
+``` java
+class Human {
+
+}
+
+...
+Human you = new Human();
+Human me = new Human();
+...
+
+```
+
+
+---
+
+# run起来
+
+
 
 ```java
 void main() {
@@ -321,9 +402,12 @@ void main() {
 }
 ```
 
----
+<div style="text-align:center; color:green"><large>C'est la vie</large></div>
 
-`main()`放哪里
+
+---
+# 入口
+`main()`放哪里？
 
 ```java
 class God {
@@ -338,62 +422,64 @@ class God {
     }
   }
 }
-
 ```
 
 ---
 
-## Composition
+# 关系：Composition
+
 
 One class has another as a part.
 
+例如：引擎是汽车的一部分。
+
+https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object?id=%e5%a4%8d%e7%94%a8
+
+![bg right:50% fit](https://lingcoder.github.io/OnJava8/images/1545758268350.png)
+
 ---
 
-## 再抽象一次
+# 再来点更抽象的
 
 ```java
 class Society {
-
   Human[] members; //A society's subparts
-
   void initialize(){
-    Human you = new Human();
-    Human me = new Human();
+    Human you = new Human(); Human me = new Human();
     members = new Human[2];
-    members[0] = you;
-    members[1] = me;
+    members[0] = you; members[1] = me;
   }
-
   void functioning(){
     for (int i=0; i< memebers.length; i++){
       if (!member[i].isDead()){
-        member[i].talk();
-        member[i].eat();
+        member[i].talk(); member[i].eat();
       }
     }
   }
-
   public static void main(String[] args){
     Society society = new Society();
-    society.initialize();
-    society.functioning();
+    society.initialize(); society.functioning();
   }
 }
 ```
 
 ---
 
-## Inheritance
+# 关系：Inheritance
 
 One class is a specialized version of another.
 
+https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object?id=%e7%bb%a7%e6%89%bf
+
+![bg right:50% 50%](https://lingcoder.github.io/OnJava8/images/1545763399825.png)
+
 ---
 
-男人和女人
+# 男人和女人
 
 ```java
 class Man extends Human {
-  void playDota(){}
+  void chiji(){}
 }
 
 class Woman extends Human {
@@ -401,7 +487,7 @@ class Woman extends Human {
 }
 
 Man me = new Man();
-me.playDota();
+me.chiji();
 me.talk();
 
 Woman her = new Woman();
@@ -411,7 +497,7 @@ her.eat();
 
 ---
 
-## 最抽象的那个对象
+# 最抽象的那个对象
 
 `Object`
 
@@ -430,11 +516,20 @@ class Object {
 
 ## Actually
 
+``` java
+class Human {
+
+}
+```
+等同于
+
 ```java
 class Human extends Object {
   ...
 }
 ```
+
+<div style="text-align:center; color:red"><large>Java中定义的每个类型默认都继承自Object类型。</large></div>
 
 ---
 
@@ -442,13 +537,12 @@ class Human extends Object {
 
 ```java
 class Man extends Human {
-  void playDota(){}
+  void chiji(){}
   @Override
   void talk(){
     System.out.println("bala bala");
   }
 }
-
 class Woman extends Human {
   void selfie(){}
   @Override
@@ -457,10 +551,11 @@ class Woman extends Human {
   }
 }
 ```
+<div style="text-align:center; color:red"><large>同样都是人，但男女还是很不一样的。</large></div>
 
 ---
 
-## 父类与子类
+# 父类与子类
 
 ```java
 Man me = new Man();
@@ -472,7 +567,7 @@ Man he = new Human(); // wrong
 
 ---
 
-## 会是什么结果？
+# 这样会是什么结果？
 
 ```java
 Man me = new Man(); me.talk();
@@ -488,21 +583,22 @@ Man he = new Human(); // wrong
 
 Different subclasses respond to the same message, possibly with different actions.
 
+https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object?id=%e5%a4%9a%e6%80%81
+
+![bg right:60% fit](https://lingcoder.github.io/OnJava8/images/1545839316314.png)
+
 ---
 
-## 会是什么结果？
+# 这样会是什么结果？
 
 ```java
 class Society{
   Human[] members;
   void initialize(){
-    Man you = new Man();
-    Woman me = new Woman();
+    Man you = new Man(); Woman me = new Woman();
     members = new Human[2];
-    members[0] = you;
-    members[1] = me;
+    members[0] = you; members[1] = me;
   }
-  
   void functioning(){
     for (int i=0; i< memebers.length; i++){
       if (!member[i].isDead()){
@@ -510,23 +606,19 @@ class Society{
       }
     }
   }
-
   public static void main(String[] args){
     Society society = new Society();
-    society.initialize();
-    society.functioning();
+    society.initialize(); society.functioning();
   }
 }
-
 ```
 
 
 ---
 
-## Initialization
+# Initialization
 
 ```java
-
 class Human{
   int age;
   boolean gender;
@@ -551,7 +643,7 @@ class Human {
   }
 
   Human(int age) {
-    self.age = age; //self -> this object
+    this.age = age; //this -> this object
   }
   ...
 }
@@ -565,13 +657,20 @@ If an object goes “out of scope,” it can no longer be used (its name is no l
 In C++, we might need to write an explicit function to free memory allocated to an object.
 Java uses references and “garbage collection”.
 
+![bg right:40% 80%](images/GC.png)
+
+---
+
+# Garbage collection
+
+![height:400px](https://static001.infoq.cn/resource/image/75/a4/754f1ab05e6527107cfd8578d98a80a4.png)
+
 ---
 
 ## What Happens?
 
 ```java
 class Woman {
-  ...
   void giveBirth() {
       Human baby;
       baby = new Human();
@@ -580,42 +679,66 @@ class Woman {
   ...
 }
 ```
+<small>The `Human` object still exists, but the reference `baby` disappears (it’s out of scope after return). Eventually, the garbage collector removes the actual `Human` object, i.e., the `baby`.</small>
 
-The `Human` object still exists, but the reference `baby` disappears (it’s out of scope after return). Eventually, the garbage collector removes the actual `Human` object, i.e., the `baby`.
+![bg right:30% 80%](images/cry.jpg)
 
 ---
 
 ## Inside
 
-![](http://www.programcreek.com/wp-content/uploads/2013/09/string-pass-by-reference--650x247.jpeg)
+![height:400px](https://www.programcreek.com/wp-content/uploads/2013/09/string-pass-by-reference--650x247.jpeg)
 
+
+<div style="text-align: right;"><small>https://www.baeldung.com/jvm-garbage-collectors
+</small></div>
 
 ---
 
 ## Primitives ?
 
 ```java
-int i;
-double d;
-...
+int i; double d; ...
 ```
+<small>
+
+| 类型      | 内存字节数 |                    数值范围 |
+| --------- | :--------: | --------------------------: |
+| `byte`    |     1      |               `-128`～`127` |
+| `short`   |     2      |           `-32768`～`32767` |
+| `int`     |     4      | `-2147483648`～`2147483647` |
+| `long`    |     8      |                    whatever |
+| `float`   |     4      |                   who cares |
+| `double`  |     8      |                   holy crap |
+| `char`    |     2      |           `\u0000`~`\uFFFF` |
+| `boolean` |     1      |           `true` or `false` |
+
+</small>
+
 
 ---
 
 ## Heap and Stack
 
-![](https://i.stack.imgur.com/KdBPf.png)
+![height:400px](https://i.stack.imgur.com/KdBPf.png)
+
+<div style="text-align: right;"><small>https://www.baeldung.com/java-stack-heap
+</small></div>
+
 
 ---
 
-![](http://poster.keepcalmandposters.com/9314179.jpg) <!-- .element: width="50%" -->
+# Always remember 
+
+![height:500px](images/showcode.jpg) 
 
 ---
 
-Let's DO the Java Programming!
+# Let's DO the Java Programming!
 
-![](https://www.jetbrains.com/idea/img/screenshots/idea_overview_5_1@2x.png) <!-- .element: width="60%" -->
+
+![height:500px](https://raw.githubusercontent.com/redhat-developer/vscode-java/master/images/vscode-java.0.0.1.gif)
 
 ---
 
-# END
+![bg 50%](https://www.desicomments.com/wp-content/uploads/2017/02/Thank-You-Image.png)
