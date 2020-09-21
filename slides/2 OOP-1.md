@@ -246,12 +246,8 @@ _“面向对象编程的首要工作就是认识待解决问题所涉及的基�
 - 每个成员都有自己的状态；每个帐号都有不同的余额；每名出纳都有一个名字。
 - 能用独一无二的实体分别表示出纳员、客户、帐号以及交易。这个实体便是“对象”，而且每个对象都隶属一个特定的“类”，那个类具有自己的通用特征与行为。
 
-<<<<<<< HEAD
-<span style="color:gold">对象属性</span> 
-=======
 
 https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object
->>>>>>> a69519e5b03f7fd3fddb59cf756081af680a3096
 
 ---
 
@@ -262,11 +258,6 @@ https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object
 - An object has an interface, determined by its class.
 - Every object has a type (class).
 
-<<<<<<< HEAD
-<span style="color:gold">接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</span> 
-
-“人”
-=======
 <span style="color:red"><small>接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</small></span> 
 
 ---
@@ -278,7 +269,6 @@ https://lingcoder.github.io/OnJava8/#/book/01-What-is-an-Object
 - “你”、“我”都是Object（对象）
 - “你”、“我”的行为方法都一样，所以我们都是"人"这个Class(类型)。
 - If “你”、“我”的行为方法不一样...
->>>>>>> a69519e5b03f7fd3fddb59cf756081af680a3096
 
 ---
 
