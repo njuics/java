@@ -543,7 +543,7 @@ Encapsulating for
 - Reusability
 - Maintainability
 
-![bg right:50% 80%](https://www.flexiprep.com/NIOS-Notes/Computer-Science/posts/Ch-8-General-Concept-Of-OOP-Part-3/Image-of-Encapsulation.webp)
+![bg right:50% 80%](images/Image-of-Encapsulation.webp)
 
 ---
 
