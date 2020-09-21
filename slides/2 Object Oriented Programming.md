@@ -222,7 +222,7 @@ Smalltalk, 1970s, Alan Kay
 
 Each object has its own memory, and is made up of other objects.
 
-<span style="color:gold">对象属性</span> <!-- .element: class="fragment" -->
+<span style="color:gold">对象属性</span> 
 
 ---
 
@@ -231,9 +231,9 @@ Each object has its own memory, and is made up of other objects.
 - An object has an interface, determined by its class.
 - Every object has a type (class).
 
-<span style="color:gold">接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</span> <!-- .element: class="fragment" -->
+<span style="color:gold">接口即与对外界交互的接口，代表对象的行为。同类型对象行为一致</span> 
 
-“人”<!-- .element: class="fragment" -->
+“人”
 
 ---
 
