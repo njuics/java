@@ -20,7 +20,7 @@ img {
 ![bg right:40% 90%](https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png)
 # Java高级程序设计
 
-## 面向对象编程
+## 面向对象编程 - 续
 
 ----
 
