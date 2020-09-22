@@ -122,7 +122,7 @@ class Human {
         gender = true; this.age = age;
     }
     Human(boolean gender){
-        this(0) //calling constructors from constructors
+        this(0); //calling constructors from constructors
         this.gender = gender;
     }
 }
