@@ -15,13 +15,19 @@ img {
 }
 </style>
 
-# 设计原则 
+![bg right:40% 90%](https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png)
 
-## Change is the eternal truth.
+# Java高级程序设计
+
+
+## 设计原则 
+
+### Change is the eternal truth.
 
 ---
 
-# 复杂性是软件开发过程中所固有的特质。
+<br><br><br><br><br>
+> 复杂性是软件开发过程中所固有的特质。
 <p align="right">-- Grady Booch, 1994</p>
 
 ![bg right:40% fit ](images/complexity.jpg)
