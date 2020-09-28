@@ -33,7 +33,7 @@
 <ul>
 <li>模块(module): “Self-Contained”; well-defined interfaces</li>
 <li>模块化(modular): 软件构造为一组“模块”之有序组合，从而易于装配、易于修补替换模块。</li>
-<li>Extendibility 和 Reusability 的要求。</li>
+<li><font color=red>Extendibility</font> 和 <font color=red>Reusability</font> 的要求。</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -46,9 +46,11 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>程序设计范型</h2>
-<h3>1. 过程抽象 --&gt; 数据抽象</h3>
-<h3>2. 结构化 --&gt; 面向对象</h3>
-<p><span style="color: red">软件工程发展的历史就是人们不断追求更高的抽象、封装和模块化的历史。</span> </p>
+<ul>
+<li>过程抽象 --&gt; 数据抽象</li>
+<li>结构化 --&gt; 面向对象</li>
+</ul>
+<p><span style="color: red">软件工程发展的历史就是人们不断追求更高的抽象、封装和模块化的历史。</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>OOSC</h2>
@@ -56,7 +58,7 @@
 <p>Object-oriented software construction is the approach to system structuring that bases the architecture of software systems on <font color=red>the types of objects </font> they manipulate — not on the function they achieve.</p>
 </blockquote>
 <p align="right">-- Bertrand Meyer</p>
-<p><span style="color:red">But OOP == OOSC ?</span> </p>
+<p><span style="color:red">But OOP == OOSC ?</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>软件设计</h2>
@@ -85,13 +87,14 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/SRP-1.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="content">
-<h2>来个例子</h2>
+<h2>举个例子</h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="11" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/SRP-2.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="content">
 <h2>Applying SRP</h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="12" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>SRP Violation</h2>
+<br />
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Modem</span></span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dial</span> <span class="hljs-params">(String pno)</span></span>;
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hangup</span><span class="hljs-params">()</span></span>;
@@ -103,11 +106,13 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/SRP-3.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="14" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>Applying SRP</h2>
 
-<p><span style="color:#0099ff">Note：如果应用程序的变化方式总是导致这两个职责同时变化，那么就不必分离它们！</span> </p>
+<p><span style="color:#0099ff">Note：如果应用程序的变化方式总是导致这两个职责同时变化，那么就不必分离它们！</span></p>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="14" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>OCP 开放封闭原则</h2>
+<br />
 <h4>Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.</h4>
+<br />
 <p><span style="color:red">OCP is the heart of OO design!</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -121,7 +126,7 @@
 </ul>
 </li>
 <li>
-<p>Do not modify sourcecode, but change behavior.</p>
+<p>Do not modify source code, but change behavior.</p>
 </li>
 </ul>
 <p><span style="color:red">Is it possible?</span></p>
@@ -155,11 +160,16 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
-<h2>LSP Liskov替换法则</h2>
+<h2>LSP 里氏替换法则</h2>
 <ul>
 <li>Subtypes must be substitutable for their base types.</li>
-<li>If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T. [Liskov88]</li>
+<li>
+<blockquote>
+<p>If for each object <em><strong>o1</strong></em> of type <em><strong>S</strong></em> there is an object <em><strong>o2</strong></em> of type <em><strong>T</strong></em> such that for all programs <em><strong>P</strong></em> defined in terms of <em><strong>T</strong></em>, the behavior of <em><strong>P</strong></em> is unchanged when <em><strong>o1</strong></em> is substituted for <em><strong>o2</strong></em> then <em><strong>S</strong></em> is a subtype of <em><strong>T</strong></em>.</p>
+</blockquote>
+</li>
 </ul>
+<p align="right">-- Barbara Liskov, 1988</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>LSP Violation (I)</h2>
@@ -209,20 +219,17 @@
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drawShape</span><span class="hljs-params">(Shape shape)</span></span>{
         <span class="hljs-keyword">if</span>(shape.itsType == ShapeType.circle){
-            Circle circle = (Circle)shape; circle.draw();
-        }
+            Circle circle = (Circle)shape; circle.draw();}
         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(shape.itsType == ShapeType.square){
             Square square = (Square)shape; square.draw();
-        }
-    }
+        }}
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
         Shape  s1 = <span class="hljs-keyword">new</span> Circle(ShapeType.circle);
         Shape  s2 = <span class="hljs-keyword">new</span> Square(ShapeType.square);
         Client.drawShape(s1); Client.drawShape(s2);
-    }
-}
+    }}
 </span></span></foreignObject></svg></code></pre>
-<p><span style="color:red">增加一种新类型?</span> </p>
+<p><span style="color: red">增加一种新类型?</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/LSP-1.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="26" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>LSP Violation (II)</h2>
@@ -240,7 +247,7 @@
   <span class="hljs-keyword">double</span> itsHeight;
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setWidth</span><span class="hljs-params">(<span class="hljs-keyword">double</span> w)</span> </span>{itsWidth=w;}
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setHeight</span><span class="hljs-params">(<span class="hljs-keyword">double</span> h)</span> </span>{itsHeight=h;}
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">area</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">return</span> itsWidth * itsHeight;}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">area</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">return</span> itsWidth*itsHeight;}
 }
 </span></span></foreignObject></svg></code></pre>
 </section>
@@ -270,7 +277,7 @@
     }
 }
 </span></span></foreignObject></svg></code></pre>
-<p><span style="color:red">结果为20吗？</span> </p>
+<p><span style="color:red">结果为20吗？</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>The Real Problem</h2>
@@ -281,7 +288,7 @@
 <li>
 <p>IS-A is about Behavior</p>
 <ul>
-<li>Behaviorally, a Square is not a Rectangle.</li>
+<li>Behaviorally, a <em><strong>Square</strong></em> is not a <em><strong>Rectangle</strong></em>.</li>
 </ul>
 </li>
 </ul>
@@ -351,7 +358,7 @@
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">timeout</span><span class="hljs-params">()</span></span>;
 }
 </span></span></foreignObject></svg></code></pre>
-<p><span style="color:red">How about a timed door?</span> </p>
+<p><span style="color:red">How about a timed door?</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/IP-1.png&quot;);background-size:35%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="content">
 <h2>Interface Polution</h2>
@@ -367,7 +374,7 @@
 <ul>
 <li>Solution 2: multiple inheritance
 <ul>
-<li>in Java,  <em>Interface</em></li>
+<li>in Java,  <em><strong>Interface</strong></em></li>
 </ul>
 </li>
 </ul>
@@ -390,7 +397,7 @@
 <p>Abstractions should not depend on details. Details should depend on abstractions.</p>
 </li>
 </ul>
-<p><span style="color:red">Inversion: 相对于结构化方法而言！</span> </p>
+<p><span style="color:red">Inversion: 相对于结构化方法而言！</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="41" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-1.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="41" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="41" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>Laying</h2>
@@ -398,7 +405,7 @@
 <li><font size=6>Booch: “… all well structured OO architectures have clearly defined layers, with each layer providing some coherent set of services through a well-defined and controlled interface.”</font></li>
 </ul>
 
-<p><span style="color:red">Unfortunate!</span> </p>
+<p><span style="color:red">Unfortunate!</span></p>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="41" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-2.png&quot;);background-size:40%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="42" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>Laying</h2>
@@ -417,30 +424,30 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="44" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-3.png&quot;);background-size:30%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="44" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="44" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="44" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-3.png&quot;);background-size:25%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="44" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="44" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>再来个例子</h2>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span></span>{
     <span class="hljs-keyword">private</span> Lamp itsLamp;
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">poll</span><span class="hljs-params">()</span></span>{
-          <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* some condition */</span>)
-               itsLamp.turnOn();
+      <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* some condition */</span>)
+        itsLamp.turnOn();
      }
 }
 </span></span></foreignObject></svg></code></pre>
-<p><span style="color:red">问题：高层依赖低层！</span> </p>
+<p><span style="color:red">问题：高层依赖低层！</span></p>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="44" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-4.png&quot;);background-size:35%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="45" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="44" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-4.png&quot;);background-size:30%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="45" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>反转</h2>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span></span>{
     <span class="hljs-keyword">private</span> ButtonServer bs;
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">poll</span><span class="hljs-params">()</span></span>{
-          <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* some condition */</span>)
-               bs.turnOn();
+      <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* some condition */</span>)
+        bs.turnOn();
      }
 }
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="45" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-5.png&quot;);background-size:45%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="46" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="45" data-marpit-pagination-total="62"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/DIP-5.png&quot;);background-size:40%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="46" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>反转</h2>
 
 <p><font color="red">换个更友好的名字</font></p>
@@ -463,7 +470,7 @@
 <li>任何变量都不应该持有一个指向具体类的指针或引用</li>
 <li>任何类都不应该从具体类派生</li>
 <li>任何方法都不应该覆写它的任何基类中的已经实现了的方法</li>
-<li>例外：可以依赖稳定的具体类，比如String</li>
+<li>例外：可以依赖稳定的具体类，比如<code>String</code></li>
 </ul>
 </li>
 </ul>
@@ -548,7 +555,7 @@
 <ul>
 <li>只有“Is-A”关系才符合继承关系，“Has-A”关系应当用聚合来描述。</li>
 <li>永远不会出现需要将子类换成另外一个类的子类的情况。</li>
-<li>子类具有扩展父类的责任，而不是具有置换掉（override）或注销掉（Nullify）父类的责任。</li>
+<li>子类具有扩展父类的责任，而不是具有置换掉（override）或注销掉（nullify）父类的责任。</li>
 <li>只有在分类学角度上有意义时，才可以使用继承。不要从工具类继承。</li>
 </ul>
 </section>
@@ -575,7 +582,10 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="58" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>OOSC</h2>
-<p>Bertrand Meyer: “Object-oriented software construction is the construction of software systems as <font color=red>structured collections</font> of possibly partial <font color=red>abstract data type </font> implementations.”</p>
+<blockquote>
+<p>Object-oriented software construction is the construction of software systems as <font color=red>structured collections</font> of possibly partial <font color=red>abstract data type </font> implementations.</p>
+</blockquote>
+<p align="right"> -- Bertrand Meyer</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="59" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>Design Principles</h2>
@@ -597,7 +607,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="62" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://www.desicomments.com/wp-content/uploads/2017/02/Thank-You-Image.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="62" data-marpit-pagination-total="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-advanced-background="content"></section>
 <script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let o,r;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",({data:e,origin:o})=>{if(o===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),o=Number.parseFloat(t);Number.isNaN(o)||(r=o)}}catch(t){console.error(t)}}));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||r||t.currentScale||1;o!==c&&(o=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let o=0;o<u;o+=1){const r=t.children[o],a=r.getScreenCTM();if(a){const t=null!==(n=null===(e=r.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,o=null!==(s=null===(i=r.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=r.firstChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-o}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}}),!1!==l&&Array.from(i.querySelectorAll("iframe"),({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)})}o=1,r=void 0;const i=(t,e,o)=>{if(t.getAttribute(e)!==o)return t.setAttribute(e,o),!0};function a(t={}){const e="boolean"==typeof t?(t=>{const e=!t;return console.warn(`[DEPRECATION WARNING] Usage of observer() with boolean option has been deprecated. Please replace with the usage of option object: observer({ once: ${e?"true":"false"} }).`),{once:e}})(t):t,{once:o=!1,target:r=document}=e,a="Apple Computer, Inc."===navigator.vendor?[n]:[];let l=!o;const s=()=>{for(const t of a)t({target:r});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{var e;const o=t.firstChild,r=o.firstChild,{scrollWidth:n,scrollHeight:a}=r;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(o,"width",""+c),i(o,"height",""+d),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")})}(r),l&&window.requestAnimationFrame(s)};return s(),()=>{l=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),o=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:o})})(s?s.getRootNode():document)}();
-</script></foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="62" data-marpit-pagination-total="62"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="6" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="24" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="28" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="34" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="39" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="40" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><div class="bespoke-marp-note" data-index="43" tabindex="0"><p>.element: class=&quot;fragment&quot;</p></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach(e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")}),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))})}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}}),e.on("prev",({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)}),a(0,0)}var r,a,s=(function(e){
+</script></foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="62" data-marpit-pagination-total="62"></section></foreignObject></svg></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach(e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")}),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))})}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}}),e.on("prev",({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)}),a(0,0)}var r,a,s=(function(e){
 /*!
 * screenfull
 * v5.0.2 - 2020-02-13

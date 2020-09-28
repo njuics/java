@@ -49,7 +49,7 @@ img {
 
 - 模块(module): “Self-Contained”; well-defined interfaces
 - 模块化(modular): 软件构造为一组“模块”之有序组合，从而易于装配、易于修补替换模块。
-- Extendibility 和 Reusability 的要求。
+- <font color=red>Extendibility</font> 和 <font color=red>Reusability</font> 的要求。
 
 ---
 
@@ -64,10 +64,10 @@ img {
 
 ## 程序设计范型
 
-### 1. 过程抽象 --> 数据抽象
-### 2. 结构化 --> 面向对象
+- 过程抽象 --> 数据抽象
+- 结构化 --> 面向对象
 
- <span style="color: red">软件工程发展的历史就是人们不断追求更高的抽象、封装和模块化的历史。</span> <!-- .element: class="fragment" -->
+ <span style="color: red">软件工程发展的历史就是人们不断追求更高的抽象、封装和模块化的历史。</span>
 
 ---
 
@@ -77,7 +77,7 @@ img {
 
 <p align="right">-- Bertrand Meyer</p>
 
-<span style="color:red">But OOP == OOSC ?</span> <!-- .element: class="fragment" -->
+<span style="color:red">But OOP == OOSC ?</span>
 
 ---
 
@@ -109,7 +109,7 @@ img {
 
 ---
 
-## 来个例子
+## 举个例子
 
 ![bg 50% fit](images/SRP-1.png)
 
@@ -125,6 +125,7 @@ img {
 
 ## SRP Violation
 
+<br>
 
 ```java
 interface Modem{
@@ -141,16 +142,19 @@ interface Modem{
 
 ![bg right 90% fit](images/SRP-3.png) 
 
- <span style="color:#0099ff">Note：如果应用程序的变化方式总是导致这两个职责同时变化，那么就不必分离它们！</span> <!-- .element: class="fragment" -->
+ <span style="color:#0099ff">Note：如果应用程序的变化方式总是导致这两个职责同时变化，那么就不必分离它们！</span> 
 
 ---
 
 ## OCP 开放封闭原则 
 
+<br>
 
 #### Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
 
-<span style="color:red">OCP is the heart of OO design!</span><!-- .element: class="fragment" -->
+<br>
+
+<span style="color:red">OCP is the heart of OO design!</span>
 
 ---
 
@@ -160,9 +164,9 @@ interface Modem{
   + <font size=6><font color="red">Open for extension</font>: the behavior of the module can be extended.</font>
   + <font size=6><font color="red">Closed for modification</font>: extending the behavior of a module does not result in changes to the source or binary code of the module.</font>
 
-- Do not modify sourcecode, but change behavior.
+- Do not modify source code, but change behavior.
 
-<span style="color:red">Is it possible?</span><!-- .element: class="fragment" -->
+<span style="color:red">Is it possible?</span>
 
 ---
 
@@ -199,10 +203,11 @@ interface Modem{
 
 ---
 
-## LSP Liskov替换法则
+## LSP 里氏替换法则
 
 - Subtypes must be substitutable for their base types. 
-- If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T. [Liskov88] 
+- > If for each object ***o1*** of type ***S*** there is an object ***o2*** of type ***T*** such that for all programs ***P*** defined in terms of ***T***, the behavior of ***P*** is unchanged when ***o1*** is substituted for ***o2*** then ***S*** is a subtype of ***T***.
+<p align="right">-- Barbara Liskov, 1988</p>
 
 
 ---
@@ -259,27 +264,22 @@ public class Square extends Shape{
 ## LSP Violation (I)
 
 
-
 ```java
 public class Client {
     public static void drawShape(Shape shape){
         if(shape.itsType == ShapeType.circle){
-            Circle circle = (Circle)shape; circle.draw();
-        }
+            Circle circle = (Circle)shape; circle.draw();}
         else if(shape.itsType == ShapeType.square){
             Square square = (Square)shape; square.draw();
-        }
-    }
+        }}
    public static void main(String[] args){
         Shape  s1 = new Circle(ShapeType.circle);
         Shape  s2 = new Square(ShapeType.square);
         Client.drawShape(s1); Client.drawShape(s2);
-    }
-}
+    }}
 ```
+<span style="color: red">增加一种新类型?</span>
 
-
-<span style="color:red">增加一种新类型?</span> <!-- .element: class="fragment" -->
 
 
 ---
@@ -303,7 +303,7 @@ class Rectangle{
   double itsHeight;
   public void setWidth(double w) {itsWidth=w;}
   public void setHeight(double h) {itsHeight=h;}
-  public double area(){ return itsWidth * itsHeight;}
+  public double area(){ return itsWidth*itsHeight;}
 }
 ```
 ---
@@ -339,7 +339,7 @@ public class Client{
 }
 ```
 
-<span style="color:red">结果为20吗？</span> <!-- .element: class="fragment" -->
+<span style="color:red">结果为20吗？</span>
 
 ---
 
@@ -348,7 +348,7 @@ public class Client{
 - Validity is not intrinsic.
 
 - IS-A is about Behavior 
-  + Behaviorally, a Square is not a Rectangle.
+  + Behaviorally, a ***Square*** is not a ***Rectangle***.
 
 ---
 
@@ -416,8 +416,7 @@ class TimerClient{
 }
 ```
 
-<span style="color:red">How about a timed door?</span> <!-- .element: class="fragment" -->
-
+<span style="color:red">How about a timed door?</span> 
 
 ---
 
@@ -439,7 +438,7 @@ class TimerClient{
 ## Seperate Interface
 
 - Solution 2: multiple inheritance 
-  + in Java,  *Interface*
+  + in Java,  ***Interface***
 
 ![bg right 70% fit](images/IP-3.png)
 
@@ -459,7 +458,7 @@ class TimerClient{
 
 - Abstractions should not depend on details. Details should depend on abstractions.
 
-<span style="color:red">Inversion: 相对于结构化方法而言！</span> <!-- .element: class="fragment" -->
+<span style="color:red">Inversion: 相对于结构化方法而言！</span> 
 
 ---
 
@@ -469,7 +468,7 @@ class TimerClient{
 
 ![bg right 50% fit](images/DIP-1.png)
 
-<span style="color:red">Unfortunate!</span> <!-- .element: class="fragment" -->
+<span style="color:red">Unfortunate!</span>
 
 ---
 
@@ -492,31 +491,31 @@ class TimerClient{
 
 ## 再来个例子
 
-![bg right 30% fit](images/DIP-3.png)
+![bg right 25% fit](images/DIP-3.png)
 
 ```java
 public class Button{
     private Lamp itsLamp;
     public void poll(){
-          if (/* some condition */)
-               itsLamp.turnOn();
+      if (/* some condition */)
+        itsLamp.turnOn();
      }
 }
 ```
-<span style="color:red">问题：高层依赖低层！</span> <!-- .element: class="fragment" -->
+<span style="color:red">问题：高层依赖低层！</span> 
 
 ---
 
 ## 反转
 
-![bg right 35% fit](images/DIP-4.png)
+![bg right 30% fit](images/DIP-4.png)
 
 ```java
 public class Button{
     private ButtonServer bs;
     public void poll(){
-          if (/* some condition */)
-               bs.turnOn();
+      if (/* some condition */)
+        bs.turnOn();
      }
 }
 ```
@@ -525,7 +524,7 @@ public class Button{
 
 ## 反转
 
-![bg right 45% fit](images/DIP-5.png)
+![bg right 40% fit](images/DIP-5.png)
 
 <font color="red">换个更友好的名字</font>
 
@@ -544,7 +543,7 @@ public class Button{
   + 任何变量都不应该持有一个指向具体类的指针或引用
   + 任何类都不应该从具体类派生
   + 任何方法都不应该覆写它的任何基类中的已经实现了的方法
-  + 例外：可以依赖稳定的具体类，比如String
+  + 例外：可以依赖稳定的具体类，比如<code>String</code>
 
 
 ---
@@ -611,7 +610,7 @@ public class Button{
 
 - 只有“Is-A”关系才符合继承关系，“Has-A”关系应当用聚合来描述。
 - 永远不会出现需要将子类换成另外一个类的子类的情况。
-- 子类具有扩展父类的责任，而不是具有置换掉（override）或注销掉（Nullify）父类的责任。
+- 子类具有扩展父类的责任，而不是具有置换掉（override）或注销掉（nullify）父类的责任。
 - 只有在分类学角度上有意义时，才可以使用继承。不要从工具类继承。
 
 
@@ -638,7 +637,8 @@ public class Button{
 
 ## OOSC
 
-Bertrand Meyer: “Object-oriented software construction is the construction of software systems as <font color=red>structured collections</font> of possibly partial <font color=red>abstract data type </font> implementations.”
+> Object-oriented software construction is the construction of software systems as <font color=red>structured collections</font> of possibly partial <font color=red>abstract data type </font> implementations.
+<p align="right"> -- Bertrand Meyer</p>
 
 ---
 
