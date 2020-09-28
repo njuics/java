@@ -371,6 +371,16 @@ public class Client{
 
 ---
 
+## Hueristics
+
+- 子类可以实现父类的抽象方法，但不能覆盖父类的非抽象方法。
+- 子类中可以增加自己特有的方法。
+- 当子类的方法重载父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。
+- 当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。
+
+
+---
+
 ## LSP
 
 - LSP is one of the enablers of the OCP.
@@ -534,7 +544,7 @@ public class Button{
 
 - Depend on abstractions!
   + 不应该依赖于具体类——程序中所有的依赖关系都应该终止于抽象类或者接口。
-
+- 面向接口编程 
 ---
 
 ## Heuristic
@@ -644,13 +654,13 @@ public class Button{
 
 ## Design Principles
 
-- <font size=6>SRP (The Single-Responsibility Principle) 单一职责原则</font>
-- <font size=6>OCP (The Open-Closed Principle) 开放-封闭原则</font>
-- <font size=6>LSP (The Liskov Substitution Principle) Liskov替换原则</font>
-- <font size=6>ISP (The Interface-Segregation Principle) 接口隔离原则</font>
-- <font size=6>DIP (The Dependency-Inversion Principle) 依赖倒置原则</font>
-- <font size=6>CARP (Composition/Aggregation Reuse Principle) 合成/聚合复用原则</font>
-- <font size=6>LoD (Law of Demeter) 迪米特法则</font>
+- SRP：实现类要职责单一
+- OCP：对扩展开放，对修改关闭
+- LSP：不要破坏继承体系
+- ISP：在设计接口的时候要精简单一
+- DIP：面向接口编程
+- CARP：优先采用合成/聚合进行复用
+- LoD：信息隐藏
 
 ---
 
