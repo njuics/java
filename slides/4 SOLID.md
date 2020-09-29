@@ -79,6 +79,8 @@ img {
 
 <span style="color:red">But OOP == OOSC ?</span>
 
+![bg right:30% fit ](images/OOSC.jpg)
+
 ---
 
 ## 软件设计
@@ -87,6 +89,7 @@ img {
 - 应用<font color=red>设计原则</font>去诊断问题；
 - 应用适当的<font color=red>设计模式</font>去解决问题。
 
+![bg right:30% fit ](images/agile.jpg)
 
 ---
 
@@ -544,7 +547,7 @@ public class Button{
 
 - Depend on abstractions!
   + 不应该依赖于具体类——程序中所有的依赖关系都应该终止于抽象类或者接口。
-- 面向接口编程 
+- <font color="red">面向接口编程</font> 
 ---
 
 ## Heuristic
