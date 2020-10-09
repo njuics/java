@@ -299,7 +299,7 @@ https://github.com/LingCoder/OnJava8
 
 # 大纲 -II
 
-5. 类加载和自省
+5. [类加载和自省](5.html)
 6. 异常处理
 7. 集合类型
 8. 泛型
