@@ -537,4 +537,4 @@ Language Basics
 
 ---
 
-![bg 50%](https://www.desicomments.com/wp-content/uploads/2017/02/Thank-You-Image.png)
+![bg 50%](images/happy.png)
