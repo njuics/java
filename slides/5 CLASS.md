@@ -31,7 +31,8 @@ img {
 
 - 低耦合: O 开闭原则，D 依赖倒置原则，L 里氏替换原则
 
-<div style="text-align:center; size:24pt"> 抽象！</div>
+<br><br>
+<div style="text-align:center; font-size: 50pt"> 抽象！</div>
 
 ---
 
@@ -112,7 +113,15 @@ In computer programming, **run-time type information or run-time type identifica
 
 ## 试一下
 
-
+```java
+import java.util.ArrayList;
+public class PrintClass {
+    public static void main(String[] ags)  {
+        System.out.println("Class of this class:" + new PrintClass().getClass());
+        System.out.println("Class of ArrayList:" + ArrayList.class);
+    }
+}
+```
 ---
 
 ## 思考一下
@@ -243,8 +252,13 @@ Classloader of ArrayList:null
 - `new`一个类型的对象
 - `java.lang.Class.forName()`
 ```
+
+public static Class<?> forName(String className)
+                        throws ClassNotFoundException
+
 public static Class<?> forName(String name, boolean initialize, ClassLoader loader)
-   throws ClassNotFoundException
+                        throws ClassNotFoundException
+
 ```
 ---
 
@@ -306,6 +320,20 @@ public class CustomClassLoader extends ClassLoader {
     }
 }
 ```
+
+---
+
+# 有啥用
+
+Browsers, for instance, use a custom class loader to load executable content from a website. A browser can load applets from different web pages using separate class loaders. The applet viewer which is used to run applets contains a ClassLoader that accesses a website on a remote server instead of looking in the local file system. And then loads the raw bytecode files via HTTP, and turns them into classes inside the JVM. Even if these applets have the same name, they are considered as different components if loaded by different class loaders.
+
+---
+
+# 更高级点
+
+- Helping in modifying the existing bytecode, e.g. weaving agents
+- Creating classes dynamically suited to the user's needs. e.g in JDBC, switching between different driver implementations is done through dynamic class loading.
+- Implementing a class versioning mechanism while loading different bytecodes for classes with same names and packages. This can be done either through URL class loader (load jars via URLs) or custom class loaders.
 
 ---
 
@@ -423,7 +451,7 @@ Constant pool:
 
 ---
 
-## JVM Internals
+## 阅读《JVM Internals》
 
 
 
@@ -623,7 +651,7 @@ Reflection enables Java code to discover information about the fields, methods a
 - Requires information about component at run-time
 - Remote Method Invocation (RMI)
 - Distributed objects
-- 
+
 当我们在使用 IDE(如 Eclipse，IDEA)时，当我们输入一个对象或类并想调用它的属性或方法时，一按点号，编译器就会自动列出它的属性或方法，这里就会用到反射。 更重要的用途就是<span style="color:red">开发各种通用框架<span>。
 
 
