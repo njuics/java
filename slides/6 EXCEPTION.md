@@ -292,7 +292,7 @@ public class InheritingExceptions {
 
 ## Getting information from exceptions
 
-- java.lang.Throwable
+<code>java.lang.Throwable</code>
 
 ```java
 public Throwable();
@@ -713,12 +713,7 @@ programmer to check and deal with the exceptions.
 case a:
 ```java
 If (!s.empty()) s.pop();
-
 ```
-
----
-
-## Tips
 
 case b:
 ```java
@@ -735,6 +730,8 @@ catch (EmptyStackException e){
 ## Tips
 
 - 不要过分地细化异常。
+
+case a:
 
 ```java
 for (i=0 ; i<100; i++) {
