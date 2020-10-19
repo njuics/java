@@ -57,7 +57,7 @@
 <p>Bertrand Meyer：<font color=red>DbC</font>是构建面向对象软件系统方法的核心。</p>
 </blockquote>
 <blockquote>
-<p>James McKim：“只要你会写程序，你就会写<font color=red>契约</font>。”</p>
+<p>James McKim：只要你会写程序，你就会写<font color=red>契约</font>。</p>
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -330,6 +330,8 @@
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getMessage</span><span class="hljs-params">()</span></span>;
 <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getLocalizedMessage</span><span class="hljs-params">()</span></span>;
 <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>;
+<span class="hljs-keyword">public</span> StackTraceElement[] getStackTrace();
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setStackTrace</span><span class="hljs-params">(StackTraceElement[] stackTrace)</span></span>;
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printStackTrace</span><span class="hljs-params">()</span></span>;
 </span></span></foreignObject></svg></code></pre>
 </section>
@@ -475,19 +477,15 @@
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
             <span class="hljs-keyword">try</span> {
-                <span class="hljs-keyword">if</span>(count++ == <span class="hljs-number">0</span>)
-                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ThreeException();
+                <span class="hljs-keyword">if</span>(count++ == <span class="hljs-number">0</span>)  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ThreeException();
                 System.out.println(<span class="hljs-string">&quot;No exception&quot;</span>);
-            } <span class="hljs-keyword">catch</span>(ThreeException e) {
-                System.out.println(<span class="hljs-string">&quot;ThreeException&quot;</span>);
-            } <span class="hljs-keyword">finally</span> {
-                System.out.println(<span class="hljs-string">&quot;In finally clause&quot;</span>);
+            } <span class="hljs-keyword">catch</span>(ThreeException e) { System.out.println(<span class="hljs-string">&quot;ThreeException&quot;</span>);
+            } <span class="hljs-keyword">finally</span> { System.out.println(<span class="hljs-string">&quot;In finally clause&quot;</span>);
                 <span class="hljs-keyword">if</span>(count == <span class="hljs-number">2</span>) <span class="hljs-keyword">break</span>; <span class="hljs-comment">// out of &quot;while&quot;</span>
             }
         }
     }
 }
-
 </span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="34" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -496,19 +494,15 @@
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MessyExceptions</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         InputStream in = <span class="hljs-keyword">null</span>;
-        <span class="hljs-keyword">try</span> {
-            in = <span class="hljs-keyword">new</span> FileInputStream(
-                    <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;MessyExceptions.java&quot;</span>));
-            <span class="hljs-keyword">int</span> contents = in.read();
-            <span class="hljs-comment">// Process contents</span>
-        } <span class="hljs-keyword">catch</span>(IOException e) {
-            <span class="hljs-comment">// Handle the error</span>
+        <span class="hljs-keyword">try</span>{ in = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;MessyExceptions.java&quot;</span>));
+             <span class="hljs-keyword">int</span> contents = in.read();
+             <span class="hljs-comment">// Process contents</span>
+        } <span class="hljs-keyword">catch</span>(IOException e) { <span class="hljs-comment">// Handle the error</span>
         } <span class="hljs-keyword">finally</span> {
             <span class="hljs-keyword">if</span>(in != <span class="hljs-keyword">null</span>) {
                 <span class="hljs-keyword">try</span> {
                     in.close();
-                } <span class="hljs-keyword">catch</span>(IOException e) {
-                    <span class="hljs-comment">// Handle the close() error</span>
+                } <span class="hljs-keyword">catch</span>(IOException e) { <span class="hljs-comment">// Handle the close() error</span>
                 }
             }
         }
@@ -537,7 +531,7 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>Try-With-Resources</h2>
 <ul>
-<li>The objects created in the <strong>try-with-resources</strong> definition clause (within the parenthese) must implement the <code>java.lang.AutoCloseable</code> interface, which has a single method, <code>close()</code></li>
+<li>The objects created in the <strong>try-with-resources</strong> definition clause (within the parenthese) must implement the <code>java.lang.AutoCloseable</code> interface, which has a single method, <code>close()</code>.</li>
 </ul>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Reporter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AutoCloseable</span> </span>{
     String name = getClass().getSimpleName();
@@ -594,7 +588,7 @@
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
     <span class="hljs-keyword">try</span>{  f(); } 
     <span class="hljs-keyword">catch</span>(MyException e){ 
-      e.pringStackTrace(System.out); 
+      e.printStackTrace(System.out); 
     }
     <span class="hljs-keyword">try</span>{  g(); } 
     <span class="hljs-keyword">catch</span>(MyException e){
@@ -658,9 +652,7 @@
 <h2>System Errors</h2>
 <ul>
 <li><font color=red>System errors</font> are thrown by JVM and represented in the <code>Error</code> class. The <code>Error</code> class describes internal system errors. Such errors rarely occur.</li>
-<li>If one does, there is little you can do beyond<br />
-notifying the user and trying to terminate the<br />
-program gracefully.</li>
+<li>If one does, there is little you can do beyond notifying the user and trying to terminate the program gracefully.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -672,10 +664,7 @@ program gracefully.</li>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>Runtime Exceptions</h2>
 <ul>
-<li><font color=red>Runtime exceptions</font> are represented in the<br />
-<code>RuntimeException</code> class that describes programming<br />
-errors, such as bad casting, accessing an out-of-bounds<br />
-array, and numeric errors.</li>
+<li><font color=red>Runtime exceptions</font> are represented in the <code>RuntimeException</code> class that describes programming errors, such as bad casting, accessing an out-of-bounds array, and numeric errors.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="47" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -685,8 +674,7 @@ array, and numeric errors.</li>
 <ul>
 <li>In most cases, unchecked exceptions reflect programming logic errors that are not recoverable.
 <ul>
-<li>For example: <code>NullPointerException</code>,<br />
-<code>IndexOutOfBoundsException</code></li>
+<li>For example: <code>NullPointerException</code>, <code>IndexOutOfBoundsException</code></li>
 </ul>
 </li>
 </ul>
@@ -700,9 +688,7 @@ array, and numeric errors.</li>
 <p>These are the logic errors that should be corrected in the program. Unchecked exceptions can occur anywhere in the program. To avoid cumbersome overuse of try-catch blocks, Java does not mandate you to write code to catch unchecked exceptions.</p>
 </li>
 <li>
-<p>All other exceptions are known as <font color=red>checked<br />
-exceptions</font>, meaning that the compiler forces the<br />
-programmer to check and deal with the exceptions.</p>
+<p>All other exceptions are known as <font color=red>checked exceptions</font>, meaning that the compiler forces the programmer to check and deal with the exceptions.</p>
 </li>
 </ul>
 </section>
@@ -718,10 +704,8 @@ programmer to check and deal with the exceptions.</p>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">try</span> { <span class="hljs-comment">//10 times longer than (a)</span>
    s.pop();
 }
-<span class="hljs-keyword">catch</span> (EmptyStackException e){
-}
+<span class="hljs-keyword">catch</span> (EmptyStackException e){}
 </span></span></foreignObject></svg></code></pre>
-<p><span style="color:red">Which one is better?</span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="50" data-marpit-pagination-total="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>Tips</h2>

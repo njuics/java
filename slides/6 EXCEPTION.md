@@ -56,7 +56,7 @@ img {
 
 > Bertrand Meyer：<font color=red>DbC</font>是构建面向对象软件系统方法的核心。
 
-> James McKim：“只要你会写程序，你就会写<font color=red>契约</font>。”
+> James McKim：只要你会写程序，你就会写<font color=red>契约</font>。
 
 ---
 
@@ -306,6 +306,8 @@ public Throwable(Throwable cause);
 public String getMessage();
 public String getLocalizedMessage();
 public String toString();
+public StackTraceElement[] getStackTrace();
+public void setStackTrace(StackTraceElement[] stackTrace);
 public void printStackTrace();
 ```
 
@@ -466,19 +468,15 @@ public class FinallyWorks {
     public static void main(String[] args) {
         while(true) {
             try {
-                if(count++ == 0)
-                    throw new ThreeException();
+                if(count++ == 0)  throw new ThreeException();
                 System.out.println("No exception");
-            } catch(ThreeException e) {
-                System.out.println("ThreeException");
-            } finally {
-                System.out.println("In finally clause");
+            } catch(ThreeException e) { System.out.println("ThreeException");
+            } finally { System.out.println("In finally clause");
                 if(count == 2) break; // out of "while"
             }
         }
     }
 }
-
 ```
 
 ---
@@ -490,19 +488,15 @@ import java.io.*;
 public class MessyExceptions {
     public static void main(String[] args) {
         InputStream in = null;
-        try {
-            in = new FileInputStream(
-                    new File("MessyExceptions.java"));
-            int contents = in.read();
-            // Process contents
-        } catch(IOException e) {
-            // Handle the error
+        try{ in = new FileInputStream(new File("MessyExceptions.java"));
+             int contents = in.read();
+             // Process contents
+        } catch(IOException e) { // Handle the error
         } finally {
             if(in != null) {
                 try {
                     in.close();
-                } catch(IOException e) {
-                    // Handle the close() error
+                } catch(IOException e) { // Handle the close() error
                 }
             }
         }
@@ -533,7 +527,7 @@ public class TryWithResources {
 
 ## Try-With-Resources
 
-- The objects created in the **try-with-resources** definition clause (within the parenthese) must implement the <code>java.lang.AutoCloseable</code> interface, which has a single method, <code>close()</code>
+- The objects created in the **try-with-resources** definition clause (within the parenthese) must implement the <code>java.lang.AutoCloseable</code> interface, which has a single method, <code>close()</code>.
 
 ```java
 class Reporter implements AutoCloseable {
@@ -595,7 +589,7 @@ public class FullConstructors {
   public static void main(String[] args){
     try{  f(); } 
     catch(MyException e){ 
-      e.pringStackTrace(System.out); 
+      e.printStackTrace(System.out); 
     }
     try{  g(); } 
     catch(MyException e){
@@ -664,9 +658,7 @@ public class LoggingExceptions{
 ## System Errors
 
 - <font color=red>System errors</font> are thrown by JVM and represented in the <code>Error</code> class. The <code>Error</code> class describes internal system errors. Such errors rarely occur.
-- If one does, there is little you can do beyond
-notifying the user and trying to terminate the
-program gracefully.
+- If one does, there is little you can do beyond notifying the user and trying to terminate the program gracefully.
 
 ---
 
@@ -678,10 +670,7 @@ program gracefully.
 
 ## Runtime Exceptions
 
-- <font color=red>Runtime exceptions</font> are represented in the
-<code>RuntimeException</code> class that describes programming
-errors, such as bad casting, accessing an out-of-bounds
-array, and numeric errors.
+- <font color=red>Runtime exceptions</font> are represented in the <code>RuntimeException</code> class that describes programming errors, such as bad casting, accessing an out-of-bounds array, and numeric errors.
 
 ---
 
@@ -689,8 +678,7 @@ array, and numeric errors.
 
 - <code>RuntimeException</code>, <code>Error</code> and their subclasses are known as <font color=red>unchecked exceptions</font>.
    - In most cases, unchecked exceptions reflect programming logic errors that are not recoverable.
-     - For example: <code>NullPointerException</code>,
-<code>IndexOutOfBoundsException</code>
+     - For example: <code>NullPointerException</code>, <code>IndexOutOfBoundsException</code>
 
 
 ---
@@ -699,9 +687,7 @@ array, and numeric errors.
 
 - These are the logic errors that should be corrected in the program. Unchecked exceptions can occur anywhere in the program. To avoid cumbersome overuse of try-catch blocks, Java does not mandate you to write code to catch unchecked exceptions.
 
-- All other exceptions are known as <font color=red>checked
-exceptions</font>, meaning that the compiler forces the
-programmer to check and deal with the exceptions.
+- All other exceptions are known as <font color=red>checked exceptions</font>, meaning that the compiler forces the programmer to check and deal with the exceptions.
 
 
 ---
@@ -714,16 +700,13 @@ case a:
 ```java
 If (!s.empty()) s.pop();
 ```
-
 case b:
 ```java
 try { //10 times longer than (a)
    s.pop();
 }
-catch (EmptyStackException e){
-}
+catch (EmptyStackException e){}
 ```
-<span style="color:red">Which one is better?</span>
 
 ---
 
