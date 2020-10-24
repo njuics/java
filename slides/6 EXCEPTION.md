@@ -13,6 +13,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+pre, 
+code{
+  overflow-y: auto;
+  max-height: 500px;
+}
 </style>
 
 ![bg right:35% 90%](https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png)
@@ -397,13 +402,17 @@ public class Rethrowing {
 ```java
 public class ChainedExceptionDemo {
   public static void main(String[] args) {
-    try {  method1();}
+    try {  
+      method1();
+    }
     catch (Exception ex) {
       ex.printStackTrace();
     }
   }
   public static void method1() throws Exception {
-    try {  method2();}
+    try {  
+      method2();
+    }
     catch (Exception ex) {
       throw new Exception("New info from method1", ex);
     }
@@ -488,7 +497,8 @@ import java.io.*;
 public class MessyExceptions {
     public static void main(String[] args) {
         InputStream in = null;
-        try{ in = new FileInputStream(new File("MessyExceptions.java"));
+        try{ 
+          in = new FileInputStream(new File("MessyExceptions.java"));
              int contents = in.read();
              // Process contents
         } catch(IOException e) { // Handle the error
@@ -634,7 +644,6 @@ public class LoggingExceptions{
     }
   }
 }
-
 ```
 
 ---
