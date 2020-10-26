@@ -301,7 +301,7 @@ https://github.com/LingCoder/OnJava8
 
 5. [类加载和自省](5.html)
 6. [异常处理](6.html)
-7. [集合类型](7.html)
+7. [集合](7.html)
 8. 泛型
 9. 标注和测试（Annotations/Testing）
 10. 工程工具（Maven/Gradle/CI）

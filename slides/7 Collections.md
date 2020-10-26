@@ -74,11 +74,34 @@ s = st.pop();
 
 ---
 
+## Generics and Upcasting
+
+```java
+class GrannySmith extends Apple {}
+class Gala extends Apple {}
+class Fuji extends Apple {}
+class Braeburn extends Apple {}
+
+public class GenericsAndUpcasting {
+  public static void main(String[] args) {
+    ArrayList<Apple> apples = new ArrayList<>();
+    apples.add(new GrannySmith());
+    apples.add(new Gala());
+    apples.add(new Fuji());
+    apples.add(new Braeburn());
+    for(Apple apple : apples)
+      System.out.println(apple);
+  }
+}
+```
+
+---
+
 ## Collections in Java
 
 - Manipulate grouped data as a single object
-  + Java provides List, Set, Map
-  + add, contains, remove, size, loop over, sort, ...
+  + Java provides **List**, **Set**, **Map**
+  + *add*, *contains*, *remove*, *size*, loop over, *sort*, ...
 - Insulate programmer from implementation
   + array, linked list, hash table, balanced binary tree
 - A Java collection is any class that holds objects and implements the <font color=red>Collection</font> interface
@@ -97,7 +120,7 @@ s = st.pop();
 
 ## Collection Framework
 
-![bg 50%](images/CollectionFramework.jpeg)
+![bg 60%](images/simple-collection-taxonomy.png)
 
 ---
 
@@ -106,7 +129,7 @@ s = st.pop();
 - A *collection* is a container object that represents a group of objects, often referred to as *elements*.
   + <font color=red>Set</font> and <font color=red>List</font> are subinterfaces of Collection.
 
-![w:700](images/CollectionHierarchy.jpeg)
+![w:700 h:300](images/collection.png)
 
 ---
 
@@ -114,7 +137,7 @@ s = st.pop();
 
 - An instance of <font color=red>Map</font> represents a group of objects, each of which is associated with a key. You can get the object from a map using a key, and you have to use a key to put the object into the map.
 
-![w:900](images/MapHierarchy.jpeg)
+![w:700](images/map.png)
 
 ---
 
@@ -134,6 +157,9 @@ s = st.pop();
 
 ## Collection Interfaces
 
+- Collection
+  + Enables you to work with collections.
+
 - Collections also use following interfaces:
   + Comparator
   + Iterator
@@ -142,10 +168,7 @@ s = st.pop();
 
 ---
 
-## Collection Interfaces
-
-- Collection
-  + Enables you to work with collections. 
+## Collection Interfaces 
 
 - List
   + Extends ***Collection*** to handle List of elements [objects]
@@ -185,7 +208,7 @@ public interface Iterator<E>{
   void remove(); //optional
 }
 ```
-
+optional method  --> <code>UnsupportOperationException</code>
 
 ---
 
@@ -314,13 +337,13 @@ Collections.shuffle(arrayList);
 
 - ArrayList
   + a resizable-array implementation like Vector
-    + unsynchronized, and without legacy methods
+    + <font color=red>unsynchronized</font>, and without legacy methods
     
 - LinkedList
   + a ***doubly-linked*** list implementation
   + May provide better performance than ArrayList
     + if elements frequently inserted/deleted within the List
-  + For queues and double-ended queues (deques)
+  + For queues and ***double-ended*** queues (deques)
 
 ---
 
@@ -367,7 +390,7 @@ public static void main(String[] args) {
 ## List Implementations
 
 - Vector
-  + a synchronized resizable-array implementation of a List with additional "legacy" methods.
+  + a <font color="red">synchronized</font> resizable-array implementation of a List with additional "legacy" methods.
 
 ---
 
@@ -561,9 +584,9 @@ public class TestTreeSet {
 
 ## The Comparator Interface
 
-- Sometimes you want to insert elements of different types into a tree set. The elements may not be instances of Comparable or are not comparable. You can define a comparator to compare these elements.
+- Sometimes you want to insert elements of different types into a tree set. The elements may not be instances of <code>Comparable</code> or are not comparable. You can define a comparator to compare these elements.
 
-- To do so, create a class that implements the <code>java.util.Comparator</code> interface. The Comparator interface has two methods, compare and equals:
+- To do so, create a class that implements the <code>java.util.Comparator</code> interface. The Comparator interface has two methods, ***compare*** and ***equals***:
   + public int compare(T o1, T o2)
   + public boolean equals(Object obj)
 
@@ -697,7 +720,7 @@ public class CountOccurrenceOfWords {
   + efficiency
   + type
   + the ability to hold primitives
-- Be careful of IndexOutOfBoundsException!
+- Be careful of <code>IndexOutOfBoundsException</code>!
 
 ---
 
