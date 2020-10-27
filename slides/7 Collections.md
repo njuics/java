@@ -120,7 +120,7 @@ public class GenericsAndUpcasting {
 
 ## Collection Framework
 
-![bg 60%](images/simple-collection-taxonomy.png)
+![w:700 h:500](images/simple-collection-taxonomy.png)
 
 ---
 
