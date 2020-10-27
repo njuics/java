@@ -146,7 +146,7 @@ public class GenericsAndUpcasting {
 - An interface describes a set of methods:
   + no constructors or instance variables
 
-- Interfaces must be implemented by clasess
+- Interfaces must be implemented by classes
 
 - 2 or more classes implement an interface
   + Classes guaranteed to have the same methods.
@@ -208,7 +208,7 @@ public interface Iterator<E>{
   void remove(); //optional
 }
 ```
-optional method  --> <code>UnsupportOperationException</code>
+optional method  --> <code>UnsupportedOperationException</code>
 
 ---
 
@@ -244,6 +244,58 @@ public class SimpleCollection{
     while (it.hasNext())  
        System.out.println(it.next());
   }
+}
+```
+
+---
+
+## Iterator vs. Iterable
+
+<code>java.lang.Iterable</code>
+- Implementing this interface allows an object to be the target of the "foreach" statement.
+
+
+```java
+public interface Iterable<T> {
+  Iterator<T> iterator();
+}
+```
+
+<font color=red>Goal: Multi-Iterators</font>
+
+---
+
+```java
+public class MutilIterator implements Iterable<String> {
+ private String[] words = "May I get offers this summer.".split(" ");
+    //默认的迭代器，前向遍历
+    public Iterator<String> iterator() {
+       //匿名内部类
+        return new Iterator<String>() {
+            private int index = 0;
+            public boolean hasNext() {return index < words.length;}
+            public String next() { return words[index++];    }
+            public void remove() { // Not implemented
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+    //反向迭代器
+    public Iterable<String> reverseIterator() {
+        return new Iterable<String>() {
+            @Override
+            public Iterator<String> iterator() {
+                return new Iterator<String>() {
+                    private int index = words.length - 1;
+                    public boolean hasNext() {return index > -1; }
+                    public String next() {return words[index--]; }
+                    public void remove() { // Not implemented
+                        throw new UnsupportedOperationException();
+                    }
+                };
+            }
+        };
+    }
 }
 ```
 
