@@ -311,8 +311,8 @@ https://github.com/LingCoder/OnJava8
 # 大纲 -III
 
 11. 文件与输入输出（NIO）
-12. 流式编程 (Stream)
-13. 函数式编程
+12. 函数式编程
+13. 流式编程 (Stream)
 14. 并发编程
 15. 图形化（JavaFX）
 16. 设计模式（Design Pattern）
@@ -323,10 +323,10 @@ https://github.com/LingCoder/OnJava8
 # 分工
 
 :man:
-- 1/2/3/5/8/9/10/13 
+- 1/2/3/5/8/9/10/12 
 
 :woman:
-- 4/6/7/11/12/14/15/16
+- 4/6/7/11/13/14/15/16
 
 
 ---
