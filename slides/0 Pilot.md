@@ -289,33 +289,33 @@ https://github.com/LingCoder/OnJava8
 
 
 
-1. [语言基础](1.html) (基本类型, 运算符, 控制流）
-2. [面向对象I](2.html) （抽象、类、接口、封装、继承、多态等)
-3. [面向对象II](3.html) (初始化与清理、访问权限、内部类等)
-4. [设计原则](4.html)(SOLID)
+1. [语言基础](1.html) (基本类型, 运算符, 控制流）:man: 
+2. [面向对象I](2.html) （抽象、类、接口、封装、继承、多态等):man: 
+3. [面向对象II](3.html) (初始化与清理、访问权限、内部类等):man:
+4. [设计原则](4.html)(SOLID):woman:
+5. [类加载和自省](5.html):man:
 
 
 --- 
 
 # 大纲 -II
 
-5. [类加载和自省](5.html)
-6. [异常处理](6.html)
-7. [集合](7.html)
-8. [泛型](8.html)
-9. 标注和测试（Annotations/Testing）
-10. 工程工具（Maven/Gradle/CI）
+6. [异常处理](6.html):woman:
+7. [集合](7.html):woman:
+8. [泛型](8.html):man:
+9. 标注和测试（Annotations/Testing）:man:
+10. 工程工具（Maven/Gradle/CI）:man:
 
 ---
 
 # 大纲 -III
 
-11. 文件与输入输出（NIO）
-12. 函数式编程
-13. 流式编程 (Stream)
-14. 并发编程
-15. 图形化（JavaFX）
-16. 设计模式（Design Pattern）
+11. 文件与输入输出（NIO）:woman:
+12. 函数式编程:man:
+13. 流式编程 (Stream):woman:
+14. 并发编程:woman:
+15. 图形化（JavaFX）:woman:
+16. 设计模式（Design Pattern）:woman:
 
 
 ---
