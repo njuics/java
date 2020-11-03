@@ -270,9 +270,11 @@ public class Holder<T> {
     }       
 }
 ```
-<br>
 <div style="text-align:center; ">多完美！可惜这只是编译时刻... 因为运行时的类型信息被擦掉了<div>
 
+```
+javap -v -p -s -sysinfo -constants Holder.class
+```
 ---
 
 ## 擦除
