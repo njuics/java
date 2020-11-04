@@ -303,8 +303,8 @@ https://github.com/LingCoder/OnJava8
 6. [异常处理](6.html):woman:
 7. [集合](7.html):woman:
 8. [泛型](8.html):man:
-9. 标注和测试（Annotations/Testing）:man:
-10. 工程工具（Maven/Gradle/CI）:man:
+9.  工程工具（Maven/Gradle/CI）:man:
+10. 标注和测试（Annotations/Testing）:man:
 
 ---
 
