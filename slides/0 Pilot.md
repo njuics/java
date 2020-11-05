@@ -303,19 +303,19 @@ https://github.com/LingCoder/OnJava8
 6. [异常处理](6.html):woman:
 7. [集合](7.html):woman:
 8. [泛型](8.html):man:
-9. [标注和测试（Annotations/Testing）](9.html):man:
+9. [注解](9-1.html)和[测试](9-2.html):man:
 10.  工程工具（Maven/Gradle/CI）:man:
 
 ---
 
 # 大纲 -III
 
-11. 文件与输入输出（NIO）:woman:
-12. 函数式编程:man:
-13. 流式编程 (Stream):woman:
-14. 并发编程:woman:
-15. 图形化（JavaFX）:woman:
-16. 设计模式（Design Pattern）:woman:
+1.  文件与输入输出（NIO）:woman:
+2.  函数式编程:man:
+3.  流式编程 (Stream):woman:
+4.  并发编程:woman:
+5.  图形化（JavaFX）:woman:
+6.  设计模式（Design Pattern）:woman:
 
 
 ---
