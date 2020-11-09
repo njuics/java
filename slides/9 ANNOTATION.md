@@ -74,16 +74,16 @@ img {
 
 ## Values
 
-| 参数        | 含义          |
-|:- |:-|
-| deprecation     | 使用了过时的类或方法| 
-| unchecked     | 执行了未检查的转换| 
-| fallthrough     | switch块缺少了break| 
-| fianlly     | 任意finally子句不能正常完成| 
-| ... | ... | 
-| all     | 以上所有情况| 
+| 参数        | 含义                        |
+| :---------- | :-------------------------- |
+| deprecation | 使用了过时的类或方法        |
+| unchecked   | 执行了未检查的转换          |
+| fallthrough | switch块缺少了break         |
+| fianlly     | 任意finally子句不能正常完成 |
+| ...         | ...                         |
+| all         | 以上所有情况                |
 
-`javac -X` <!-- .element: class="fragment" -->
+[`javac -X`](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html) 
 
 ---
 
@@ -105,10 +105,9 @@ public @interface Override {
 }
 ```
 
-<small>https://docs.oracle.com/javase/7/docs/api/java/lang/Override.html</small>
+<small>https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html</small>
 
-其中`@interface`定义了`Override`是一个Annotation类型，或者叫元数据(meta-data)。
-`@Target`和`@Retetion`是对`Override`的注解，称之为元注解(注解的注解)。
+其中`@interface`定义了`Override`是一个Annotation类型，或者叫元数据(meta-data)。 `@Target`和`@Retetion`是对`@Override`的注解，称之为元注解(注解的注解)。
 
 
 ---
@@ -186,15 +185,12 @@ public @interface Target {
     ElementType[] value();
 }
 ```
-
 <small>而`Target`注解本身也有一个`@Target`元注解，这个`@Target`元注解属性是`ElementType.ANNOTATION_TYPE`，也就是说`Target`注解只能用作元数据(注解)的注解，所以叫它元注解。</small>
 
 <small>`@Retention(RetentionPolicy.RUNTIME)`? `@Documented`?</small>
 
 ---
 ## @Retention
-
-
 ``` java
 package java.lang.annotation;
 @Documented
@@ -207,30 +203,27 @@ public @interface Retention {
      */
     RetentionPolicy value();
 }
+```
+---
+## RetentionPolicy
 
+
+``` java
 public enum RetentionPolicy {
     /**
      * Annotations are to be discarded by the compiler.
      */
     SOURCE,
-
     /**
-     * Annotations are to be recorded in the class file by the compiler
-     * but need not be retained by the VM at run time.  This is the default
-     * behavior.
+     * Annotations are to be recorded in the class file by the compiler but need not be retained by the VM at run time.  This is the default behavior.
      */
     CLASS,
-
     /**
-     * Annotations are to be recorded in the class file by the compiler and
-     * retained by the VM at run time, so they may be read reflectively.
-     *
-     * @see java.lang.reflect.AnnotatedElement
+     * Annotations are to be recorded in the class file by the compiler and retained by the VM at run time, so they may be read  reflectively.
      */
     RUNTIME
 }
 ```
-
 <small>`@Retention`注解则定义了注解的保留范围，如:在源代码、CLASS文件或运行时保留。超出`@Retention`定义的属性，注解将被丢弃。</small>
 
 ---
@@ -249,6 +242,27 @@ public @interface Documented {
 ```
 <small>如果一个注解定义了`@Ducumented`，在[javadoc](http://www.oracle.com/technetwork/articles/java/index-137868.html)生成API文档时，被这个注解标记的元素在文档上也会出现该注解。</small>
 
+---
+
+## 例
+
+``` java
+@Documented
+@Inherited
+@Retention(RetentionPolicy.RUNTIME)
+public @interface InWork {
+    String value();
+}
+
+/**
+ * Annotated class.
+ */
+@InWork(value = "")
+public class MainApp {...}
+```
+
+
+![bg right:40% 80%](https://i.stack.imgur.com/QLm1F.png)
 
 ---
 

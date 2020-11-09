@@ -24,21 +24,13 @@ img {
 
 ---
 
----
 
 ## 软件测试
 
 “使用人工和自动手段来运行或测试某个系统的过程，其目的在于检验它是否满足规定的需求或弄清楚预期结果与实际结果之间的差别。”
 
----
 
-
-## 测试金字塔模型
-
-
-![bg 70%](images/testing.png)
-
-Mike Cohn
+![bg right:60% 90%](images/testing.png)
 
 
 ---
@@ -55,6 +47,7 @@ Mike Cohn
 
 单元测试中的“单元”在Java中可以理解为某个类中的某一个方法，因此“单元测试”就是针对Java中某个类中的某一个方法中的逻辑代码进行验证即测试该方法是不是可以正常工作。 
 
+![bg right:50% fit](https://cdn.lynda.com/course/697724/697724-637335312330961181-16x9.jpg)
 
 ---
 
@@ -82,7 +75,21 @@ Mike Cohn
 
 ## JUnit
 
-https://github.com/junit-team/junit4/wiki/Download-and-Install
+
+#### [Download and Install](https://github.com/junit-team/junit4/wiki/Download-and-Install)
+
+##### Plain-old JAR
+Download the following JARs and add them to your test classpath:
+
+- [junit.jar](https://search.maven.org/search?q=g:junit%20AND%20a:junit)
+- [hamcrest-core.jar](https://search.maven.org/artifact/org.hamcrest/hamcrest-core/1.3/jar)
+
+##### Maven
+
+Next time...
+
+
+![bg right:30% 80% ](https://avatars3.githubusercontent.com/u/874086?s=400&v=4)
 
 ---
 
@@ -128,6 +135,9 @@ public class MathTest {
 
 ```
 
+```bash
+java -cp ... org.junit.runner.JUnitCore MathTest
+```
 ---
 
 ## 在IDE中写测试用例
@@ -164,46 +174,37 @@ Keeps the bar <span style="color:green">green</span> to keep the code clean
 
 ```java
 public class AnnotationTest {
-
     public AnnotationTest() {
         System.out.println("构造方法");
     }
-
     @BeforeClass
     public static void setUpBeforeClass() {
         System.out.println("BeforeClass");
     }
-
     @AfterClass
     public static void tearDownAfterClass() {
         System.out.println("AfterClass");
     }
-
     @Before
     public void setUp() {
         System.out.println("Before");
     }
-
     @After
     public void tearDown() {
         System.out.println("After");
     }
-
     @Test
     public void test1() {
         System.out.println("test1");
     }
-
     @Test
     public void test2() {
         System.out.println("test2");
     }
-
     @Ignore
     public void test3() {
         System.out.println("test3");
     }
-
 }
 ```
 ---
@@ -220,28 +221,51 @@ public class AnnotationTest {
 
 ## @Test的属性
 
-- excepted 用来测试异常的
-- timeout 用来测试性能的
+- `excepted` 用来测试异常的
+- `timeout` 用来测试性能的
 
 ---
 
-## expected
-``` java
-    @Test(expected = Exception.class)
-    public void testFactorialException() throws Exception {
-        new Math().factorial(-1);
-        fail("factorial参数为负数没有抛出异常");
-    }
-```
-
-测试方法会检查是否抛出Exception异常（当然也可以检测是否抛出其它异常）。如果抛出了异常那么测试通过（因为你的预期就是传进负数会抛出异常）。没有抛出异常则测试不通过执行fail("factorial参数为负数没有抛出异常")。
-
----
-
-## timeout
+# 还是这个阶乘函数
 
 ```java
-public void sort(int[] arr) {
+public class Math {
+    /**
+     * 阶乘
+     * @param n
+     * @return
+     */
+    public int factorial(int n) throws Exception {
+        if (n < 0) {
+            throw new Exception("负数没有阶乘");
+        } else if (n <= 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+```
+---
+
+## 用`excepted`测试异常
+``` java
+@Test(expected = Exception.class)
+public void testFactorialException() throws Exception {
+    new Math().factorial(-1);
+    fail("factorial参数为负数没有抛出异常");
+}
+```
+
+测试方法会检查是否抛出`Exception`异常（当然也可以检测是否抛出其它异常）。如果抛出了异常那么测试通过（因为你的预期就是传进负数会抛出异常）。没有抛出异常则测试不通过执行`fail("factorial参数为负数没有抛出异常")`。
+
+---
+
+# 你最喜欢的排序算法
+
+```java
+public class Sort {
+    public void sort(int[] arr) {
         //冒泡排序
         for (int i = 0; i < arr.length - 1; i++) { //控制比较轮数
             for (int j = 0; j < arr.length - i - 1; j++) { //控制每轮的两两比较次数
@@ -250,13 +274,18 @@ public void sort(int[] arr) {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
-
             }
-
         }
-
     }
+}
+```
 
+---
+
+## 用`timeout`来测试性能
+
+```java
+public class SortTest {
     @Test(timeout = 2000)
     public void testSort() throws Exception {
         int[] arr = new int[50000]; //数组长度为50000
@@ -266,11 +295,15 @@ public void sort(int[] arr) {
         for (int i = 0; i < arrLength; i++) {
             arr[i] = r.nextInt(arrLength);
         }
-
-        new Math().sort(arr);
+        new Sort().sort(arr);
     }
-
+}
 ```
+
+---
+# 作业
+
+测试你的 葫芦娃
 
 ---
 
