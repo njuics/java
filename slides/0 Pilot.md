@@ -139,13 +139,13 @@ public class HelloWorld extends Applet {
 
 # 本课程去年考试情况
 
-|&nbsp;&nbsp;&nbsp;&nbsp;分数段&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;人数&nbsp;&nbsp;|&nbsp;&nbsp;比例&nbsp;&nbsp;|
-|:--:|--:|--:|
-|100-90|11|18%|
-|89-80|16|27%|
-|79-70|14|23%|
-|69-60|11|18%|
-|59-0|8|14%|
+| &nbsp;&nbsp;&nbsp;&nbsp;分数段&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;人数&nbsp;&nbsp; | &nbsp;&nbsp;比例&nbsp;&nbsp; |
+| :----------------------------------------------------: | ---------------------------: | ---------------------------: |
+|                         100-90                         |                           11 |                          18% |
+|                         89-80                          |                           16 |                          27% |
+|                         79-70                          |                           14 |                          23% |
+|                         69-60                          |                           11 |                          18% |
+|                          59-0                          |                            8 |                          14% |
 
 [去年试卷](https://www.zhihu.com/question/392342294)
 
@@ -304,7 +304,7 @@ https://github.com/LingCoder/OnJava8
 7. [集合](7.html):woman:
 8. [泛型](8.html):man:
 9. [注解](9-1.html)和[测试](9-2.html):man:
-10.  工程工具（Maven/Gradle/CI）:man:
+10. [自动构建](10.html):man:
 
 ---
 
