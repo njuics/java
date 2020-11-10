@@ -305,10 +305,10 @@
 <h2>注解解析</h2>
 <pre><code class="language-java"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnnotationParser</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> SecurityException, ClassNotFoundException </span>{
-        String clazz = <span class="hljs-string">&quot;AnnotationDemo&quot;</span>;
-        Method[]  demoMethod = AnnotationParser.class.getClassLoader().loadClass(clazz).getMethods();
-
+        Method[]  demoMethod = AnnotationDemo.class.getMethods();
+        
         <span class="hljs-keyword">for</span> (Method method : demoMethod) {
+
             <span class="hljs-keyword">if</span> (method.isAnnotationPresent(AuthorAnno.class)) {
                  AuthorAnno annotationInfo = method.getAnnotation(AuthorAnno.class);
                  System.out.println(<span class="hljs-string">&quot;method: &quot;</span>+ method);
