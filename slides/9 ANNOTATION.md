@@ -326,10 +326,10 @@ public class AnnotationDemo {
 ```java
 public class AnnotationParser {
     public static void main(String[] args) throws SecurityException, ClassNotFoundException {
-        String clazz = "AnnotationDemo";
-        Method[]  demoMethod = AnnotationParser.class.getClassLoader().loadClass(clazz).getMethods();
-
+        Method[]  demoMethod = AnnotationDemo.class.getMethods();
+        
         for (Method method : demoMethod) {
+
             if (method.isAnnotationPresent(AuthorAnno.class)) {
                  AuthorAnno annotationInfo = method.getAnnotation(AuthorAnno.class);
                  System.out.println("method: "+ method);
