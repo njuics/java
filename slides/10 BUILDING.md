@@ -161,7 +161,7 @@ clean:
 ```
 ---
 
-# 自动构建工具
+# 构建工具
 
 - Make
 - Rake
@@ -177,6 +177,8 @@ clean:
 Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
 https://maven.apache.org/
+
+![bg right:40% fit](images/maven.png)
 
 
 ---
@@ -398,10 +400,199 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 
 ---
 
+# Maven POM Files
+
+A Maven POM file (Project Object Model) is an XML file that describe the resources of the project. This includes the directories where the source code, test source etc. is located in, what external dependencies (JAR files) your projects has etc.
+
+
+The POM file describes what to build, but most often not how to build it. How to build it is up to the Maven build phases and goals. You can insert custom actions (goals) into the Maven build phase if you need to, though.
+
+
+---
+
+# POM inheritance
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+        <parent>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>my-parent</artifactId>
+        <version>2.0</version>
+        <relativePath>../my-parent</relativePath>
+        </parent>
+    
+
+    <artifactId>my-project</artifactId>
+    ...
+</project>
+```
+
+![bg right:30% fit ](images/maven-super-pom.png)
+
+---
+
+# Running Maven
+
+Running Maven is done by executing the mvn command from a command prompt. When executing the mvn command you pass the name of a **build life cycle**, **phase** or **goal** to it.
+
+``` bash
+mvn install
+```
+
+<small>This command executes the build phase called install (part of the default build life cycle), which builds the project and copies the packaged JAR file into the local Maven repository. Actually, this command executes all build phases before install in the build phase sequence, before executing the install build phase.</small>
+
+---
+
+# Build Life Cycles, Phases and Goals
+
+Maven contains three major build life cycles:
+
+- clean
+- default
+- site
+
+Inside each build life cycle there are build phases, and inside each build phase there are build goals.
+
+
+---
+
+# Executing
+
+You can execute either a build life cycle, build phase or build goal. When executing a build life cycle you execute all build phases (and thus build goals) inside that build life cycle.
+
+When executing a build phase you execute all build goals within that build phase. Maven also executes all build phases earlier in the build life cycle of the desired build phase.
+
+
+
+``` sh
+mvn clean
+mvn clean install
+```
+
+
+---
+
+#  Default Life Cycle
+
+The default life cycle is the build life cycle which generates, compiles, packages etc. your source code.
+
+You cannot execute the default build life cycle directly, as is possible with the clean and site. Instead you have to execute a specific build phase within the default build life cycle.
+
+---
+
+| Build Phase | Description                                                                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| validate    | <small>Validates that the project is correct and all necessary information is available. This also makes sure the dependencies are downloaded.</small> |
+| compile     | <small>Compiles the source code of the project.</small>                                                                                                |
+| test        | <small>Runs the tests against the compiled source code using a suitable unit testing framework. </small>                                               |
+| package     | <small>Packs the compiled code in its distributable format, such as a JAR.</small>                                                                     |
+| install     | <small>Install the package into the local repository.</small>                                                                                          |
+| deploy      | <small>Copies the final package to the remote repository for sharing.</small>                                                                          |
+
+---
+
+# Project Dependencies
+
+<small>Your project may need external Java APIs or frameworks which are packaged in their own JAR files to be on the classpath when you compile your project code. Each external JAR may again also need other external JAR files etc. Downloading all these dependencies (JAR files) recursively downloaded is cumbersome.</small> 
+
+<small>Maven has built-in dependency management. You specify in the POM file what external libraries your project depends on, and which version, and then Maven downloads them for you and puts them in your local Maven repository. If any of these external libraries need other libraries, then these other libraries are also downloaded into your local Maven repository.</small>
+
+
+---
+
+##### Dependencies
+
+``` xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.jenkov.crawler</groupId>
+    <artifactId>java-web-crawler</artifactId>
+    <version>1.0.0</version>
+      <dependencies>
+        <dependency>
+          <groupId>org.jsoup</groupId>
+          <artifactId>jsoup</artifactId>
+          <version>1.7.1</version>
+        </dependency>
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.8.1</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+</project>
+```
+
+---
+
+# Repositories
+
+
+![bg fit 80% ](images/maven-repositories.png)
+![bg fit 90%](images/mavenrepository.png)
+
+---
+
+# Maven Plugins
+
+Maven plugins enable you to add actions to the build process.
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.6.1</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
+---
+
+# A tutorial
+
+Building Java Projects with Maven 
+
+https://spring.io/guides/gs/maven/
+
+```sh
+git clone https://github.com/spring-guides/gs-maven.git
+```
+
+---
+
+# A web application
+
+Serving Web Content with Spring MVC
+
+https://spring.io/guides/gs/serving-web-content/
+
+```sh
+git clone https://github.com/spring-guides/gs-serving-web-content.git
+```
+
+``` sh
+mvn spring-boot:run
+```
+---
+
+# 作业
 
 自动构建你的葫芦娃
 
 
 ---
 
-# END
+![bg 50%](images/happy.png)
