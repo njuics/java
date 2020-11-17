@@ -74,7 +74,7 @@ int main() {
 
 ```c
 #include <stdio.h>
-#include <hellofunc.h>
+#include <hellomake.h>
 void myPrintHelloMake(void) {
     printf("Hello, Hacker Schoolers!\n"); 
     return;
@@ -163,12 +163,12 @@ clean:
 
 # 构建工具
 
-- Make
-- Rake
-- Cake
-- MS build
-- Ant
-- Gradle
+- Make https://www.gnu.org/software/make/
+- Rake https://ruby.github.io/rake/
+- Cake https://coffeescript.org/v1/annotated-source/cake.html
+- MSBuild https://docs.microsoft.com/en-us/visualstudio/msbuild
+- Ant https://ant.apache.org/
+- Gradle https://gradle.org/
 
 ---
 
@@ -561,7 +561,7 @@ Maven plugins enable you to add actions to the build process.
 ```
 ---
 
-# A tutorial
+# A Complete Tutorial
 
 Building Java Projects with Maven 
 
@@ -573,7 +573,7 @@ git clone https://github.com/spring-guides/gs-maven.git
 
 ---
 
-# A web application
+# Web Application
 
 Serving Web Content with Spring MVC
 
@@ -586,11 +586,19 @@ git clone https://github.com/spring-guides/gs-serving-web-content.git
 ``` sh
 mvn spring-boot:run
 ```
+
+![bg right:30% 80%](images/bilibili.png)
+
+
 ---
 
 # 作业
 
-自动构建你的葫芦娃
+- 使用第三方库（Jar）增强你的葫芦娃
+  - Apache Commons https://commons.apache.org/
+  - Google Guava https://github.com/google/guava
+- 自动构建你的葫芦娃
+  - 注意你的gitignore http://gitignore.io/
 
 
 ---
