@@ -287,36 +287,33 @@ https://github.com/LingCoder/OnJava8
 
 # 大纲 -I
 
-
-
-1. [语言基础](1.html) (基本类型, 运算符, 控制流）:man: 
-2. [面向对象I](2.html) （抽象、类、接口、封装、继承、多态等):man: 
-3. [面向对象II](3.html) (初始化与清理、访问权限、内部类等):man:
-4. [设计原则](4.html)(SOLID):woman:
-5. [类加载和自省](5.html):man:
+1. [语言基础](1.html) (基本类型, 运算符, 控制流）
+2. [面向对象I](2.html) （抽象、类、接口、封装、继承、多态等)
+3. [面向对象II](3.html) (初始化与清理、访问权限、内部类等)
+4. [设计原则](4.html)（SOLID）
+5. [类加载和自省](5.html)
 
 
 --- 
 
 # 大纲 -II
 
-6. [异常处理](6.html):woman:
-7. [集合](7.html):woman:
-8. [泛型](8.html):man:
-9. [注解](9-1.html)和[测试](9-2.html):man:
-10. [自动构建](10.html):man:
+6. [异常处理](6.html)
+7. [集合](7.html)
+8. [泛型](8.html)
+9. [注解](9-1.html)和[测试](9-2.html)
+10. [自动构建](10.html)
 
 ---
 
 # 大纲 -III
 
-1.  文件与输入输出（NIO）:woman:
-2.  函数式编程:man:
-3.  流式编程 (Stream):woman:
-4.  并发编程:woman:
-5.  图形化（JavaFX）:woman:
-6.  设计模式（Design Pattern）:woman:
-
+11.  [输入输出](11.html)（IO & NIO）
+12.  函数式编程（Lambda）
+13.  网络编程（Networking）
+14.  并发编程（Concurrency）
+15.  图形化（JavaFX）
+16.  设计模式（Design Pattern）
 
 ---
 
