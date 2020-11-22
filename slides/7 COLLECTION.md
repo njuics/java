@@ -22,7 +22,9 @@ code{
 
 ![bg right:30% 90%](https://upload.wikimedia.org/wikipedia/zh/8/88/Java_logo.png)
 
-## Java Collections Framework
+# Java高级程序设计
+
+## 集合框架
 
 <br>
 
