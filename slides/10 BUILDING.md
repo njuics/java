@@ -243,7 +243,7 @@ public class HelloWorld {
 mvn package 
 ```
 
-What does `mvn pakcage` mean?
+What does `mvn package` mean?
 
 ---
 
