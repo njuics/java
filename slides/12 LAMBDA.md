@@ -322,8 +322,9 @@ Java 世界是严格地以名词为中心的
 
 - <small>Imperative: is a style of programming where you program the  algorithm with control flow and explicit steps. </small>
 - <small>Declarative:  is a style of programming where you declare what needs be done without concern for the control flow. </small>
+- <small>Functional programming: is a declarative programming paradigm that treats computation as a series of functions and avoids state and mutable data to facilitate concurrency http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</small>
 
-- <small>Functional programming: is a declarative programming paradigm that treats computation as a series of functions and avoids state and mutable data to facilitate concurrency</small>
+
 
 Java缺少函数式编程特点， 为此Java 8 增加了一个语言级的新特性，名为Lambda表达式。
 
