@@ -456,5 +456,77 @@ http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart
 
 ---
 
+# `java.util.function.Function`
+
+`Interface Function<T,R>`
+
+This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.
+
+
+`R apply(T t)`
+
+Applies this function to the given argument.
+
+<small>https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html</small>
+
+---
+
+#  FaaS: Function as a service 
+
+Function as a service is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage application functionalities without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app.
+
+AWS Lambda was the first FaaS offering by a large public cloud vendor.
+
+<small>https://en.wikipedia.org/wiki/Function_as_a_service</small>
+
+---
+
+# Spring Cloud Function
+
+- <small>[Spring Cloud Function](https://spring.io/projects/spring-cloud-function) 是来自 Pivotal 的 Spring 团队的新项目，它致力于促进函数作为主要的开发单元。</small>
+- <small>该项目提供了一个通用的模型，用于在各种平台上部署基于函数的软件，包括像 Amazon AWS Lambda 这样的 FaaS（函数即服务，function as a service）平台。</small>
+
+![bg right:40% fit](images/springcloudfunction.png)
+
+---
+
+# Demo
+
+https://github.com/sa-spring/spring-cloudfunction
+
+```java
+@SpringBootApplication
+public class CloudFunctionApplication {
+    ...
+    @Bean
+    public Function<String, String> reverseString() {
+        return value -> new StringBuilder(value).reverse().toString();
+	}
+}
+```
+
+```bash
+$ curl localhost:8080/reverseString -H "Content-Type: text/plain" -d  "hello world"
+```
+
+---
+# Demo Pojo Function
+
+```java
+import java.util.function.Function;
+
+public class Greeter implements Function<String, String> {
+ 
+    @Override
+    public String apply(String s) {
+        return "Hello " + s + ", and welcome to Spring Cloud Function!!!";
+    }
+}
+```
+```bash
+$ curl localhost:8080/greeter -H "Content-Type: text/plain" -d "World"
+```
+---
+
 ![bg 50%](images/happy.png)
 
