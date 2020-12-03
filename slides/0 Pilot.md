@@ -309,8 +309,8 @@ https://github.com/LingCoder/OnJava8
 # 大纲 -III
 
 11.  [输入输出](11.html)（IO & NIO）
-12.  函数式编程（Lambda）
-13.  网络编程（Networking）
+12.  [函数式编程](12.html)（Lambda）
+13.  [网络编程](13.html)（Networking）
 14.  并发编程（Concurrency）
 15.  图形化（JavaFX）
 16.  设计模式（Design Pattern）
