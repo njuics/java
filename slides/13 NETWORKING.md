@@ -29,7 +29,7 @@ code{
 <br>
 
 <small>https://docs.oracle.com/javase/tutorial/networking/index.html</small>
-
+<small>https://docs.oracle.com/javase/8/docs/technotes/guides/net/index.html</small>
 
 ---
 
@@ -45,6 +45,13 @@ code{
   + java.net.Socket
   + java.net.DatagramSocket
   + java.net.DatagramPacket
+
+---
+
+## Networking Basics
+
+![w:900](images/NetworkingRef.png)
+
 
 ---
 
@@ -75,8 +82,60 @@ code{
 - URL is the acronym for Uniform Resource Locator. It is a reference (an address) to a resource on the Internet. 
 
 - A URL takes the form of a string that describes how to find a resource on the Internet. URLs have two main components: the protocol needed to access the resource and the location of the resource.
-  + Protocol: HTTP, FTP, Gopher, File, News
+  + Protocol: HTTP, FTP, Gopher, File, News...
   + Resource name: Host Name; File Name; Port Number; Reference
+
+---
+
+## URLConnection
+
+![w:800](images/URL.png)
+
+---
+
+## An Example
+
+- Read from an URL
+
+```java
+import java.net.*;
+import java.io.*;
+public class URLConnectionReader {
+    public static void main(String[] args) throws Exception {
+        URL oracle = new URL("http://www.oracle.com/");
+        BufferedReader in = new BufferedReader(new InputStreamReader(oracle.openStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) 
+            System.out.println(inputLine);
+        in.close();
+    }
+}
+```
+---
+
+## An Example
+
+- Connecting to a URL
+
+```java
+try {
+    URL myURL = new URL("http://example.com/");
+    URLConnection myURLConnection = myURL.openConnection();
+    myURLConnection.connect();
+    Map<String, List<String>> headers = myURLConnection.getHeaderFields();
+    for (Map.Entry<String, List<String>> entry: headers.entrySet()){
+        String key = entry.getKey();
+        for (String value: entry.getValue()) 
+          System.out.println(key + ":"+ value);
+    }
+} 
+catch (MalformedURLException e) { 
+    // new URL() failed
+} 
+catch (IOException e) {   
+    // openConnection() failed
+}
+```
 
 ---
 
@@ -87,7 +146,6 @@ code{
 ```java
 import java.net.*;
 import java.io.*;
-
 public class URLConnectionReader {
     public static void main(String[] args) throws Exception {
         URL oracle = new URL("http://www.oracle.com/");
@@ -107,7 +165,7 @@ public class URLConnectionReader {
 
 - Socket
   + A socket is one endpoint of a two-way communication link between two programs running on the network. A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to.
-  + Usage: java.net.Socket; java.net.ServerSocket
+  + Usage: <code>java.net.Socket</code>; <code>java.net.ServerSocket</code>
 
 - URLs are relatively high-level connection to the Web.
 
@@ -118,16 +176,9 @@ public class URLConnectionReader {
 - Server
 
 ```java
-import java.net.*;
-import java.io.*;
 public class EchoServer {
-    public static void main(String[] args) throws IOException {      
-        if (args.length != 1) {
-            System.err.println("Usage: java EchoServer <port number>");
-            System.exit(1);
-        }     
+    public static void main(String[] args) throws IOException {         
         int portNumber = Integer.parseInt(args[0]);
-      
         try (
             ServerSocket serverSocket =
                 new ServerSocket(Integer.parseInt(args[0]));
@@ -148,7 +199,6 @@ public class EchoServer {
         }
     }
 }
-
 ```
 
 ---
@@ -169,15 +219,8 @@ public class EchoServer {
 - Client
 
 ```java
-import java.io.*;
-import java.net.*;
 public class EchoClient {
     public static void main(String[] args) throws IOException {        
-        if (args.length != 2) {
-            System.err.println(
-                "Usage: java EchoClient <host name> <port number>");
-            System.exit(1);
-        }
         String hostName = args[0];
         int portNumber = Integer.parseInt(args[1]);
         try (
@@ -226,6 +269,11 @@ public class EchoClient {
 
 ![w:700](images/SocketProgramming.png)
 
+---
+
+## Connection-oriented programming
+
+![w:700](images/sockets.png)
 
 ---
 
@@ -271,10 +319,6 @@ public class QuoteServer {
 - Server
 
 ```java
-import java.io.*;
-import java.net.*;
-import java.util.*;
-
 public class QuoteServerThread extends Thread {
     protected DatagramSocket socket = null;
     protected BufferedReader in = null;
@@ -285,7 +329,6 @@ public class QuoteServerThread extends Thread {
     public QuoteServerThread(String name) throws IOException {
         super(name);
         socket = new DatagramSocket(4445);
-
         try {
             in = new BufferedReader(new FileReader("one-liners.txt"));
         } catch (FileNotFoundException e) {
@@ -296,25 +339,21 @@ public class QuoteServerThread extends Thread {
         while (moreQuotes) {
             try {
                 byte[] buf = new byte[256];
-                // receive request
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 socket.receive(packet);
-                // figure out response
                 String dString = null;
                 if (in == null)
                     dString = new Date().toString();
                 else
                     dString = getNextQuote();
                 buf = dString.getBytes();
-
-		// send the response to the client at "address" and "port"
                 InetAddress address = packet.getAddress();
                 int port = packet.getPort();
                 packet = new DatagramPacket(buf, buf.length, address, port);
                 socket.send(packet);
             } catch (IOException e) {
                 e.printStackTrace();
-		moreQuotes = false;
+		        moreQuotes = false;
             }
         }
         socket.close();
@@ -324,7 +363,7 @@ public class QuoteServerThread extends Thread {
         try {
             if ((returnValue = in.readLine()) == null) {
                 in.close();
-		moreQuotes = false;
+		        moreQuotes = false;
                 returnValue = "No more quotes. Goodbye.";
             }
         } catch (IOException e) {
@@ -333,7 +372,6 @@ public class QuoteServerThread extends Thread {
         return returnValue;
     }
 }
-
 ```
 
 ---
@@ -343,39 +381,29 @@ public class QuoteServerThread extends Thread {
 - Client 
 
 ```java
-import java.io.*;
-import java.net.*;
-
 public class QuoteClient {
     public static void main(String[] args) throws IOException {
-
-        if (args.length != 1) {
-             System.out.println("Usage: java QuoteClient <hostname>");
-             return;
-        }
-
-            // get a datagram socket
         DatagramSocket socket = new DatagramSocket();
-
-            // send request
         byte[] buf = new byte[256];
         InetAddress address = InetAddress.getByName(args[0]);
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 4445);
         socket.send(packet);
-    
-            // get response
         packet = new DatagramPacket(buf, buf.length);
         socket.receive(packet);
-
-	    // display response
         String received = new String(packet.getData(), 0, packet.getLength());
         System.out.println("Quote of the Moment: " + received);
-    
         socket.close();
     }
 }
 
 ```
+
+---
+
+## Datagram Packets via UDP
+
+![w:700](images/datagram.png)
+
 
 ---
 
