@@ -435,6 +435,7 @@ socket.close();
 
 - Old Package: com.oracle.httpclient
 - Goal: a Java based framework for communication with Web Services.
+- Package from Java 9/10: jdk.incubator.http
 - New Package from Java 11: java.net.http
 
 ---
@@ -523,6 +524,25 @@ webSocket.sendText("world ",true);
 TimeUnit.SECONDS.sleep(10);
 webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "ok").join(); 
 ```
+---
+
+## Blocking vs Unblocking
+
+- BIO (Blocking IO): 同步阻塞
+  + <small>同步并阻塞，服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端就需要启动一个线程进行处理。</small>
+
+- NIO (Unblocking/New IO): 同步非阻塞
+  + <small>当一个连接创建后，不需要对应一个线程，这个连接会被注册到多路复用器上面，所以所有的连接只需要一个线程就可以搞定，当这个线程中的多路复用器进行轮询的时候，发现连接上有请求的话，才开启一个线程进行处理，也就是一个请求一个线程模式。</small>
+
+---
+
+## Blocking vs Unblocking
+
+- AIO (Asynchronous IO): 异步非阻塞
+  + read/write方法都是异步的，完成后会主动调用回调函数。
+  + <code>AsynchronousSocketChannel</code> ,<code>AsynchronousServerSocketChannel</code>,<code>AsynchronousFileChannel</code>,<code>AsynchronousDatagramChannel</code>
+
+
 ---
 
 <!-- _class: lead -->
