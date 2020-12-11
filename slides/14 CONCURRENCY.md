@@ -13,10 +13,26 @@ img {
   display: block;
   margin: 0 auto;
 }
-pre, 
+pre {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 28px;
+  line-height: 28px;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); 
+} 
 code{
-  overflow-y: auto;
-  max-height: 450px;
+  text-transform: none; 
+}
+pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 420px;
+  word-wrap: normal; 
 }
 </style>
 
@@ -336,8 +352,7 @@ class TaskWithResult implements Callable<String> {
 public class CallableDemo {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        ArrayList<Future<String>> results =
-                new ArrayList<Future<String>>();
+        ArrayList<Future<String>> results = new ArrayList<Future<String>>();
         for (int i = 0; i < 10; i++)
             results.add(exec.submit(new TaskWithResult(i)));
         for (Future<String> fs : results)
@@ -379,12 +394,9 @@ class MyCallable implements Callable<String>{
 ```java
 public class FutureSimpleDemo {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-
         ExecutorService executorService = Executors.newCachedThreadPool();
         Future<String> future = executorService.submit(new MyCallable());
-
         System.out.println("dosomething...");
-
         System.out.println("得到异步任务返回结果：" + future.get());
         System.out.println("Completed!");
     }
@@ -405,9 +417,7 @@ public class SleepingTask extends LiftOff {
         try {
             while (countDown-- > 0) {
                 System.out.print(status());
-                // Old-style:
-                // Thread.sleep(100);
-                // Java SE5/6-style:
+                // Old-style: Thread.sleep(100);
                 TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
@@ -451,15 +461,9 @@ public class SimplePriorities implements Runnable {
     private int countDown = 5;
     private volatile double d; // No optimization 后面再解释
     private int priority;
-
     public SimplePriorities(int priority) {
         this.priority = priority;
     }
-
-    public String toString() {
-        return Thread.currentThread() + ": " + countDown;
-    }
-
     public void run() {
         Thread.currentThread().setPriority(priority);
         while (true) {
@@ -477,7 +481,11 @@ public class SimplePriorities implements Runnable {
 
 ---
 
-```java
+```java    
+    public String toString() {
+        return Thread.currentThread() + ": " + countDown;
+    }
+
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++)
@@ -551,19 +559,16 @@ public class SimpleDaemons implements Runnable {
 ``` java
 class Sleeper extends Thread {
     private int duration;
-
     public Sleeper(String name, int sleepTime) {
         super(name);
         duration = sleepTime;
         start();
     }
-
     public void run() {
         try {
             sleep(duration);
         } catch (InterruptedException e) {
-            print(getName() + " was interrupted. " +
-                    "isInterrupted(): " + isInterrupted());
+            print(getName() + " was interrupted. " + "isInterrupted(): " + isInterrupted());
             return;
         }
         print(getName() + " has awakened");
@@ -573,16 +578,16 @@ class Sleeper extends Thread {
 
 ---
 
+## Join
+
 ```java
 class Joiner extends Thread {
     private Sleeper sleeper;
-
     public Joiner(String name, Sleeper sleeper) {
         super(name);
         this.sleeper = sleeper;
         start();
     }
-
     public void run() {
         try {
             sleeper.join();
@@ -592,7 +597,13 @@ class Joiner extends Thread {
         print(getName() + " join completed");
     }
 }
+```
 
+---
+
+## Join
+
+```java
 public class Joining {
     public static void main(String[] args) {
         Sleeper
@@ -610,7 +621,7 @@ public class Joining {
 
 ## 线程生命周期
 
-![w:700](images/thread-life-cycle.png)
+![w:750](images/thread-life-cycle.png)
 
 
 ---
@@ -840,16 +851,14 @@ public class MutexEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
     private Lock lock = new ReentrantLock();
     public int next() {
-        //加锁
-        lock.lock();
+        lock.lock(); //加锁
         try {
             ++currentEvenValue;
             Thread.yield();
             ++currentEvenValue;
             return currentEvenValue;
         } finally {
-            //一定要用try-catch的finally去释放锁
-            lock.unlock();
+            lock.unlock(); //一定要用try-catch的finally去释放锁
         }
     }
     public static void main(String[] args) {
@@ -973,11 +982,9 @@ public class ThreadLocalVariableHolder {
 
 ## 从竞争到协作
 
-```java
-wait();
-notify();
-notifyAll();
-```
+- wait();
+- notify();
+- notifyAll();
 
 `Object`类型上的三个方法
 
@@ -998,23 +1005,19 @@ notifyAll();
 ```java
 class Car {
     private boolean waxOn = false;
-
     public synchronized void waxed() {
         waxOn = true; // Ready to buff
         notifyAll();
     }
-
     public synchronized void buffed() {
         waxOn = false; // Ready for another coat of wax
         notifyAll();
     }
-
     public synchronized void waitForWaxing()
             throws InterruptedException {
         while (waxOn == false)
             wait();
     }
-
     public synchronized void waitForBuffing()
             throws InterruptedException {
         while (waxOn == true)
@@ -1028,11 +1031,9 @@ class Car {
 ```java
 class WaxOn implements Runnable {
     private Car car;
-
     public WaxOn(Car c) {
         car = c;
     }
-
     public void run() {
         try {
             while (!Thread.interrupted()) {
@@ -1054,11 +1055,9 @@ class WaxOn implements Runnable {
 ```java
 class WaxOff implements Runnable {
     private Car car;
-
     public WaxOff(Car c) {
         car = c;
     }
-
     public void run() {
         try {
             while (!Thread.interrupted()) {
@@ -1073,7 +1072,11 @@ class WaxOff implements Runnable {
         print("Ending Wax Off task");
     }
 }
+```
 
+---
+
+```java
 public class WaxOMatic {
     public static void main(String[] args) throws Exception {
         Car car = new Car();
@@ -1090,7 +1093,7 @@ public class WaxOMatic {
 
 ## 再看一下线程状态
 
-![w:700](images/thread-life-cycle.png)
+![w:750](images/thread-life-cycle.png)
 
 ---
 
@@ -1106,16 +1109,17 @@ public class WaxOMatic {
 
 java.util.concurrent.*
 
-- `CountDownLatch`
-- `CyclicBarrier`
-- `DelayQueue`
-- `PriorityBlockingQueue`
-- `ScheduledExecutorService`
-- `Semaphore`
-- `Exchanger`
+- CountDownLatch
+- CyclicBarrier
+- DelayQueue
+- PriorityBlockingQueue
+- ScheduledExecutorService
+- Semaphore
+- Exchanger
 
 ---
 
+## 推荐
 
 ![bg w:60%](images/DougLea.jpg)
 ![bg w:60%](images/Effective_Java.jpg)
