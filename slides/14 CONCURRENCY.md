@@ -396,7 +396,7 @@ public class FutureSimpleDemo {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Future<String> future = executorService.submit(new MyCallable());
-        System.out.println("dosomething...");
+        System.out.println("do something...");
         System.out.println("得到异步任务返回结果：" + future.get());
         System.out.println("Completed!");
     }
@@ -407,7 +407,7 @@ public class FutureSimpleDemo {
 
 ---
 
-## SLEEP 
+## Sleep 睡眠
 
 - suspend execution for a specified period
 
@@ -437,13 +437,13 @@ public class SleepingTask extends LiftOff {
 }
 ```
 
-<small>运行结果看起来很均衡，但实际并不完全如此...跟`yeild()`语义不一样</small> 
+<small>运行结果看起来很均衡，但实际并不完全如此...跟`yield()`语义不一样</small> 
 
 
 
 ---
 
-## Yeild 让位 
+## Yield 让位 
 
 - `yield`和`sleep`的主要区别：
   + <small>yield方法会临时暂停当前正在执行的线程，来让有同样优先级的正在等待的线程有机会执行</small>
@@ -454,7 +454,7 @@ public class SleepingTask extends LiftOff {
 
 ---
 
-## Priority
+## Priority 优先级
 
 ``` java
 public class SimplePriorities implements Runnable {
@@ -526,7 +526,7 @@ public class SimpleDaemons implements Runnable {
             daemon.setDaemon(true); // Must call before start()
             daemon.start();
         }
-        print("All daemons started");
+        System.out.println("All daemons started");
         TimeUnit.MILLISECONDS.sleep(99);
     }
 }
@@ -541,7 +541,7 @@ public class SimpleDaemons implements Runnable {
 - The identity of the currently running thread can be found using the <font color="red">currentThread</font> method.
 - This has a static modifier, which means that there is only one method for all instances of Thread objects.
 - The method can always be called using the <font color="red">Thread</font> class.
-  +  public static Thread currentThread();
+  +  `public static Thread currentThread()`;
 
 
 
@@ -549,29 +549,30 @@ public class SimpleDaemons implements Runnable {
 
 ## 线程是否结束？
 
--  final boolean isAlive()  //很少用到
--  final void join() throws InterruptedException  //等待所调用线程结束
+-  `final boolean isAlive()`  //很少用到
+-  `final void join() throws InterruptedException`  //等待所调用线程结束，即某个线程在另一个线程t上调用t.join()，此线程将被挂起，直到目标线程t结束才恢复
+- `final void join(long millis) throws InterruptedException` //等待一个线程指定毫秒数后再消亡
 
 ---
 
 ## Join
 
 ``` java
-class Sleeper extends Thread {
-    private int duration;
-    public Sleeper(String name, int sleepTime) {
+public class ScanDouyin extends Thread{
+    private int scanTime; // 浏览抖音的时长
+    public ScanDouyin(String name, int scanTime){
         super(name);
-        duration = sleepTime;
-        start();
+        scanTime = this.scanTime;
     }
+    @Override
     public void run() {
-        try {
-            sleep(duration);
+        System.out.println(getName() + ":开始刷抖音了");
+        try {       
+            sleep(scanTime);// 刷抖音的时间
         } catch (InterruptedException e) {
-            print(getName() + " was interrupted. " + "isInterrupted(): " + isInterrupted());
-            return;
+            e.printStackTrace();
         }
-        print(getName() + " has awakened");
+        System.out.println(getName() +":抖音刷完了，睡觉吧");
     }
 }
 ```
@@ -581,38 +582,31 @@ class Sleeper extends Thread {
 ## Join
 
 ```java
-class Joiner extends Thread {
-    private Sleeper sleeper;
-    public Joiner(String name, Sleeper sleeper) {
+public class ReadySleep extends Thread{
+    private ScanDouyin scanDouyin;
+    public ReadySleep(String name,ScanDouyin scanDouyin){
         super(name);
-        this.sleeper = sleeper;
-        start();
+        this.scanDouyin = scanDouyin;
     }
+    @Override
     public void run() {
+        System.out.println(getName() + ":准备开始睡觉啦");
         try {
-            sleeper.join();
+            scanDouyin.join(); // 睡前刷把抖音 
+            //睡觉的线程必须等待直到刷完抖音（刷抖音线程执行完毕，线程消亡），才能开始睡觉。    
+            System.out.println("开始睡觉");
+            sleep(100);
         } catch (InterruptedException e) {
-            print("Interrupted");
+            e.printStackTrace();
         }
-        print(getName() + " join completed");
+        System.out.println(getName() + ":zzzzzzzz,已经睡着了");
     }
-}
-```
 
----
-
-## Join
-
-```java
-public class Joining {
     public static void main(String[] args) {
-        Sleeper
-                sleepy = new Sleeper("Sleepy", 1500),
-                grumpy = new Sleeper("Grumpy", 1500);
-        Joiner
-                dopey = new Joiner("Dopey", sleepy),
-                doc = new Joiner("Doc", grumpy);
-        grumpy.interrupt();
+        ScanDouyin scanDouyin = new ScanDouyin("刷抖音线程",10000);
+        ReadySleep readySleep = new ReadySleep("睡觉线程",scanDouyin);
+        readySleep.start();
+        scanDouyin.start();
     }
 }
 ```
@@ -668,18 +662,16 @@ public class Joining {
 
 - Safety (object-centric):
   + “Nothing bad ever happens to an object.”
-  + Safety failure lead to unintended behavior at run time — things just start going wrong. 
-- Liveness (activity-centric): 
-  + “Something eventually happens within an activity.”
-  + Liveness failures lead to no behavior — things just stop running. 
-
+  + Safety failure lead to unintended behavior at run time — things just start going wrong.
 
 ---
 
-## Liveness
+## Correctness
 
-- In live systems, every activity eventually progresses toward completion; every invoked method eventually executes. 
-
+- Liveness (activity-centric): 
+  + “Something eventually happens within an activity.”
+  + Liveness failures lead to no behavior — things just stop running. 
+  + In live systems, every activity eventually progresses toward completion; every invoked method eventually executes.
 
 ---
 
@@ -730,115 +722,34 @@ public class LazySingleton {
 
 ---
 
-## 示例
-
-IntGenerator
-
-``` java
-public abstract class IntGenerator {
-    private volatile boolean canceled = false;
-    public abstract int next();
-    // Allow this to be canceled:
-    public void cancel() {
-        canceled = true;
-    }
-    public boolean isCanceled() {
-        return canceled;
-    }
-}
-```
-
----
-
-## 示例
-
-EvenGenerator
-
-```java
-public class EvenGenerator extends IntGenerator {
-    private int currentEvenValue = 0;
-    public int next() {
-        ++currentEvenValue; // Danger point here!
-        ++currentEvenValue;
-        return currentEvenValue;
-    }
-}
-```
-
----
-
-EvenChecker
-
-``` java
-public class EvenChecker implements Runnable {
-    private IntGenerator generator;
-    private final int id;
-    public EvenChecker(IntGenerator g, int ident) {
-        generator = g;
-        id = ident;
-    }
-    public void run() {
-        while (!generator.isCanceled()) {
-            int val = generator.next();
-            if (val % 2 != 0) {
-                System.out.println(val + " not even!");
-                generator.cancel(); // Cancels all EvenCheckers
-            }
-        }
-    }
-```
----
-
-```java
-    // Test any type of IntGenerator:
-    public static void test(IntGenerator gp, int count) {
-        System.out.println("Press Control-C to exit");
-        ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < count; i++)
-            exec.execute(new EvenChecker(gp, i));
-        exec.shutdown();
-    }
-
-    // Default value for count:
-    public static void test(IntGenerator gp) {
-        test(gp, 10);
-    }
-
-    public static void main(String[] args) {
-        EvenChecker.test(new EvenGenerator());
-    }
-
-}
-
-```
-
----
-
 ## 解决方法
 
 - 对资源加锁，使得对资源的访问顺序化，确保在某一时刻只有一个任务在使用共享资源（使其互斥）
+  + ***synchronized***
+  + ***ReentrantLock***
 
 - Mutual Exclusion （Mutex）
-
 
 ---
 
 ## Synchronized
 
 ``` java
-public class Synchronized EvenGenerator extends IntGenerator {
-    private int currentEvenValue = 0;
-
-    public synchronized int next() {
-        ++currentEvenValue;
-        Thread.yield(); 
-        ++currentEvenValue;
-        return currentEvenValue;
-    }
-
-    public static void main(String[] args) {
-        EvenChecker.test(new SynchronizedEvenGenerator());
-    }
+public class ThreadSafeSingleton {
+	private static ThreadSafeSingleton instance = null;
+	protected ThreadSafeSingleton(){
+		System.out.println("Singleton's consturct method is invoked. " +
+				"This method should not be public");
+	}
+	public static synchronized ThreadSafeSingleton getInstance(){
+		if (instance == null){
+			instance = new ThreadSafeSingleton()
+		}
+		return instance;
+	}
+	public void operation(){
+		System.out.println("ThreadSafeSingleton.operation() is executed");
+	}
 }
 ```
 
@@ -846,36 +757,31 @@ public class Synchronized EvenGenerator extends IntGenerator {
 
 ## Lock
 
-``` java
-public class MutexEvenGenerator extends IntGenerator {
-    private int currentEvenValue = 0;
-    private Lock lock = new ReentrantLock();
-    public int next() {
-        lock.lock(); //加锁
-        try {
-            ++currentEvenValue;
-            Thread.yield();
-            ++currentEvenValue;
-            return currentEvenValue;
-        } finally {
-            lock.unlock(); //一定要用try-catch的finally去释放锁
-        }
-    }
-    public static void main(String[] args) {
-        EvenChecker.test(new MutexEvenGenerator());
-    }
-} 
+- ReentrantLock：具有可重入、可中断、可限时、公平锁等特点。
+
+- lock.tryLock(2, TimeUnit.SECONDS) //可限时锁，参数为时间和单位
+
+- 如果失败做其他处理
+
+```java
+ReentrantLock lock = new ReentrantLock();
+try {
+     lock.lock();
+     //……
+ }finally {
+     lock.unlock();
+ }
 ```
 
 ---
 
-## Lock
+## Synchronized vs ReentrantLock
 
-- ReentrantLock允许你尝试加锁
-
-- lock.tryLock(2, TimeUnit.SECONDS)
-
-- 如果失败做其他处理
+| synchronized | Reentrantlock |
+|  ----------  | ------------  |
+| 使用Object本身的wait、notify、notifyAll调度机制 | 与Condition结合进行线程的调度 |
+| 显式的使用在同步方法或者同步代码块 | 显式的声明指定起始和结束位置 |
+| 托管给JVM执行，不会因为异常、或者未释放而发生死锁 | 手动释放锁 |
 
 
 ---
@@ -888,114 +794,88 @@ synchronized(syncObject){
 }
 ```
 
-加锁代码片段
 
-
----
-
-## 示例
-
-``` java
-// Synchronize the entire method:
-class PairManager1 extends PairManager {
-    public synchronized void increment() {
-        p.incrementX();
-        p.incrementY();
-        store(getPair());
-    }
-}
-
-// Use a critical section:
-class PairManager2 extends PairManager {
-    public void increment() {
-        Pair temp;
-        synchronized (this) {
-            p.incrementX();
-            p.incrementY();
-            temp = getPair();
-        }
-        store(temp);
-    }
-}
+```java
+//double-check locking
+public static ThreadSafeSingleton getInstance(){
+		if (instance == null){
+			synchronized (ThreadSafeSingleton.class){
+				if(instance == null){
+					instance = new ThreadSafeSingleton();		
+				}
+			}
+		}
+		return instance;
+	}
 ```
 
 ---
 
 ## Thread local Storage
 
-![w:50%](images/ThreadLocal.jpg)
+![bg right:40% 90%](images/ThreadLocal.jpg)
 
+- 目的：把共享数据的可见范围限制在同一线程之内，这样无须同步也能保证线程之间不出现数据的争用问题。
 
 --- 
 
+## Thread local Storage
+
+- `java.lang.ThreadLocal`：实现线程本地存储的功能。
+
+- 每个线程的Thread对象中都有一个ThreadLocalMap对象，这个对象存储了一组以TreadLocal.threadLocalHashCode为键，以本地线程变量为值的K-V值对，每一个ThreadLocal对象都包含了一个独一无二的threadLocalHashCode值，使用这个值就可以在线程K-V值对中找到对应的本地线程变量。
+
+---
 ## 示例
 
 ``` java
-class Accessor implements Runnable {
-    private final int id;
-    public Accessor(int idn) {
-        id = idn;
-    }
-    public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            ThreadLocalVariableHolder.increment();
-            System.out.println(this);
-            Thread.yield();
+public class TestThreadLocal {
+    private static final ThreadLocal<Integer> value = new ThreadLocal<Integer>() {
+        @Override
+        protected Integer initialValue() {
+            return 0;
+        }
+    };
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            new Thread(new TestThread(i)).start();
         }
     }
-    public String toString() {
-        return "#" + id + ": " +
-                ThreadLocalVariableHolder.get();
+    static class TestThread implements Runnable {
+        private int index;
+        public TestThread(int index) {
+            this.index = index;
+        }
+        public void run() {
+            System.out.println("线程" + index + "的累加前:" + value.get());
+            for (int i = 0; i < 5; i++) {
+                value.set(value.get() + i);
+            }
+            System.out.println("线程" + index + "的累加后:" + value.get());
+        }
     }
 }
 ```
-
----
-
-```java
-public class ThreadLocalVariableHolder {
-    private static ThreadLocal<Integer> value =
-            new ThreadLocal<Integer>() {
-                private Random rand = new Random(47);
-
-                protected synchronized Integer initialValue() {
-                    return rand.nextInt(10000);
-                }
-            };
-    public static void increment() {
-        value.set(value.get() + 1);
-    }
-    public static int get() {
-        return value.get();
-    }
-    public static void main(String[] args) throws Exception {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < 5; i++)
-            exec.execute(new Accessor(i));
-        TimeUnit.SECONDS.sleep(3);  // Run for a while
-        exec.shutdownNow();         // All Accessors will quit
-    }
-}
-```
+<small>各个线程的value值是相互独立的，本线程的累加操作不会影响到其他线程的值。</small>
 
 ---
 
 ## 从竞争到协作
 
-- wait();
-- notify();
-- notifyAll();
+- `wait()`;
+- `notify()`;
+- `notifyAll()`;
 
-`Object`类型上的三个方法
+<font color=red>Object</font>类型上的三个方法
 
 ---
 
 ## Java Concurrency Models
 
-- wait: an unconditional suspension of the calling thread (the thread is placed on a queue associated with the condition variable)
-- notify: one thread is taken from the queue and re-scheduled for execution (it must reclaim the lock first)
-- notifyAll: all suspended threads are re-scheduled
-- notify and notifyAll have no effect if no threads are suspended on the condition variable
+- `wait()`: 调用某个对象的wait()方法能让当前线程阻塞，并且当前线程必须拥有此对象的monitor(即锁)；
+- `notify()`: 调用某个对象的notify()方法能够唤醒一个正在等待这个对象的monitor的线程，如果有多个线程都在等待这个对象的monitor，则只能唤醒其中一个线程；
+- `notifyAll()`: 调用notifyAll()方法能够唤醒所有正在等待这个对象的monitor的线程。
+- ***notify*** and ***notifyAll*** have no effect if no threads are suspended on the condition variable
 
 
 ---
@@ -1037,7 +917,7 @@ class WaxOn implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
-                printnb("Wax On! ");
+                System.out.println("Wax On! ");
                 TimeUnit.MILLISECONDS.sleep(200);
                 car.waxed();
                 car.waitForBuffing();
@@ -1045,7 +925,7 @@ class WaxOn implements Runnable {
         } catch (InterruptedException e) {
             print("Exiting via interrupt");
         }
-        print("Ending Wax On task");
+        System.out.println("Ending Wax On task");
     }
 }
 ```
@@ -1062,14 +942,14 @@ class WaxOff implements Runnable {
         try {
             while (!Thread.interrupted()) {
                 car.waitForWaxing();
-                printnb("Wax Off! ");
+                System.out.println("Wax Off! ");
                 TimeUnit.MILLISECONDS.sleep(200);
                 car.buffed();
             }
         } catch (InterruptedException e) {
             print("Exiting via interrupt");
         }
-        print("Ending Wax Off task");
+        System.out.println("Ending Wax Off task");
     }
 }
 ```
