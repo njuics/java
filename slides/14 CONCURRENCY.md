@@ -150,6 +150,11 @@ public class QuoteServer {
 }
 ```
 
+还有Java NIO：
+- 由一个专门的线程(Selector)来处理所有的IO事件，并负责分发。
+- 事件驱动机制：事件到的时候触发，而不是同步的去监视事件。
+- 线程通讯：线程之间通过 wait,notify 等方式通讯。保证每次上下文切换都是有意义的。减少无谓的线程切换。
+
 ---
 
 ## 创建线程
@@ -205,6 +210,10 @@ public class MainThread {
 ```
 
 <small>`Runnable`接口仅仅定义“任务”</small>
+
+ ```java
+ Runnable r = () -> { task code };
+ ```
 
 ---
 
@@ -329,10 +338,27 @@ public class FixedThreadPool {
 
 - 如果需要获得异步执行的任务结果怎么办？
 
+`Callable<V>`：封装异步运行的任务，有返回值
 ``` java
 public interface Callable<V> {
     V call() throws Exception;
 }
+```
+
+`Future<V>`：保存异步计算的结果
+```java
+V get() //阻塞，直到计算完成
+V get(long timeout, TImeUnit unit)
+void cancel(boolean mayInterrupt)
+boolean isCancelled()
+boolean isDone()
+```
+
+---
+
+## 例子
+
+```java
 class TaskWithResult implements Callable<String> {
     private int id;
     public TaskWithResult(int id) {
@@ -346,7 +372,7 @@ class TaskWithResult implements Callable<String> {
 
 ---
 
-## Callable
+## 例子
 
 ```java
 public class CallableDemo {
@@ -374,7 +400,7 @@ public class CallableDemo {
 
 ---
 
-## Future
+## Callable
 
 ``` java
 class MyCallable implements Callable<String>{
@@ -404,6 +430,15 @@ public class FutureSimpleDemo {
 ```
 
 <small>当调用`Future`的`get()`方法以获得结果时，当前线程就开始阻塞，直接`call()`方法结束返回结果。</small>
+
+---
+
+## 线程池常见用法
+
+- 调用`Executors`类的静态方法`newCachedThreadPool`或者`newFixedThreadPool`
+- 调用`submit`提交`Runnalbe`或`Callable`对象
+- 保存好返回的`Future`对象，以便得到结果或者取消任务
+- 当不想再提交任何任务时，调用`shutdown`
 
 ---
 
@@ -765,11 +800,11 @@ public class ThreadSafeSingleton {
 
 ```java
 ReentrantLock lock = new ReentrantLock();
+lock.lock();
 try {
-     lock.lock();
-     //……
+     //critical section
  }finally {
-     lock.unlock();
+     lock.unlock(); //make sure the lock is unlocked even if an exception is thrown
  }
 ```
 
@@ -808,6 +843,16 @@ public static ThreadSafeSingleton getInstance(){
 		return instance;
 	}
 ```
+
+---
+
+## volatile
+
+> 如果写一个变量，而这个变量接下来可能会被另一个线程读取，或者，如果读一个变量，而这个变量可能已经被另一个线程写入值，那么必须使用同步。      
+<div align = right> -- Brian Goetz </div>
+
+- <small>***volatile*** 关键字为实例字段的同步访问提供了一种免锁机制。如果声明一个字段为volatile，那么编译器和虚拟机就知道该字段可能被另一个线程并发更新。更确切地说，对volatile变量的每次读操作都会直接从计算机的主存中读取，而不是从CPU缓存中读取；同样，每次对volatile变量的写操作都会直接写入到主存中，而不仅仅写入到CPU缓存里。 </small>
+
 
 ---
 
@@ -882,89 +927,96 @@ public class TestThreadLocal {
 
 ## 还是看个例子
 
+`Message`：线程将会使用它并调用wait和notify方法。
 ```java
-class Car {
-    private boolean waxOn = false;
-    public synchronized void waxed() {
-        waxOn = true; // Ready to buff
-        notifyAll();
+public class Message {
+    private String msg;
+
+    public Message(String str){
+        this.msg=str;
     }
-    public synchronized void buffed() {
-        waxOn = false; // Ready for another coat of wax
-        notifyAll();
+
+    public String getMsg() {
+        return msg;
     }
-    public synchronized void waitForWaxing()
-            throws InterruptedException {
-        while (waxOn == false)
-            wait();
+
+    public void setMsg(String str) {
+        this.msg=str;
     }
-    public synchronized void waitForBuffing()
-            throws InterruptedException {
-        while (waxOn == true)
-            wait();
+
+}
+```
+
+---
+
+`Waiter`：等待其它的线程调用notify方法以唤醒线程完成处理。注意等待线程必须通过加synchronized同步锁拥有Message对象的监视器。
+
+```java
+public class Waiter implements Runnable{
+    private Message msg;
+    public Waiter(Message m){
+        this.msg=m;
+    }
+    @Override
+    public void run() {
+        String name = Thread.currentThread().getName();
+        synchronized (msg) {
+            try{
+                System.out.println(name+" waiting to get notified at time:"+System.currentTimeMillis());
+                msg.wait();
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println(name+" waiter thread got notified at time:"+System.currentTimeMillis());
+            //process the message now
+            System.out.println(name+" processed: "+msg.getMsg());
+        }
     }
 }
 ```
 
 ---
 
+`Notifier`：处理Message对象并调用notify方法唤醒等待Message对象的线程。注意synchronized代码块被用于持有Message对象的监视器。
+
 ```java
-class WaxOn implements Runnable {
-    private Car car;
-    public WaxOn(Car c) {
-        car = c;
+public class Notifier implements Runnable {
+    private Message msg;
+    public Notifier(Message msg) {
+        this.msg = msg;
     }
+    @Override
     public void run() {
+        String name = Thread.currentThread().getName();
+        System.out.println(name+" started");
         try {
-            while (!Thread.interrupted()) {
-                System.out.println("Wax On! ");
-                TimeUnit.MILLISECONDS.sleep(200);
-                car.waxed();
-                car.waitForBuffing();
+            Thread.sleep(1000);
+            synchronized (msg) {
+                msg.setMsg(name+" Notifier work done");
+                //msg.notify();  //只能唤醒一个Waiter线程
+                msg.notifyAll();  //可以唤醒所有的Waiter线程
             }
         } catch (InterruptedException e) {
-            print("Exiting via interrupt");
+            e.printStackTrace();
         }
-        System.out.println("Ending Wax On task");
     }
 }
 ```
 
 ---
 
+`WaitNotifyTest`：交付创建多个等待线程和一个通过线程，并启动这些线程。
 ```java
-class WaxOff implements Runnable {
-    private Car car;
-    public WaxOff(Car c) {
-        car = c;
-    }
-    public void run() {
-        try {
-            while (!Thread.interrupted()) {
-                car.waitForWaxing();
-                System.out.println("Wax Off! ");
-                TimeUnit.MILLISECONDS.sleep(200);
-                car.buffed();
-            }
-        } catch (InterruptedException e) {
-            print("Exiting via interrupt");
-        }
-        System.out.println("Ending Wax Off task");
-    }
-}
-```
-
----
-
-```java
-public class WaxOMatic {
-    public static void main(String[] args) throws Exception {
-        Car car = new Car();
-        ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new WaxOff(car));
-        exec.execute(new WaxOn(car));
-        TimeUnit.SECONDS.sleep(5); // Run for a while...
-        exec.shutdownNow(); // Interrupt all tasks
+public class WaitNotifyTest {
+    public static void main(String[] args) {
+        Message msg = new Message("process it");
+        Waiter waiter1 = new Waiter(msg);
+        new Thread(waiter1,"waiter1").start();
+        Waiter waiter2 = new Waiter(msg);
+        new Thread(waiter2, "waiter2").start();
+        Notifier notifier = new Notifier(msg);
+        new Thread(notifier, "notifier").start();
+        System.out.println("All the threads are started");
     }
 }
 ```
@@ -1002,6 +1054,7 @@ java.util.concurrent.*
 ## 推荐
 
 ![bg w:60%](images/DougLea.jpg)
+![bg w:50%](images/JCP.jpg)
 ![bg w:60%](images/Effective_Java.jpg)
 
 
