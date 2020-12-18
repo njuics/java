@@ -312,8 +312,8 @@ https://github.com/LingCoder/OnJava8
 12.  [函数式编程](12.html)（Lambda）
 13.  [网络编程](13.html)（Networking）
 14.  [并发编程](14.html)（Concurrency）
-15.  图形化（JavaFX）
-16.  设计模式（Design Pattern）
+15.  [图形化](15.html)（JavaFX）
+16.  [设计模式](16.html)（Design Pattern）
 
 ---
 
