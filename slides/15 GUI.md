@@ -270,7 +270,6 @@ class Terminator extends WindowAdapter {
     system.exit(0);
   }
 }
-
 ```
 
 ---
@@ -364,104 +363,104 @@ class Terminator extends WindowAdapter {
 
 ## 文本框和文本区
 
-- 文本框(JTextField)是界面中用于输入和输出一行文本的框。JTextField类用来建立文本框。与文本框相关的接口是ActionListener。
+- 文本框(JTextField)是界面中用于输入和输出一行文本的框。JTextField类用来建立文本框。与文本框相关的接口是`ActionListener`。
 
-- 文本区(JTextArea)是窗体中一个放置文本的区域。文本区与文本框的主要区别是文本区可存放多行文本。javax.swing包中的JTextArea类用来建立文本区。JTextArea组件没有事件。
+- 文本区(JTextArea)是窗体中一个放置文本的区域。文本区与文本框的主要区别是文本区可存放多行文本。javax.swing包中的`JTextArea`类用来建立文本区。JTextArea组件没有事件。
 
-- 常用文本框和文本区实现数据的输入和输出：getText()和setText()
+- 常用文本框和文本区实现数据的输入和输出：`getText()`和`setText()`
 
 
 ---
 
 ## 选择框和单选按钮
 
-- <font size=6>选择框(JCheckBox)的选中与否开状是一个小方框，被选中则在框中打勾。当在一个容器中有多个选择框，同时可以有多个选择框被选中，这样的选择框也称复选框。与选择框相关的接口是ItemListener，事件类是ItemEvent。</font>
+- 选择框(JCheckBox)的选中与否开状是一个小方框，被选中则在框中打勾。当在一个容器中有多个选择框，同时可以有多个选择框被选中，这样的选择框也称复选框。与选择框相关的接口是ItemListener，事件类是ItemEvent。
 
-- <font size=6>单选按钮(JRadioButton)的功能与单选框相似。使用单选按钮的方法是将一些单选按钮用ButtonGroup对象分组，使同一组的单选按钮只允许有一个被选中。单选按钮与单选框的差异是显示的样式不同，单选按钮是一个圆形的按钮，单选框是一个小方框。</font>
+- 单选按钮(JRadioButton)的功能与单选框相似。使用单选按钮的方法是将一些单选按钮用ButtonGroup对象分组，使同一组的单选按钮只允许有一个被选中。单选按钮与单选框的差异是显示的样式不同，单选按钮是一个圆形的按钮，单选框是一个小方框。
 
 ---
 
 ## 列表
 
-- <font size=6>列表(JList)在界面中表现为列表框，是JList类或它的子类的对象。程序可以在列表框中加入多个文本选择项条目。列表事件的事件源有两种：</font>
-- <font size=6>1. 鼠标双击某个选项：双击选项是动作事件，与该事件相关的接口是ActionListener，注册监视器的方法是addActionListener()，接口方法是actionPerformed(ActionEvent e)。</font>
-- <font size=6>2. 鼠标单击某个选项：单击选项是选项事件，与选项事件相关的接口是ListSelectionListener，注册监视器的方法是addListSelectionListener，接口方法是valueChanged(ListSelectionEvent e)。</font>
+- 列表(JList)在界面中表现为列表框，是JList类或它的子类的对象。程序可以在列表框中加入多个文本选择项条目。列表事件的事件源有两种：
+  1. 鼠标双击某个选项：双击选项是动作事件，与该事件相关的接口是`ActionListener`，注册监视器的方法是`addActionListener()`，接口方法是`actionPerformed(ActionEvent e)`。
+  2. 鼠标单击某个选项：单击选项是选项事件，与选项事件相关的接口是`ListSelectionListener`，注册监视器的方法是`addListSelectionListener()`，接口方法是`valueChanged(ListSelectionEvent e)`。
 
 ---
 
 ## 组合框
 
-- <font size=6>组合框(JComboBox)是文本框和列表的组合，可以在文本框中输入选项，也可以单击下拉按钮从显示的列表中进行选择。</font>
+- 组合框(JComboBox)是文本框和列表的组合，可以在文本框中输入选项，也可以单击下拉按钮从显示的列表中进行选择。
 
-- <font size=6>在JComboBox对象上发生事件分为两类。一是用户选定项目，事件响应程序获取用户所选的项目。二是用户输入项目后按回车键，事件响应程序读取用户的输入。第一类事件的接口是ItemListener；第二类事件是输入事件，接口是ActionListener。</font>
-
----
-
-## 菜单
-
-- <font size=6>有两种类型的菜单：下拉式菜单和弹出式菜单。</font>
-
-- <font size=6>在下拉式菜单或弹出式菜单中选择一个选项就产生一个ActionEvent事件。该事件被发送给那个选项的监视器，事件的意义由监视器解释。</font>
-
-- <font size=6>一个菜单条可以放多个菜单(JMenu)，每个菜单又可以有许多菜单项(JMenuItem)。</font>
+- 在JComboBox对象上发生事件分为两类。一是用户选定项目，事件响应程序获取用户所选的项目。二是用户输入项目后按回车键，事件响应程序读取用户的输入。第一类事件的接口是`ItemListener`；第二类事件是输入事件，接口是`ActionListener`。
 
 ---
 
 ## 菜单
 
-- <font size=6>菜单的事件源是用鼠标点击某个菜单项。处理该事件的接口是ActionListener，要实现的接口方法是actionPerformed(ActionEvent e)，获得事件源的方法getSource()。</font>
+- 有两种类型的菜单：下拉式菜单和弹出式菜单。
 
-- <font size=6>菜单也可以包含具有持久的选择状态的选项，这种特殊的菜单可由JCheckBoxMenuItem类来定义。</font>
+- 在下拉式菜单或弹出式菜单中选择一个选项就产生一个ActionEvent事件。该事件被发送给那个选项的监视器，事件的意义由监视器解释。
+
+- 一个菜单条可以放多个菜单(JMenu)，每个菜单又可以有许多菜单项(JMenuItem)。
+
+---
+
+## 菜单
+
+- 菜单的事件源是用鼠标点击某个菜单项。处理该事件的接口是`ActionListener`，要实现的接口方法是`actionPerformed(ActionEvent e)`，获得事件源的方法`getSource()`。
+
+- 菜单也可以包含具有持久的选择状态的选项，这种特殊的菜单可由JCheckBoxMenuItem类来定义。
 
 
 ---
 
 ## 对话框
 
-- <font size=6>对话框是一个临时窗口，可以在其中放置用于得到用户输入的控件。在Swing中，有两个对话框类，它们是JDialog类和JOptionPane类。JDialog类提供构造并管理通用对话框；JOptionPane类给一些常见的对话框提供许多便于使用的选项</font>
+- 对话框是一个临时窗口，可以在其中放置用于得到用户输入的控件。在Swing中，有两个对话框类，它们是JDialog类和JOptionPane类。JDialog类提供构造并管理通用对话框；JOptionPane类给一些常见的对话框提供许多便于使用的选项。
 
-- <font size=6>JDialog类是对话框的基类，对话框依赖其他窗口，当它所依赖的窗口消失或最小化时，对话框也将消失；窗口还原时，对话框又会自动恢复。对话框的默认布局为BorderLayout布局。</font>
+- JDialog类是对话框的基类，对话框依赖其他窗口，当它所依赖的窗口消失或最小化时，对话框也将消失；窗口还原时，对话框又会自动恢复。对话框的默认布局为BorderLayout布局。
 
 
 ---
 
 ## 滚动条
 
-- <font size=6>滚动条(JScrollBar)也称为滑块，用来表示一个相对值，该值代表指定范围内的一个整数。</font>
+- 滚动条(JScrollBar)也称为滑块，用来表示一个相对值，该值代表指定范围内的一个整数。
 
-- <font size=6>JScrollBar类对象的事件类型是AdjustmentEvent；类要实现的接口是AdjustmentListener，接口方法是adjustmentValueChanged()；注册监视器的方法是addAdjustmentListener()；获取事件源对象的方法是getAdjustable()。</font>
+- JScrollBar类对象的事件类型是`AdjustmentEvent`；类要实现的接口是`AdjustmentListener`，接口方法是`adjustmentValueChanged()`；注册监视器的方法是`addAdjustmentListener()`；获取事件源对象的方法是`getAdjustable()`。
 
 ---
 
 ## 鼠标事件
 
-- <font size=6>鼠标事件的事件源往往与容器相关，当鼠标进入容器、离开容器，或者在容器中单击鼠标、拖动鼠标时都会发生鼠标事件。java语言为处理鼠标事件提供两个接口：MouseListener，MouseMotionListener接口。</font>
+- 鼠标事件的事件源往往与容器相关，当鼠标进入容器、离开容器，或者在容器中单击鼠标、拖动鼠标时都会发生鼠标事件。Java语言为处理鼠标事件提供两个接口：`MouseListener`，`MouseMotionListener`接口。
 
-- <font size=6>MouseListener接口能处理5种鼠标事件：按下鼠标，释放鼠标，点击鼠标、鼠标进入、鼠标退出。</font>
+- `MouseListener`接口能处理5种鼠标事件：按下鼠标，释放鼠标，点击鼠标、鼠标进入、鼠标退出。
 
-- <font size=6>MouseMotionListener接口处理拖动鼠标和鼠标移动两种事件。</font>
+- `MouseMotionListener`接口处理拖动鼠标和鼠标移动两种事件。
 
 ---
 
 ## 键盘事件
 
-- <font size=6>键盘事件的事件源一般与组件相关，当一个组件处于激活状态时，按下、释放或敲击键盘上的某个键时就会发生键盘事件。</font>
+- 键盘事件的事件源一般与组件相关，当一个组件处于激活状态时，按下、释放或敲击键盘上的某个键时就会发生键盘事件。
 
-- <font size=6>键盘事件的接口是KeyListener，注册键盘事件监视器的方法是addKeyListener(监视器)。</font>
+- 键盘事件的接口是`KeyListener`，注册键盘事件监视器的方法是`addKeyListener()`(监视器)。
 
-- <font size=6>管理键盘事件的类是KeyEvent，该类提供方法：
-public int getKeyCode()，获得按动的键码。</font>
+- 管理键盘事件的类是KeyEvent，该类提供方法：
+`public int getKeyCode()`，获得按动的键码。
 
 
 ---
 
 ## 绘图基础
 
-- <font size=6>要在平面上显示文字和绘图，首先要确定一个平面坐标系。Java语言约定，显示屏上一个长方形区域为程序绘图区域，坐标原点(0,0）位于整个区域的左上角。一个坐标点（x,y）对应屏幕窗口中的一个像素，是整数。</font>
+- 要在平面上显示文字和绘图，首先要确定一个平面坐标系。Java语言约定，显示屏上一个长方形区域为程序绘图区域，坐标原点(0,0）位于整个区域的左上角。一个坐标点（x,y）对应屏幕窗口中的一个像素，是整数。
 
-- <font size=6>在java.awt包中，类Graphics提供的功能有：建立字体、设定显示颜色、显示图像和文本，绘制和填充各种几何图形。</font>
+- 在`java.awt`包中，类Graphics提供的功能有：建立字体、设定显示颜色、显示图像和文本，绘制和填充各种几何图形。
 
-- <font size=6>在某个组件中绘图，一般应该为这个组件所属的子类重写paint()方法，在该重写的方法中进行绘图。</font>
+- 在某个组件中绘图，一般应该为这个组件所属的子类重写paint()方法，在该重写的方法中进行绘图。
 
 ---
 
@@ -473,9 +472,9 @@ public int getKeyCode()，获得按动的键码。</font>
 
 ## Graphics2D类的绘图方法
 
-- <font size=6>Java语言在Graphics类提供绘制各种基本的几何图形的基础上，扩展Graphics类提供一个Graphics2D类，它拥用更强大的二维图形处理能力，提供、坐标转换、颜色管理以及文字布局等更精确的控制。</font>
+- Java语言在Graphics类提供绘制各种基本的几何图形的基础上，扩展Graphics类提供一个Graphics2D类，它拥用更强大的二维图形处理能力，提供、坐标转换、颜色管理以及文字布局等更精确的控制。
 
-- <font size=6>Graphics2D定义了几种方法，用于添加或改变图形的状态属性。可以通过设定和修改状态属性，指定画笔宽度和画笔的连接方式；设定平移、旋转、缩放或修剪变换图形；以及设定填充图形的颜色和图案等。图形状态属性用特定的对象存储。</font>
+- Graphics2D定义了几种方法，用于添加或改变图形的状态属性。可以通过设定和修改状态属性，指定画笔宽度和画笔的连接方式；设定平移、旋转、缩放或修剪变换图形；以及设定填充图形的颜色和图案等。图形状态属性用特定的对象存储。
 
 ---
 
@@ -501,11 +500,10 @@ public int getKeyCode()，获得按动的键码。</font>
 
 - BufferedImage类
 
-```java
+  ```java 
   BufferedImage bimage = (BufferedImage)this.createImage(this.getWidth(),this.getHeight());
   Graphics2D g2d = bimge.createGraphics();
-
-```
+  ```
 
 ---
 
@@ -513,18 +511,18 @@ public int getKeyCode()，获得按动的键码。</font>
 
 - 可以用Java程序播放幻灯片、动画、视频、声音等
 
-- javax.swing.Timer: a source component that fires an
-ActionEvent at a predefined rate.
+- `javax.swing.Timer`: a source component that fires an
+*ActionEvent* at a predefined rate.
 
-- 结合多线程编程技术
+- 结合<font color=red>多线程编程</font>技术
 
 ---
 
 ## JavaFX
 
-- JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms.
+- JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy <font color=red>rich client applications</font> that operate consistently across diverse platforms.
 
-- to build network-aware applications that are deployed across multiple platforms and display information in a high-performance modern user interface that features audio, video, graphics, and animation.
+- to build <font color=red>network-aware applications</font> that are deployed across multiple platforms and display information in a high-performance modern user interface that features audio, video, graphics, and animation.
 
 ---
 
@@ -542,7 +540,7 @@ ActionEvent at a predefined rate.
 
 ## JavaFX Architecture
 
-![w:800](images/jfxar_dt_001_arch-diag.png)
+![w:800 h:400](images/jfxar_dt_001_arch-diag.png)
 
 ---
 
@@ -550,7 +548,9 @@ ActionEvent at a predefined rate.
 
 - 从JDK11开始，JavaFX作为独立模块从JDK中分离出来，以使JavaFX更易于被采用。
 
-![w:700](images/JavaFX15.png)
+- OpenJFX https://openjfx.io/
+
+![w:600](images/JavaFX15.png)
 
 ---
 
@@ -577,18 +577,18 @@ public class MyApp extends Application {
 ## JavaFX Application Lifecycle
 
 - The entry point for JavaFX applications is the Application class.
-  + <small>1. Constructs an instance of the specified Application class</small>
-  + <small>2. Calls the init() method</small>
-  + <small>3. Calls the start(javafx.stage.Stage) method</small>
+  1. Constructs an instance of the specified Application class;
+  2. Calls the `init()` method;
+  3. Calls the `start(javafx.stage.Stage)` method.
 
 ---
 
 ## JavaFX Application Lifecycle
 
-  + <small>4. Waits for the application to finish, which happens when either of the following occur:</small>
-    + <small>the application calls Platform.exit()</small>
-    + <small>the last window has been closed and the implicitExit attribute on Platform is true</small>
-  + <small>5. Calls the stop() method</small>
+  4. Waits for the application to finish, which happens when either of the following occur:
+    - the application calls `Platform.exit()`
+    - the last window has been closed and the implicitExit attribute on Platform is true
+  5. Calls the `stop()` method
 
 ---
 
@@ -607,7 +607,7 @@ public class MyApp extends Application {
 ---
 
 <!-- _class: lead -->
-## Colorful Samples
+## Some Colorful Samples
 
 ---
 
