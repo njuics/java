@@ -652,7 +652,8 @@ public class MyApp extends Application {
 ---
 
 <!-- _class: lead -->
-## 让你的葫芦娃们在丰富多彩的图形界面里和妖精们战斗！
+## 战斗吧，葫芦娃兄弟！
+![w:600](images/hulubrothers.JPG)
 
 ---
 
