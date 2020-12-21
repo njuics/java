@@ -570,17 +570,11 @@ class Terminator extends WindowAdapter {
 
 - Java APIs
 - FXML and Scene Builder
-- WebView
+- WebView: Javascript, HTML5
 - Swing interoperability
 - Built-in UI controls and CSS
 - 3D Graphics Features
-- Canvas API, Pringting API, Rich Text Support, Multitouch Support...
-
----
-
-## JavaFX Architecture
-
-![w:800 h:400](images/jfxar_dt_001_arch-diag.png)
+- Canvas API, Pringting API, Rich Text Support, Multitouch Support, Hi-DPI Support...
 
 ---
 
@@ -591,6 +585,99 @@ class Terminator extends WindowAdapter {
 - OpenJFX https://openjfx.io/
 
 ![w:600](images/JavaFX15.png)
+
+---
+
+## JavaFX Architecture
+
+![w:800](images/jfxar_dt_001_arch-diag.png)
+
+- Prism: JavaFX high performance graphics engine
+- Glass: small and efficient windowing system
+
+---
+
+## Scene Graph
+
+- **Scene Graph** is the starting point for constructing a JavaFX application. It is a hierarchical tree of nodes that represents all of the visual elements of the application's user interface. It can handle input and can be rendered.
+
+- A single element in a scene graph is called a **node**. Each node has an ID, style class, and bounding volume. With the exception of the root node of a scene graph, each node in a scene graph has a single parent and zero or more children. 
+
+---
+
+## javafx.scene API
+
+- Nodes：Shapes (2-D and 3-D), images, media, embedded web browser, text, UI controls, charts, groups, and containers
+- State：Transforms (positioning and orientation of nodes), visual effects, and other visual state of the content
+- Effects：Simple objects that change the appearance of scene graph nodes, such as blurs, shadows, and color adjustment
+
+
+---
+
+## Scene
+
+![w:600](images/helloworld_scenegraph.png)
+
+---
+
+## Stage
+
+- The JavaFX `Stage` class is the top level JavaFX container. 
+- The primary **Stage** is constructed by the platform. Additional Stage objects may be constructed by the application.
+- Stage objects must be constructed and modified on the JavaFX Application Thread.
+
+---
+
+## Threads
+
+- **JavaFX application thread**: This is the primary thread used by JavaFX application developers. Any “live” scene, which is a scene that is part of a window, must be accessed from this thread. 
+
+- **Prism render thread**: This thread handles the rendering separately from the event dispatcher. It allows frame N to be rendered while frame N +1 is being processed. 
+
+- **Media thread**: This thread runs in the background and synchronizes the latest frames through the scene graph by using the JavaFX application thread.
+
+---
+
+## Pulse
+
+- A pulse is an ***event*** that indicates to the JavaFX scene graph that it is time to synchronize the state of the elements on the scene graph with **Prism**. 
+- A pulse is throttled at 60 frames per second (fps) maximum and is fired whenever animations are running on the scene graph. Even when animation is not running, a pulse is scheduled when something in the scene graph is changed.
+
+---
+
+## Media and Images
+
+- JavaFX supports both visual and audio media. Support is provided for MP3, AIFF, and WAV audio files and FLV video files. 
+- JavaFX media functionality is provided as three separate components: the **Media object** represents a media file, the **MediaPlayer** plays a media file, and a **MediaView** is a node that displays the media.
+
+---
+
+## Web Component
+
+- The Web component is a new JavaFX UI control, based on ***Webkit***, that provides a Web viewer and full browsing functionality through its API. 
+  + `WebEngine`: provides basic web page browsing capability.
+  + `WebView`: encapsulates a **WebEngine** object, incorporates HTML content into an application's scene, and provides fields and methods to apply effects and transformations. It is an extension of a `Node` class.
+
+---
+
+## CSS
+
+- JavaFX Cascading Style Sheets (CSS) provides the ability to apply customized styling to the user interface of a JavaFX application without changing any of that application's source code. 
+- CSS can be applied to any node in the JavaFX scene graph and are applied to the nodes asynchronously. 
+- JavaFX CSS styles can also be easily assigned to the scene at runtime, allowing an application's appearance to dynamically change.
+
+---
+
+## Others
+
+- UI Controls: `javafx.scene.control`
+- Layout: `javafx.scene.layout`
+  + BorderPane, HBox, VBox, StackPane, GridPane, FlowPane, TilePane, AnchorPane...
+- 2-D and 3-D Transformations: `javafx.scene.transform`
+  + translate, scale, shear, rotate, affine
+- Visual Effects: `javafx.scene.effect`
+  + drop shadow, reflection, lighting...
+
 
 ---
 
@@ -614,6 +701,34 @@ public class MyApp extends Application {
 
 ---
 
+## JavaFX Samples
+
+```java
+public class HelloWorld extends Application { 
+    @Override
+    public void start(Stage primaryStage) {
+        Button btn = new Button();
+        btn.setText("Say 'Hello World'");
+        btn.setOnAction(new   EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Hello World!");
+            }
+        });      
+        StackPane root = new StackPane();
+        root.getChildren().add(btn);
+        Scene scene = new Scene(root, 300, 250);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+---
+
 ## JavaFX Application Lifecycle
 
 - The entry point for JavaFX applications is the Application class.
@@ -632,22 +747,17 @@ public class MyApp extends Application {
 
 ---
 
-## Scene
-
-![w:600](images/helloworld_scenegraph.png)
-
----
-
-## Stage
-
-- The JavaFX Stage class is the top level JavaFX container. 
-- The primary Stage is constructed by the platform. Additional Stage objects may be constructed by the application.
-- Stage objects must be constructed and modified on the JavaFX Application Thread.
-
----
-
 <!-- _class: lead -->
-## Some Colorful Samples
+## More Colorful Samples
+
+<br>
+
+```shell
+java -jar Ensemble8.jar
+java -jar MandelbrotSet.jar
+java -jar Modena.jar
+java -jar 3DViewer.jar
+```
 
 ---
 
