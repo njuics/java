@@ -274,6 +274,41 @@ class Terminator extends WindowAdapter {
 
 ---
 
+## MVC
+
+- Model-View-Controller(MVC)
+  + Model: 模型代表一个存取数据的对象或JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。 
+  + View: 视图代表模型包含的数据的可视化。 
+  + Controller: 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。
+
+---
+
+## MVC
+
+![w:600](images/mvc.png)
+
+---
+
+## MVC Example
+
+![w:600](images/javase-app-using-mvc.png)
+
+---
+
+## Modified MVC
+
+![w:500](images/new-mvc.png)
+
+- <font color=red>Diff</font>: The notifications of state changes in model objects are communicated to the view through the controller. 
+
+
+---
+
+<!-- _class: lead -->
+## 以下内容用于考古
+
+---
+
 ## 示例: Containers (top level)
 
 ![w:600](images/Containers1.jpeg)
@@ -518,6 +553,11 @@ class Terminator extends WindowAdapter {
 
 ---
 
+<!-- _class: lead -->
+## 回到现实
+
+---
+
 ## JavaFX
 
 - JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy <font color=red>rich client applications</font> that operate consistently across diverse platforms.
@@ -546,7 +586,7 @@ class Terminator extends WindowAdapter {
 
 ## JavaFX 15
 
-- 从JDK11开始，JavaFX作为独立模块从JDK中分离出来，以使JavaFX更易于被采用。
+- Note: 从JDK11开始，JavaFX作为独立模块从JDK中分离出来，以使JavaFX更易于被采用。
 
 - OpenJFX https://openjfx.io/
 
