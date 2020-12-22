@@ -311,7 +311,7 @@ class Terminator extends WindowAdapter {
 
 ## 示例: Containers (top level)
 
-![w:600](images/Containers1.jpeg)
+![h:450](images/Containers1.jpeg)
 
 ---
 
