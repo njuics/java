@@ -277,7 +277,7 @@ https://njuics.github.io/java20
 https://github.com/LingCoder/OnJava8
 
 
-> 讲课的目的是对书本内容进行提要，听课并不能个替代你自己读书的过程。
+> 讲课的目的是对书本内容进行提要，听课并不能够替代你自己读书的过程。
 
 ![bg right:50% 60%](https://cdn.njuics.cn/java20/onjava8.png)
 
