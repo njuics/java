@@ -52,8 +52,8 @@ pre code {
 - SRP：单一职责原则
 - OCP：开放-封闭原则
 - LSP：Liskov替换法则
-- DIP：依赖倒置原则
 - ISP：接口隔离原则
+- DIP：依赖倒置原则
 - CARP：合成/聚合复用原则
 - LoD：最少知识原则
 
@@ -72,7 +72,7 @@ pre code {
   + 掌握解决反复出现的问题的办法
   + 沟通的手段（设计词汇，文档）
 
-- 从这些实践证明是成功的设计中学习“设计"
+- 从这些实践证明是成功的设计中学习“设计”
   + 反复阅读/反复应用/反复揣摩
 
 ---
@@ -92,7 +92,7 @@ pre code {
 
 ## Design Pattern: What?
 
-<small>Gamma, Erich, R. Helm, R. Johnson, and J. Vlissides. Design patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1994.</small>
+<small>Gamma, Erich, R. Helm, R. Johnson, and J. Vlissides. **Design patterns: Elements of Reusable Object-Oriented Software**. Addison-Wesley, 1994.</small>
 
 ![bg right:40% 60%](images/DesignPatterns.jpg)
 
@@ -100,9 +100,19 @@ pre code {
 
 ## Design Pattern: What?
 
-- In the book “Design Patterns”, the design patterns are descriptions of communicating objects and classes that are customized to solve a general design problem in a particular context.
+- In the book **Design Patterns**, the design patterns are descriptions of communicating objects and classes that are customized to solve a general design problem in a particular context.
 - Design patterns represent solutions to problems that arise when developing software within a particular context.
 
+<div style="color:#0099ff" align=center>目标是提高代码的可复用性、可读性和可靠性</div>
+
+---
+
+## 基本要素
+
+- 模式名称
+- 问题
+- 解决方案
+- 效果
 
 ---
 
@@ -204,8 +214,6 @@ class Monitor implements ActionListener {
 } 
 ```
 
-
-
 ---
 
 
@@ -219,7 +227,6 @@ public class MyApp extends Application {
         Circle circ = new Circle(40, 40, 30);
         Group root = new Group(circ);
         Scene scene = new Scene(root, 400, 300);
-
         stage.setTitle("My JavaFX Application");
         stage.setScene(scene);
         stage.show();
@@ -243,7 +250,7 @@ public class MyApp extends Application {
 
 ## 创建型设计模式
 
-- 创建模式是对类的实例化过程的抽象化。
+- 创建模式是对类的**实例化过程的抽象化**。
   + 怎样创建对象，创建哪些对象，如何组合和表示这些对象？
   + 创建模式描述了怎样构造和封装这些动态决定。
 
@@ -290,13 +297,11 @@ public class MyApp extends Application {
 
 <span style="color:#0099ff">可以使用序列化实现深拷贝</span>
 
-
-
 ---
 
 ## 单例
 
-- 一个类仅有一个实例，自行实例化并向整个系统提供一个访问它的全局访问点
+- 一个类<font color=red>仅有一个实例</font>，自行实例化并向整个系统提供一个访问它的全局访问点
   + 懒汉式 lazy mode
   + 饿汉式 eager mode
 
@@ -335,16 +340,13 @@ public class LazySingleton {
 public class EagerSingleton {
 	//is it thread-safe? 
     private static final EagerSingleton instance = new EagerSingleton() ;
-    
     private EagerSingleton() {}
-    
-    public static EagerSingleton getInstance()
-    {
+    public static EagerSingleton getInstance(){
         return instance ;
     }
-	public void operation(){
-		System.out.println("EagerSignleton.operation() is executed");
-	}
+    public void operation(){
+      System.out.println("EagerSignleton.operation() is executed");
+    }
 }
 
 ```
@@ -401,7 +403,7 @@ public class ThreadSafeSingleton {
 
 ## 适配器
 
-- 将一个类的接口转换成客户希望的另外一个接口。（转换匹配，重用功能）
+- 将一个类的接口转换成客户希望的另外一个接口。<font color=red>转换匹配，重用功能!</font>
   + 类适配器
   + 对象适配器
 
@@ -439,7 +441,7 @@ public abstract class WindowAdapter extends Object implements WindowListener, Wi
 ## 组合模式
 
 - 将对象组合成树形结构以表示“部分-整体”的层次结构，Composite使得用户对单个对象和组合对象的使用具有一致性。
-- 本质：统一leaf对象和composite对象
+- 本质：<font color=red>统一leaf对象和composite对象</font>
 
 ---
 
@@ -480,9 +482,9 @@ public abstract class WindowAdapter extends Object implements WindowListener, Wi
 
 ## Java动态代理
 
-- java.lang.reflect.Proxy
+- `java.lang.reflect.Proxy`
   + Java动态代理机制的主类，提供了一组静态方法来为一组接口动态地生成代理类机器对象
-- java.lang.reflect.InvocationHandler
+- `java.lang.reflect.InvocationHandler`
   + 调用处理器接口，它自定义了一个***invoke***方法，用于集中处理在动态代理类对象上的方法调用，通常在该方法中实现对委托类的代理访问
 
 ---
@@ -508,7 +510,7 @@ Interface Proxy = (Interface)constructor.newInstance(new Object[] { handler });
 
 ## 行为型设计模式
 
-- 行为模式是对在不同的对象之间划分责任和算法的抽象化。行为模式不仅仅是关于类和对象的，而且关注它们之间的通信模式。
+- 行为模式是对在不同的对象之间划分责任和算法的抽象化。行为模式不仅仅是关于类和对象的，而且关注它们之间的**通信模式**。
    + 类的行为模式：使用继承关系在几个类之间分配行为 – Interpreter, Template Method
    + 对象的行为模式：使用对象的聚合来分配行为
 
@@ -566,7 +568,7 @@ public boolean action(Event event, Object obj){
 ## 命令模式
 
 - 将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化
-- 对请求排队或记录请求日志，以及支持undo和redo操作
+- 对请求排队或记录请求日志，以及支持**undo**和**redo**操作
 - 可将多个Command装配成一个复合Command
 
 ---
@@ -584,7 +586,7 @@ public boolean action(Event event, Object obj){
 ## 迭代器模式
 
 - 提供一种方法顺序访问一个聚合对象中各个元素, 而又不需暴露该对象的内部表示。
-- 本质：控制访问聚合对象中的元素！
+- 本质：<font color=red>控制访问聚合对象中的元素！</font>
 
 ---
 
@@ -633,8 +635,8 @@ public boolean action(Event event, Object obj){
 
 ## Java Observer
 
-- java.util.Observer (interface)
-- java.util.Observable (class)
+- `java.util.Observer` (interface)
+- `java.util.Observable` (class)
 
 ![w:600](images/JavaObserver.png)
 
@@ -681,7 +683,8 @@ public class Watcher implements Observer {
 
 ## 模版方法
 
-- 定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。Template Method使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+- 定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。
+- Template Method使得<font color=red>子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</font>
 
 ---
 
@@ -697,7 +700,7 @@ public class Watcher implements Observer {
 
 - 固定算法骨架
 
-- 模板方法导致一种反向的控制结构
+- 模板方法导致一种**反向的控制结构**
 
 - 子类可以置换掉父类的可变部分，但是子类却不可以改变模板方法所代表的顶级逻辑！
 
