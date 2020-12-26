@@ -381,6 +381,41 @@ public class ThreadSafeSingleton {
 
 ---
 
+## 内部类
+
+```java
+public class LazyInitHolderSingleton {
+	private static class SingletonHolder{
+		private static LazyInitHolderSingleton instance = new LazyInitHolderSingleton();
+	}
+	private LazyInitHolderSingleton(){}
+	public static LazyInitHolderSingleton getInstance(){
+		return SingletonHolder.instance;
+	}
+	public void operation(){
+		System.out.println("LazyInitHolderSignleton.operation() is executed");
+	}
+}
+```
+<span style="color:#0099ff">优点：延迟加载，线程安全，也减少了内存消耗</span>
+
+---
+
+## 枚举
+
+```java
+public enum EnumSingleton {
+	uniqueInstance;
+	
+	public void operation(){
+		System.out.println("EnumSingleton.operation() is executed");
+	}
+}
+```
+<span style="color:#0099ff">从Java1.5开始支持; 无偿提供序列化机制; 绝对防止多次实例化，即使在面对复杂的序列化或者反射攻击的时候。</span>
+
+---
+
 ## 结构型设计模式
 
 - 结构模式描述如何将类或者对象结合在一起形成更大的结构
@@ -708,7 +743,11 @@ public class Watcher implements Observer {
 
 ## Summary
 
+![w:600 h:500](images/DP_ALL.jpg)
 
+---
+
+## Summary
 
 >  <small>  It is possible to make buildings by stringing together patterns, in a rather loose way. A building made like this, is an assembly of patterns. It is not dense. It is not profound. But it is also possible to put patterns together in such a way that many patterns overlap in the same physical space: the building is very dense; it has many meanings captured in a small space; and through this density, it becomes profound. </small>
     
