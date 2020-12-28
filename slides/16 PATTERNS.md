@@ -273,19 +273,39 @@ public class MyApp extends Application {
 
 ---
 
+## 工厂方法
+
+![w:800](images/FactoryMethod.jpg)
+
+---
+
 ## 抽象工厂
 
 ![w:700](images/AbsFac.png)
 
+---
+
+## Builder
+
+![w:800](images/builder.png)
 
 ---
 
 ## 原型
 
 - Java 语言的构件模型直接支持Prototype模式
+
 - java.lang.Object   根类
-  + `protected Object clone()`;
+```java
+protected Object clone()
+```
+
 - java.lang.Cloneable  接口
+```java
+package java.lang;
+public interface Cloneable { 
+}
+```
 
 ---
 
@@ -412,7 +432,7 @@ public enum EnumSingleton {
 	}
 }
 ```
-<span style="color:#0099ff">从Java1.5开始支持; 无偿提供序列化机制; 绝对防止多次实例化，即使在面对复杂的序列化或者反射攻击的时候。</span>
+<span style="color:#0099ff">从Java1.5开始支持; 无偿提供序列化机制; 可以防止多次实例化，即使在面对复杂的序列化或者反射攻击的时候。</span>
 
 ---
 
@@ -465,10 +485,10 @@ public enum EnumSingleton {
 
 ```java
 public abstract class WindowAdapter extends Object implements WindowListener, WindowStateListener, WindowFocusListener{
-	public void windowClosed(WindowEvent e){}
+    public void windowClosed(WindowEvent e){}
     public void windowClosing(WindowEvent e){}
-       ...
-  }
+    ...
+}
 ```
 
 ---
@@ -483,6 +503,8 @@ public abstract class WindowAdapter extends Object implements WindowListener, Wi
 ## 组合模式
 
 ![w:700](images/Composite.png)
+
+<span style="color:#0099ff">两种实现：透明 vs. 安全</span>
 
 ---
 
@@ -527,17 +549,17 @@ public abstract class WindowAdapter extends Object implements WindowListener, Wi
 ## Java动态代理
 
 ```java
-// InvocationHandlerImpl 实现了 InvocationHandler 接口，并能实现方法调用从代理类到委托类的分
+//InvocationHandlerImpl 实现了 InvocationHandler 接口，并能实现方法调用从代理类到委托类的分
 //派转发 其内部通常包含指向委托类实例的引用，用于真正执行分派转发过来的方法调用
 InvocationHandler handler = new InvocationHandlerImpl(..); 
 
-// 通过 Proxy 为包括 Interface 接口在内的一组接口动态创建代理类的类对象
+//通过 Proxy 为包括 Interface 接口在内的一组接口动态创建代理类的类对象
 Class clazz = Proxy.getProxyClass(classLoader, new Class[] { Interface.class, ... }); 
 
-// 通过反射从生成的类对象获得构造函数对象
+//通过反射从生成的类对象获得构造函数对象
 Constructor constructor = clazz.getConstructor(new Class[] { InvocationHandler.class }); 
 
-// 通过构造函数对象创建动态代理类实例
+//通过构造函数对象创建动态代理类实例
 Interface Proxy = (Interface)constructor.newInstance(new Object[] { handler }); 
 ```
 
@@ -546,7 +568,7 @@ Interface Proxy = (Interface)constructor.newInstance(new Object[] { handler });
 ## 行为型设计模式
 
 - 行为模式是对在不同的对象之间划分责任和算法的抽象化。行为模式不仅仅是关于类和对象的，而且关注它们之间的**通信模式**。
-   + 类的行为模式：使用继承关系在几个类之间分配行为 – Interpreter, Template Method
+   + 类的行为模式：使用继承关系在几个类之间分配行为
    + 对象的行为模式：使用对象的聚合来分配行为
 
 
@@ -713,6 +735,14 @@ public class Watcher implements Observer {
 	}
 }
 ```
+
+---
+
+## 回顾MVC
+
+![w:500](images/new-mvc.png)
+
+<div align=center style="color:#0099ff">MVC是多种设计模式的合体，是一种体系结构风格</div>
 
 ---
 
