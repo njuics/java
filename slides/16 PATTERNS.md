@@ -92,7 +92,7 @@ pre code {
 
 ## Design Pattern: What?
 
-<small>Gamma, Erich, R. Helm, R. Johnson, and J. Vlissides. **Design patterns: Elements of Reusable Object-Oriented Software**. Addison-Wesley, 1994.</small>
+<small>Gamma, Erich, R. Helm, R. Johnson, and J. Vlissides. **Design Patterns: Elements of Reusable Object-Oriented Software**. Addison-Wesley, 1994.</small>
 
 ![bg right:40% 60%](images/DesignPatterns.jpg)
 
@@ -358,7 +358,7 @@ public class LazySingleton {
 
 ```java
 public class EagerSingleton {
-	//is it thread-safe? 
+    //is it thread-safe? 
     private static final EagerSingleton instance = new EagerSingleton() ;
     private EagerSingleton() {}
     public static EagerSingleton getInstance(){
