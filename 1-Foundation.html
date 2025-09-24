@@ -28,7 +28,7 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-background-color="#fff" data-theme="gaia" lang="zh-CN" style="--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1 id="%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E8%AF%86%E7%AC%A6%E7%9A%84%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99">用户自定义标识符的定义规则</h1>
 <ul>
-<li>以字母、下划线或符开头的字母、下划线、数字、符的序列。</li>
+<li>以字母、下划线或符号开头的字母、下划线、数字、符号的序列。</li>
 <li>一些由开发环境自动生成的名称中会带有符或下划线，因此虽然规则允许，但是自定义的变量名称中应尽量避免使用符或下划线。</li>
 <li>标识符区分大小写。</li>
 <li>标识符不能与保留字同名。</li>
@@ -312,14 +312,14 @@ Find Largest and Smallest Number in an Array Example
                 <span class="hljs-comment">//array of 10 numbers</span>
                 <span class="hljs-type">int</span> numbers[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]{<span class="hljs-number">32</span>,<span class="hljs-number">43</span>,<span class="hljs-number">53</span>,<span class="hljs-number">54</span>,<span class="hljs-number">32</span>,<span class="hljs-number">65</span>,<span class="hljs-number">63</span>,<span class="hljs-number">98</span>,<span class="hljs-number">43</span>,<span class="hljs-number">23</span>};
                 <span class="hljs-comment">//assign first element of an array to largest and smallest</span>
-                <span class="hljs-type">int</span> <span class="hljs-variable">smallest</span> <span class="hljs-operator">=</span> numbers[<span class="hljs-number">0</span>], largetst = numbers[<span class="hljs-number">0</span>];
+                <span class="hljs-type">int</span> <span class="hljs-variable">smallest</span> <span class="hljs-operator">=</span> numbers[<span class="hljs-number">0</span>], largest = numbers[<span class="hljs-number">0</span>];
                 <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt; numbers.length; i++){
-                        <span class="hljs-keyword">if</span>(numbers[i] &gt; largetst)
-                                largetst = numbers[i];
+                        <span class="hljs-keyword">if</span>(numbers[i] &gt; largest)
+                                largest = numbers[i];
                         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[i] &lt; smallest)
                                 smallest = numbers[i];
                 }
-                System.out.println(<span class="hljs-string">&quot;Largest Number is : &quot;</span> + largetst);
+                System.out.println(<span class="hljs-string">&quot;Largest Number is : &quot;</span> + largest);
                 System.out.println(<span class="hljs-string">&quot;Smallest Number is : &quot;</span> + smallest);
         }
 }
