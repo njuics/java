@@ -248,11 +248,6 @@
 <ul>
 <li>赋值、递增递减、方法调用和对象创建等表达式加上 <code>;</code> 可以构成表达式语句</li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">a=<span class="hljs-number">0</span>;
-</code></pre>
-<ul>
-<li>还有局部变量声明语句、控制流语句、<code>return</code> 和 <code>throw</code> 等语句</li>
-</ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">int</span> <span class="hljs-variable">cadence</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 anArray[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>;
 System.out.println(<span class="hljs-string">&quot;Element 1 at index 0: &quot;</span> + anArray[<span class="hljs-number">0</span>]);
@@ -261,6 +256,9 @@ System.out.println(<span class="hljs-string">&quot;Element 1 at index 0: &quot;<
 <span class="hljs-keyword">if</span> (value1 == value2)
     System.out.println(<span class="hljs-string">&quot;value1 == value2&quot;</span>);
 </code></pre>
+<ul>
+<li>还有局部变量声明语句、控制流语句、<code>return</code> 和 <code>throw</code> 等语句</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-background-color="#fff" data-theme="gaia" lang="C" style="--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2 id="%E5%9D%97block">块（Block）</h2>
@@ -371,13 +369,12 @@ Find Largest and Smallest Number in an Array Example
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-background-color="#fff" data-theme="gaia" lang="C" style="--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1 id="if-else"><code>if-else</code></h1>
 <p><code>if-else</code> 语句是控制程序执行流程最基本的形式。 其中 <code>else</code> 是可选的，因此可以有两种形式的 <code>if</code>。代码示例：</p>
-<p>以下是语法示意，<code>condition</code> 和 <code>statement</code> 需要替换为实际表达式和语句。</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">if</span> (condition)
 	statement;
 </code></pre>
 <p>或</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">if</span> (condition)
-	statement;
+  statement;
 <span class="hljs-keyword">else</span>
   statement;
 </code></pre>
@@ -491,7 +488,6 @@ Find Largest and Smallest Number in an Array Example
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-background-color="#fff" data-theme="gaia" lang="C" style="--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2 id="switch">switch</h2>
 <p><code>switch</code> 是一种选择结构，可以根据 <code>byte</code>、<code>short</code>、<code>char</code>、<code>int</code>、字符串、枚举或对应包装类型的值选择执行分支。它的格式如下：</p>
-<p>以下是语法示意，不是可直接编译的完整程序。</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">switch</span> (selector) {
 	<span class="hljs-keyword">case</span> value1: statement; <span class="hljs-keyword">break</span>;
 	<span class="hljs-keyword">case</span> value2: statement; <span class="hljs-keyword">break</span>;
