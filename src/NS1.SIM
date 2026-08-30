@@ -1,0 +1,190 @@
+!  NESTED Simulation using the Simula's class SIMULATION    ;
+!                                                           ;
+!  The example is a model of a bank. Customers are first    ;
+!  served by tellers, then by cashiers.                     ;
+!  The input rate changes in three periods: there is a busy ;
+!  period, then an idle period and again a busy one.        ;
+!  For each period the repeated inner simulation experiment ;
+!  simulates the first queue for the particular input rate  ;
+!  and for various numbers of servers. Then it shows the    ;
+!  results (average time spent at the first server) and     ;
+!  prompts the user for the number of tellers and the number;
+!  of cashiers. Tellers always finish a service that has    ;
+!  already started. The simulation should find the          ;
+!  time customers spend in the bank (average and maximum)   ;
+!  for various numbers of clerks in the three periods.      ;
+
+Simulation Begin
+                                       ! Global variables: ;
+   Integer Period,Trial;               ! Period, Trial number;
+   Real Array MinInt,MaxInt(1:3);      ! Min and Max intervals;
+   Real Array Duration(1:3);           ! Duration of periods [min];
+   Ref(Head) Queue1,Queue2;            ! The two queues;
+   Integer MaxClerks, Tellers, Cashiers;  ! Total numbers;
+   Integer BusyTellers, BusyCashiers;  ! Numbers of working clerks;
+   Real S1Mean, S1Std, S2Mean, S2Std;  ! Random normal servers;
+   Integer SeedG, SeedS1, SeedS2;      ! Seeds of the random generators;
+   Long Real TotalTime, MaxTime;       ! Variables for statistics;
+   Integer CustomersOut;               ! Number of served customers;
+
+   Process Class Generator;
+   Begin
+      While true do begin
+             ! Interval between arrivals: ;
+         Hold(Uniform(MinInt(Period),MaxInt(Period),SeedG));
+         Activate New Customer(Time);
+      End While;
+   End of Generator;
+
+   Process Class Customer(Arrival); Real Arrival;
+   Begin
+      Ref(Customer) Next;
+      Real Spent;
+
+      If (not Queue1.Empty) or (BusyTellers >= Tellers) then
+         Wait(Queue1);   ! Has to wait in Queue1;
+                         ! Service can start;
+      BusyTellers := BusyTellers + 1;
+      Hold(Normal(S1Mean, S1Std, SeedS1));  ! This is the teller service;
+      BusyTellers := BusyTellers - 1;
+
+      If (not Queue1.Empty) and (BusyTellers < Tellers) then begin
+         Next :- Queue1.First;
+         Next.Out;                          ! First from Queue1 served;
+         Activate Next after Current;
+      End If;
+
+      If (not Queue2.Empty) or (BusyCashiers >= Cashiers) then
+         Wait(Queue2);   ! Has to wait in Queue2;
+                         ! Service can start;
+      BusyCashiers := BusyCashiers + 1;
+      Hold(Normal(S2Mean, S2Std, SeedS2));  ! This is the cashier service;
+      BusyCashiers := BusyCashiers - 1;
+
+      If (not Queue2.Empty) and (BusyCashiers < Cashiers) then begin
+         Next :- Queue2.First;
+         Next.Out;                          ! First from Queue2 served;
+         Activate Next after Current;
+      End If;
+
+      CustomersOut := CustomersOut + 1;
+      Spent := Time - Arrival;
+      TotalTime := TotalTime + Spent;
+      If Spent > MaxTime then MaxTime := Spent;
+   End of Customer;
+
+   Procedure Report;          ! Experiment evaluation;
+   Begin
+      OutText("  *** Report on external simulation ***"); OutImage;
+      OutInt(CustomersOut,6); OutText(" customers ready at time ");
+      OutFix(Time,2,10); OutImage;
+      OutText("Average time in system: ");
+      OutFix(TotalTime/CustomersOut,2,10); OutImage;
+      OutText("Maximum time in system: ");
+      OutFix(MaxTime,2,10); OutImage;
+   End of Report;
+
+! MAIN program body;
+
+    SeedG  := 11;                    ! Seeds of random variables;
+    SeedS1 := 13;
+    SeedS2 := 17;
+    MinInt(1) := 1; MaxInt(1) := 4;  ! Min and Max intervals;
+    MinInt(2) := 2; MaxInt(2) := 9;
+    MinInt(3) := 1; MaxInt(3) := 3;
+    Duration(1) := 120;              ! Duration of periods;
+    Duration(2) := 240;
+    Duration(3) := 120;
+    MaxClerks  := 6;
+    BusyTellers := BusyCashiers :=0; ! Numbers of working clerks;
+    S1Mean := 6;                     ! Random normal servers;
+    S1Std  := 1;
+    S2Mean := 8;
+    S2Std  := 2;
+    Queue1 :- New Head;
+    Queue2 :- New Head;
+    TotalTime := MaxTime := 0;       ! Variables for statistics;
+    CustomersOut := 0;
+    Period := 1;
+    Activate New Generator;
+
+For Period:=1 step 1 until 3 do begin
+
+ Real Array TimeSpent(1:MaxClerks);
+
+ OutText("  *** Results of internal simulation *** Period ");
+ OutInt(Period,1); OutImage;
+ OutText("      Tellers     Average time spent"); OutImage;
+
+ For Trial:=1 step 1 until MaxClerks do
+ ! ********************************************************** ;
+  Simulation Begin
+                                       ! Internal Global variables: ;
+   Real TrialDuration;                 ! Internal experiment [min];
+   Ref(Head) Queue;                    ! The queue;
+   Integer Servers;                    ! Total number;
+   Integer BusyServers;                ! Numbers of working clerks;
+   Integer TrialSeedG,TrialSeedS;      ! Seeds of the random generators;
+   Long Real TotTime;                  ! Variables for statistics;
+   Integer CustOut;                    ! Number of served customers;
+
+   Process Class IGenerator;
+   Begin
+      While true do begin
+         Hold(Uniform(MinInt(Period),MaxInt(Period),TrialSeedG));
+         Activate New ICustomer(Time); ! Interval between arrivals: ;
+      End While;
+   End of IGenerator;
+
+   Process Class ICustomer(Arrival); Real Arrival;
+   Begin
+      Ref(ICustomer) Next;
+
+      If not Queue.Empty or (BusyServers >= Servers) then
+         Wait(Queue);    ! Has to wait in Queue;
+                         ! Service can start;
+      BusyServers := BusyServers + 1;
+      Hold(Normal(S1Mean, S1Std, TrialSeedS)); ! This is the teller service;
+      BusyServers := BusyServers - 1;
+
+      If not Queue.Empty then begin
+         Next :- Queue.First;
+         Next.Out;                          ! First from Queue served;
+         Activate Next after Current;
+      End If;
+
+      CustOut := CustOut + 1;
+      TotTime := TotTime + Time - Arrival;
+   End of ICustomer;
+
+  ! Internal MAIN program body;
+
+    TrialSeedG := 7;                 ! Seeds for random variables;
+    TrialSeedS := 23;
+    Servers := Trial;
+    BusyServers := 0;
+    TrialDuration := 600;
+    TotTime := 0;                    ! Variables for statistics;
+    CustOut := 0;
+    Queue :- New Head;
+    Activate New IGenerator;
+    Hold(TrialDuration);             ! Internal experiment duration;
+    TimeSpent(Trial) := TotTime/CustOut;
+    OutInt(Trial,13);
+    OutFix(TimeSpent(Trial),3,23); OutImage;
+
+   End of internal simulation;
+  ! ********************************************************** ;
+
+  OutText("Enter the number of tellers : "); OutImage;
+  Tellers := InInt;
+  OutText("Enter the number of cashiers : "); OutImage;
+  Cashiers := InInt;
+  ! Cashiers:= Clerks - Tellers;
+  Hold(Duration(Period));
+  Report;
+  OutText("Press Enter to Continue."); OutImage; InImage;
+ End For;
+End of program;
+
+
