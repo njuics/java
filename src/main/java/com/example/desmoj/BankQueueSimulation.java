@@ -3,6 +3,7 @@ package com.example.desmoj;
 import java.awt.GraphicsEnvironment;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Dimension;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -82,7 +83,7 @@ public final class BankQueueSimulation {
         TimeInstant end = new TimeInstant(SIMULATION_MINUTES, SIMULATION_UNIT);
         cmdGeneration.setStartStopTime(begin, end, TimeZone.getDefault());
 
-        BankModel model = new BankModel(cmdGeneration, 2, 2, true, false, true);
+        BankModel model = new BankModel(cmdGeneration, 4, 4, true, false, true);
         Experiment experiment = new Experiment("BankQueue", reportDirectory.toString());
         // The DESMO-J progress window is a Swing component; disable it for
         // command-line and headless runs. The 2D viewer is opened separately.
@@ -108,7 +109,7 @@ public final class BankQueueSimulation {
         ViewerFrame viewer = new ViewerFrame(
                 commandFile.toUri().toURL(), iconDirectory, Locale.ENGLISH);
         viewer.setTitle("DESMO-J Bank Queue");
-        viewer.setLocationByPlatform(true);
+        viewer.setSize(new Dimension(1600, 960));
         viewer.setVisible(true);
     }
 
