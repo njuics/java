@@ -1,0 +1,1367 @@
+<!DOCTYPE html><html lang="C"><head><title>Java高级程序设计</title><meta property="og:title" content="Java高级程序设计"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4O3J4OjVweDtyeTo1cHg7d2lkdGg6MjVweDtoZWlnaHQ6MjVweH08L3N0eWxlPjwvZGVmcz48cmVjdCB4PSIyMCIgeT0iMjAiIGNsYXNzPSJhIi8+PHJlY3QgeD0iNTUiIHk9IjIwIiBjbGFzcz0iYSIvPjxyZWN0IHg9IjIwIiB5PSI1NSIgY2xhc3M9ImEiLz48cmVjdCB4PSI1NSIgeT0iNTUiIGNsYXNzPSJhIi8+PC9zdmc+") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;interactivity:inert;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;interactivity:auto;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent{inset:0;position:absolute}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;view-transition-name:__bespoke_marp_transition_osc__;white-space:nowrap;will-change:transform;z-index:1}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*){margin-left:6px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*):where(:first-child){margin-left:0}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+:where(.bespoke-marp-parent){top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent){grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide){height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide).bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;interactivity:inert;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container :is(.bespoke-marp-presenter-info-page-area,.bespoke-marp-presenter-info-time,.bespoke-marp-presenter-info-timer){box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}body[data-bespoke-view=overview]{background:#161616;overflow:auto}body[data-bespoke-view=overview] [data-bespoke-marp-fragment=inactive]{visibility:visible}body[data-bespoke-view=overview] .bespoke-marp-overview-header{backdrop-filter:blur(4px);background:#222222d9;box-shadow:0 3px 10px #00000080;box-sizing:border-box;display:flex;height:48px;inset:0 0 auto;justify-content:flex-end;padding:10px;position:fixed;z-index:1}body[data-bespoke-view=overview] button.bespoke-marp-overview-close{height:28px;line-height:28px;transform:rotate(45deg);width:28px}body[data-bespoke-view=overview] .bespoke-marp-parent{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(0,240px));justify-content:space-around;padding:30px}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide{--bov-selected:#0000;--bov-focus:#161616;--bov-focus-outline:#0000;background-image:conic-gradient(#161616 0 0),conic-gradient(var(--bov-focus) 0 0),conic-gradient(var(--bov-focus-outline) 0 0),conic-gradient(var(--bov-selected) 0 0);background-position:5px 5px,3px 3px,2px 2px,0 0;background-repeat:no-repeat;background-size:calc(100% - 10px) calc(100% - 10px),calc(100% - 6px) calc(100% - 6px),calc(100% - 4px) calc(100% - 4px),100% 100%;content-visibility:visible;cursor:pointer;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));margin:-6px;padding:6px;interactivity:auto;opacity:1;outline:0;pointer-events:auto;scroll-margin-block:30px;width:100%;z-index:0}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide *,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active *{pointer-events:none;interactivity:inert}body[data-bespoke-view=overview] .bespoke-marp-parent :is(svg.bespoke-marp-slide:active,svg.bespoke-marp-slide:focus-visible,svg.bespoke-marp-slide:hover){--bov-focus-outline:#161616}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:focus-visible,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:hover{--bov-focus:#999}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:active{--bov-focus:#eee}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{--bov-selected:#0288d1}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent{padding-top:78px}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent svg.bespoke-marp-slide{scroll-margin-top:78px}.bespoke-marp-overview{background:#000000a6;inset:0;opacity:0;pointer-events:none;position:fixed;transition:opacity .1s ease;z-index:10}.bespoke-marp-overview iframe{background:#222;border:0;display:block;height:100%;left:0;position:absolute;top:0;width:100%}.bespoke-marp-overview[data-open="1"]{opacity:1;pointer-events:auto}}@media print{.bespoke-marp-overview,.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :where(:is(h1, marp-h1)){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section section:where(:is(h1, marp-h1)){--marpit-root-font-size: 2em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#\:\$p > svg > foreignObject > section code.hljs{padding:3px 5px}div#\:\$p > svg > foreignObject > section .hljs{background:#000;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-comment,div#\:\$p > svg > foreignObject > section .hljs-quote{color:#aeaeae;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-keyword,div#\:\$p > svg > foreignObject > section .hljs-selector-tag,div#\:\$p > svg > foreignObject > section .hljs-type{color:#e28964}div#\:\$p > svg > foreignObject > section .hljs-string{color:#65b042}div#\:\$p > svg > foreignObject > section .hljs-subst{color:#daefa3}div#\:\$p > svg > foreignObject > section .hljs-link,div#\:\$p > svg > foreignObject > section .hljs-regexp{color:#e9c062}div#\:\$p > svg > foreignObject > section .hljs-name,div#\:\$p > svg > foreignObject > section .hljs-section,div#\:\$p > svg > foreignObject > section .hljs-tag,div#\:\$p > svg > foreignObject > section .hljs-title{color:#89bdff}div#\:\$p > svg > foreignObject > section .hljs-class .hljs-title,div#\:\$p > svg > foreignObject > section .hljs-doctag,div#\:\$p > svg > foreignObject > section .hljs-title.class_{text-decoration:underline}div#\:\$p > svg > foreignObject > section .hljs-bullet,div#\:\$p > svg > foreignObject > section .hljs-number,div#\:\$p > svg > foreignObject > section .hljs-symbol{color:#3387cc}div#\:\$p > svg > foreignObject > section .hljs-params,div#\:\$p > svg > foreignObject > section .hljs-template-variable,div#\:\$p > svg > foreignObject > section .hljs-variable{color:#3e87e3}div#\:\$p > svg > foreignObject > section .hljs-attribute{color:#cda869}div#\:\$p > svg > foreignObject > section .hljs-meta{color:#8996a8}div#\:\$p > svg > foreignObject > section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-selector-class{color:#9b703f}div#\:\$p > svg > foreignObject > section .hljs-selector-id{color:#8b98ab}div#\:\$p > svg > foreignObject > section .hljs-emphasis{font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-strong{font-weight:700}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){margin:.5em 0 0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:580px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:1.8em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.5em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section p{margin:1em 0 0}div#\:\$p > svg > foreignObject > section ol>li,div#\:\$p > svg > foreignObject > section ul>li{margin:.3em 0 0}div#\:\$p > svg > foreignObject > section ol>li>p,div#\:\$p > svg > foreignObject > section ul>li>p{margin:.6em 0 0}div#\:\$p > svg > foreignObject > section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){display:block;margin:1em 0 0;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{box-sizing:border-box;margin:0;min-width:100%;padding:.5em;font-size:.7em}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div#\:\$p > svg > foreignObject > section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#\:\$p > svg > foreignObject > section blockquote:before{top:0;left:0}div#\:\$p > svg > foreignObject > section blockquote:after{right:0;bottom:0;transform:rotate(180deg)}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section mark{background:transparent}div#\:\$p > svg > foreignObject > section table{border-spacing:0;border-collapse:collapse;margin:1em 0 0}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{padding:.2em .4em;border-width:1px;border-style:solid}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:66%}div#\:\$p > svg > foreignObject > section header{top:0}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{left:0;right:0}div#\:\$p > svg > foreignObject > section footer{bottom:0}div#\:\$p > svg > foreignObject > section{--color-background:light-dark(#fff8e1, #455a64);--color-background-stripe:light-dark(
+    rgba(69,90,100,.1),
+    rgba(255,248,225,.1)
+  );--color-foreground:light-dark(#455a64, #fff8e1);--color-dimmed:light-dark(
+    #6a7a7d,
+    #dad8c8
+  );--color-highlight:light-dark(#0288d1, #81d4fa);color-scheme:light;background-color:var(--color-background);background-image:linear-gradient(135deg, var(--color-background), color-mix(in srgb, var(--color-background) 98%, #888 2%) 50%, var(--color-background) 50%, color-mix(in srgb, var(--color-background) 95%, #fff 5%));color:var(--color-foreground);font-size:35px;font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;height:720px;line-height:1.35;letter-spacing:1.25px;padding:70px;width:1280px;overflow-wrap:break-word}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:35px}div#\:\$p > svg > foreignObject > section:after{right:0;bottom:0;font-size:80%}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:80%}div#\:\$p > svg > foreignObject > section a,div#\:\$p > svg > foreignObject > section mark{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section code{background:var(--color-dimmed);color:var(--color-background)}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:var(--color-foreground)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before,div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section section:after{color:var(--color-dimmed)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-color:var(--color-foreground)}div#\:\$p > svg > foreignObject > section table thead th{background:var(--color-foreground);color:var(--color-background)}div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) td,div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe, transparent)}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:where(.invert){color-scheme:dark}div#\:\$p > svg > foreignObject > section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.lead){place-content:safe center center;flex-flow:column nowrap;align-items:stretch}div#\:\$p > svg > foreignObject > section:where(.lead) :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h6, marp-h6){text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) p{text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h6, marp-h6),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) ol>li>p,div#\:\$p > svg > foreignObject > section:where(.lead) ul>li>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) table{margin-left:auto;margin-right:auto}div#\:\$p > svg > foreignObject > section img{display:block;margin:0 auto}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="overview" tabindex="-1" title="Toggle overview view (o)">Toggle overview view</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" lang="C" class="lead" data-marpit-pagination="1" style="--paginate:true;--background-color:#fff;--class:lead;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="79" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/Java_logo.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="1" data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" lang="C" class="lead" data-marpit-pagination="1" style="--paginate:true;--background-color:#fff;--class:lead;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="79" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1 id="java%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">Java高级程序设计</h1>
+<h2 id="lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F">Lambda 表达式</h2>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" lang="C" class="lead" data-marpit-pagination="1" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="2" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E5%85%88%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90">先举个例子</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>{
+    <span class="hljs-keyword">private</span> Integer id;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">Integer</span> <span class="hljs-title function_">getId</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> id; }
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">setId</span><span class="hljs-params">(Integer id)</span> { <span class="hljs-built_in">this</span>.id = id; }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaSort</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getUnsortedEmployeeList();
+        <span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> sort the list</span>
+    }
+    <span class="hljs-comment">//Returns an unordered list of employees</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-title function_">getUnsortedEmployeeList</span><span class="hljs-params">()</span>{ ... }
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="3" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="javautilcollections"><code>java.util.Collections</code></h2>
+<p><small><code>public static &lt;T extends Comparable&lt;? super T&gt;&gt; void sort(List&lt;T&gt; list)</code></small></p>
+<p><small>Sorts the specified list into ascending order, according to the natural ordering of its elements. <strong>All elements in the list must implement the Comparable interface</strong>. Furthermore, all elements in the list must be mutually comparable (that is, <code>e1.compareTo(e2)</code> must not throw a <code>ClassCastException</code>).</small></p>
+<p><small><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html</a></small></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">names</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;Alex&quot;</span>, <span class="hljs-string">&quot;Charles&quot;</span>, <span class="hljs-string">&quot;Brian&quot;</span>, <span class="hljs-string">&quot;David&quot;</span>);
+Collections.sort(names);    <span class="hljs-comment">//[Alex, Brian, Charles, David]</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="4" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="comparable-employees">Comparable employees</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span>&lt;Employee&gt; {
+    <span class="hljs-keyword">private</span> Integer id;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">Integer</span> <span class="hljs-title function_">getId</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> id;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">setId</span><span class="hljs-params">(Integer id)</span> {
+        <span class="hljs-built_in">this</span>.id = id;
+    }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">String</span> <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Employee [id=&quot;</span> + id + <span class="hljs-string">&quot;]&quot;</span>;
+    }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(Employee o)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getId().compareTo(o.getId());
+    }
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="5" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="sorting-employees">Sorting employees</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaSort</span> 
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> 
+    {
+        <span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getUnsortedEmployeeList();
+        Collections.sort(employees);
+        System.out.println(employees);
+    }
+    <span class="hljs-comment">//Returns an unordered list of employees</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-title function_">getUnsortedEmployeeList</span><span class="hljs-params">()</span>{ ... }
+}
+
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-sh">[E [<span class="hljs-built_in">id</span>=13], E [<span class="hljs-built_in">id</span>=46], E [<span class="hljs-built_in">id</span>=80], E [<span class="hljs-built_in">id</span>=90], E [<span class="hljs-built_in">id</span>=93]]
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="6" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="javautilcollections-1"><code>java.util.Collections</code></h2>
+<p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c)</code></p>
+<p><small>Sorts the specified list according to the order induced by the specified comparator. <strong>All elements in the list must be mutually comparable using the specified <code>comparator</code></strong> (that is, .compare(e1, e2) must not throw a ClassCastException for any elements e1 and e2 in the list).</small></p>
+<p><small>This implementation defers to the <code>List.sort(Comparator)</code> method using the specified list and comparator.</small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="7" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="interface-comparatort"><code>Interface Comparator&lt;T&gt;</code></h2>
+<p>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</p>
+<p><small>A comparison function, which imposes a <em><strong>total ordering</strong></em> on some collection of objects. Comparators can be passed to a sort method (such as Collections.sort or Arrays.sort) to allow precise control over the sort order. Comparators can also be used to control the order of certain data structures (such as sorted sets or sorted maps), or to provide an ordering for collections of objects that don't have a natural ordering.</small></p>
+<p><small><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html</a></small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="8" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="int-comparet-o1-t-o2"><code>int	compare(T o1, T o2)</code></h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Comparator</span>&lt;T&gt; {
+    <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(T o1,  T o2)</span>;
+    ...
+}
+</code></pre>
+<p>Compares its two arguments for order. Returns a negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than the second.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="9" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="comparator-for-employees">Comparator for employees</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">compareById</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Employee&gt;() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Employee o1, Employee o2)</span> {
+        <span class="hljs-keyword">return</span> o1.getId().compareTo(o2.getId());
+    }
+};
+
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getUnsortedEmployeeList();
+
+Collections.sort(employees, compareById);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="10" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="in-java-8">In Java 8</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">compareById</span> <span class="hljs-operator">=</span> (Employee o1, Employee o2) -&gt; 
+                                    o1.getId().compareTo( o2.getId() );
+<span class="hljs-comment">//First name sorter</span>
+<span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">compareByFirstName</span> <span class="hljs-operator">=</span> (Employee o1, Employee o2) -&gt;
+                                    o1.getFirstName().compareTo( o2.getFirstName() );
+<span class="hljs-comment">//Last name sorter</span>
+<span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">compareByLastName</span> <span class="hljs-operator">=</span> (Employee o1, Employee o2) -&gt; 
+                                    o1.getLastName().compareTo( o2.getLastName() );
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">ArrayList</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getUnsortedEmployeeList();
+Collections.sort(employees, compareById);
+Collections.sort(employees, compareByFirstName);
+Collections.sort(employees, compareByLastName);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="11" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%86%8D%E7%9C%8B%E4%B8%AA%E4%BE%8B%E5%AD%90actionlistener">再看个例子：ActionListener</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestActionEvent</span> {  
+  
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {  
+        ...
+        <span class="hljs-type">Button</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Button</span>(<span class="hljs-string">&quot;Press me&quot;</span>);  
+        <span class="hljs-type">Monitor</span> <span class="hljs-variable">mo</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Monitor</span>();  
+        b.addActionListener(mo);  
+        ...
+    }  
+}  
+  
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Monitor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> {  
+  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span> {  
+        System.out.println(e);  
+    }  
+  
+} 
+
+</code></pre>
+<p><code>Button</code>需要一个<code>ActionListener</code></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="12" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%BD%BF%E7%94%A8%E5%8C%BF%E5%90%8D%E7%B1%BB">使用匿名类</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestActionEvent</span> {  
+  
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {  
+        ...
+        <span class="hljs-type">Button</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Button</span>(<span class="hljs-string">&quot;Press me&quot;</span>);  
+        b.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ActionListener</span>(){
+            <span class="hljs-meta">@Override</span>  
+            <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span> {  
+                System.out.println(e);  
+            } 
+        } );  
+        ...
+    }  
+}  
+  
+</code></pre>
+<p><code>Button</code>并不在意<code>Listener</code>是谁，要的一个函数处理Action</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="13" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="actionlistener">ActionListener</h2>
+<p><code>ActionListener</code>只定义了一个函数接口:</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span>
+</code></pre>
+<p>Invoked when an action occurs.</p>
+<p><small><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html">https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html</a></small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="14" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E9%82%A3%E7%9B%B4%E6%8E%A5%E4%BC%A0%E4%B8%AA%E5%87%BD%E6%95%B0%E4%B8%8D%E5%A5%BD%E4%B9%88">那直接传个函数不好么？</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestActionEvent</span> {  
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {  
+        <span class="hljs-type">Button</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Button</span>(<span class="hljs-string">&quot;Press me&quot;</span>);  
+        b.addActionListener((e) -&gt; {
+            System.out.println(e);
+        });  
+    }  
+}  
+</code></pre>
+<p><code>(e) -&gt; {System.out.println(e);}</code></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="15" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E6%AD%A4%E4%BA%8B%E5%B9%B6%E4%B8%8D%E7%A8%80%E5%A5%87c-pointer">此事并不稀奇：C Pointer</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-c"><span class="hljs-type">void</span> <span class="hljs-title function_">MyFun</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span>;   
+<span class="hljs-type">void</span> (*FunP)(<span class="hljs-type">int</span> ); 
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span>* argv[])</span>
+{
+   MyFun(<span class="hljs-number">10</span>);    
+   FunP=&amp;MyFun; 
+   (*FunP)(<span class="hljs-number">20</span>); 
+}
+
+<span class="hljs-type">void</span> <span class="hljs-title function_">MyFun</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> 
+{
+   <span class="hljs-built_in">printf</span>(“%d\n”,x);
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="16" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%9C%9F%E7%9A%84%E4%B8%8D%E7%A8%80%E5%A5%87">真的不稀奇</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-swift"><span class="hljs-keyword">func</span> <span class="hljs-title function_">backward</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s1</span>: <span class="hljs-type">String</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">s2</span>: <span class="hljs-type">String</span>) -&gt; <span class="hljs-type">Bool</span> {
+   <span class="hljs-keyword">return</span> s1 <span class="hljs-operator">&gt;</span> s2
+}
+
+<span class="hljs-keyword">var</span> reversedNames <span class="hljs-operator">=</span> names.sorted(by: backward)
+</code></pre>
+<p>Swift Clousure</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="17" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%9C%9F%E7%9A%84%E4%B8%80%E7%82%B9%E4%B8%8D%E7%A8%80%E5%A5%87">真的一点不稀奇</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-objectivec"><span class="hljs-type">float</span> price = <span class="hljs-number">1.99</span>; 
+<span class="hljs-type">float</span> (^finalPrice)(<span class="hljs-type">int</span>) = ^(<span class="hljs-type">int</span> quantity) {
+	<span class="hljs-comment">// Notice local variable price is </span>
+	<span class="hljs-comment">// accessible in the block</span>
+	<span class="hljs-keyword">return</span> quantity * price;
+};
+
+<span class="hljs-type">int</span> orderQuantity = <span class="hljs-number">10</span>;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;Ordering %d units, final price is: $%2.2f&quot;</span>, orderQuantity, finalPrice(orderQuantity));
+</code></pre>
+<p>Objective-C block</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<p>函数式编程 <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a></p>
+<p><small>In computer science, functional programming is a programming paradigm where programs are constructed by <strong>applying and composing functions</strong>. It is a declarative programming paradigm in which function definitions are trees of expressions that each return a value, rather than a sequence of imperative statements which change the state of the program.</small></p>
+<p><small>In functional programming, functions are treated as <strong>first-class citizens</strong>, meaning that they can be bound to names, passed as arguments, and returned from other functions, just as any other data type can. This allows programs to be written in a <strong>declarative and composable style</strong>, where small functions are combined in a modular manner.</small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="19" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:55%;" data-marpit-pagination-total="79" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/kingdomofnouns.jpg&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="45%" height="720"><section id="19" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="19" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:55%;" data-marpit-pagination-total="79" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="java">Java？</h2>
+<p>很多时候我们只是需要一个函数，Java里将普通的方法或函数像参数一样传值并不简单。</p>
+<p>Java 世界是严格地以名词为中心的。 Why？</p>
+<p><a href="images/7/kingdom-of-nouns.pdf">Execution in the Kingdom of Nouns</a></p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="19" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="20" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="imperative-versus-declarative">Imperative versus Declarative</h2>
+<ul>
+<li><small>Imperative: is a style of programming where you program the  algorithm with control flow and explicit steps. </small></li>
+<li><small>Declarative:  is a style of programming where you declare what needs be done without concern for the control flow. </small></li>
+<li><small>Functional programming: is a declarative programming paradigm that treats computation as a series of functions and <strong>avoids state and mutable data to facilitate concurrency</strong> <a href="http://www.ruanyifeng.com/blog/2012/04/functional_programming.html">http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</a></small></li>
+</ul>
+<p>Java缺少函数式编程特点， 为此Java 8 增加了一个语言级的新特性，名为Lambda表达式。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="21" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F-1">Lambda 表达式</h2>
+<p>Lambda表达式是一种匿名函数(并不完全正确)，简单地说，它是没有声明的方法，也即没有访问修饰符、返回值声明和名字。</p>
+<p><small>你可以将其想做一种速记，在你需要使用某个方法的地方写上它。当某个方法只使用一次，而且定义很简短，使用这种速记替代之尤其有效，这样，你就不必在类中费力写声明与方法了。</small></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">(arg1, arg2...) -&gt; { body }
+
+(type1 arg1, type2 arg2...) -&gt; { body }
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="22" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%BE%8B%E5%A6%82">例如</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b) -&gt; {  <span class="hljs-keyword">return</span> a + b; }
+
+() -&gt; System.out.println(<span class="hljs-string">&quot;Hello World&quot;</span>);
+
+(String s) -&gt; { System.out.println(s); }
+
+() -&gt; <span class="hljs-number">42</span>
+
+() -&gt; { <span class="hljs-keyword">return</span> <span class="hljs-number">3.1415</span> };
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="23" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h4 id="lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%BB%93%E6%9E%84">Lambda 表达式的结构</h4>
+<ul>
+<li><small>一个Lambda表达式可以有零个或多个参数
+<ul>
+<li>参数类型既可以明确声明，也可以根据上下文来推断。例如<code>(int a)</code>与<code>(a)</code>等效</small></li>
+<li><small>所有参数需包含在圆括号内，参数之间用逗号相隔。例如：<code>(a, b)</code> 或 <code>(int a, int b)</code> 或 <code>(String a, int b, float c)</code></small></li>
+<li><small>空圆括号代表参数集为空。例如：<code>() -&gt; 42</code>；当只有一个参数，且其类型可推导时，圆括号<code>（）</code>可省略。例如：<code>a -&gt; return a*a</code></small></li>
+</ul>
+</li>
+<li><small>Lambda 表达式的主体可包含零条或多条语句</small>
+<ul>
+<li><small>若只有一条语句，花括号<code>{}</code>可省略。匿名函数的返回类型与该主体表达式一致</small></li>
+<li><small>若包含一条以上语句，则表达式必须包含在花括号<code>{}</code>中（形成代码块）。匿名函数的返回类型与代码块的返回类型一致，若没有返回则为空</small></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="24" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3">函数式接口</h2>
+<ul>
+<li>函数式接口是只包含一个抽象方法声明的接口
+<ul>
+<li><small><code>java.lang.Runnable</code>就是一种函数式接口，在<code>Runnable</code>接口中只声明了一个方法<code>void run()</code></small></li>
+<li><small>相似地，<code>ActionListener</code>接口也是一种函数式接口，我们使用匿名内部类来实例化函数式接口的对象，有了Lambda表达式，这一方式可以得到简化。</small></li>
+</ul>
+</li>
+<li>每个 Lambda 表达式都能隐式地赋值给函数式接口</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="25" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%BE%8B%E5%A6%82-1">例如</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Runnable</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> () -&gt; System.out.println(<span class="hljs-string">&quot;hello world&quot;</span>);
+</code></pre>
+<p>Or even</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(
+   () -&gt; System.out.println(<span class="hljs-string">&quot;hello world&quot;</span>)
+).start();
+</code></pre>
+<p><small>根据线程类的构造函数签名<code>public Thread(Runnable r) { }</code>，将该Lambda表达式赋给<code>Runnable</code>接口。</small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="26" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3">其他常见的函数式接口</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Consumer</span>&lt;Integer&gt;  <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> (<span class="hljs-type">int</span> x) -&gt; { System.out.println(x) };
+
+<span class="hljs-type">BiConsumer</span>&lt;Integer, String&gt; <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (Integer x, String y)  
+                                  -&gt; System.out.println(x + <span class="hljs-string">&quot; : &quot;</span> + y);
+
+<span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> (String s) -&gt; { <span class="hljs-keyword">return</span> s == <span class="hljs-literal">null</span>; };
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="27" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%AE%9A%E4%B9%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3">定义自己的函数式接口</h2>
+<p><code>@FunctionalInterface</code>是 Java 8 新加入的一种接口，用于指明该接口类型声明是根据 Java 语言规范定义的函数式接口。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@FunctionalInterface</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">WorkerInterface</span> {
+   <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">doSomeWork</span><span class="hljs-params">()</span>;
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="28" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%BD%BF%E7%94%A8">使用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">WorkerInterface</span> {
+   <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">doSomeWork</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WorkerInterfaceTest</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">execute</span><span class="hljs-params">(WorkerInterface worker)</span> { worker.doSomeWork(); }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String [] args)</span> {
+        execute(<span class="hljs-keyword">new</span> <span class="hljs-title class_">WorkerInterface</span>() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">doSomeWork</span><span class="hljs-params">()</span> {
+                System.out.println(<span class="hljs-string">&quot;Worker invoked using Anonymous class&quot;</span>);
+            }
+        });
+        execute(() -&gt; System.out.println(<span class="hljs-string">&quot;Worker invoked using Lambda expression&quot;</span>));
+    }
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="29" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+<p>Lambda Quick Start</p>
+<p><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html">http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="30" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="javautilfunctionfunction"><code>java.util.function.Function</code></h1>
+<p><code>Interface Function&lt;T,R&gt;</code></p>
+<p>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">R</span> <span class="hljs-title function_">apply</span><span class="hljs-params">(T t)</span>
+</code></pre>
+<p>Applies this function to the given argument.</p>
+<p><small><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html">https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html</a></small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="31" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E5%9B%9E%E5%A4%B4%E7%9C%8B">回头看</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Predicate</span>&lt;T&gt;
+</code></pre>
+<p>Represents a predicate (boolean-valued function) of one argument.<br />
+This is a functional interface whose functional method is <code>test(Object)</code>.</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html">https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="32" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/predicate.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="32" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="content">
+<h1 id="method-summary">Method Summary</h1>
+
+<p><br /><br /><br /><br /><br /><br /><br /><br /><br />
+What's static methods &amp; default methods in interfaces?</p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="32" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="33" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%8B">自己写一下</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">import</span> java.util.function.Function;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FunctionClass</span> {
+
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-type">void</span> <span class="hljs-title function_">printer</span><span class="hljs-params">(Function&lt;T, String&gt; function, T t)</span> {
+        System.out.println(function.apply(t));
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">FunctionClass</span>().&lt;String&gt;printer((s) -&gt; <span class="hljs-string">&quot;Length is &quot;</span> + s.length(), <span class="hljs-string">&quot;abc&quot;</span>);
+    }
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="34" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/exam.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="34" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="content"></section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="34" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="35" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E7%BB%A7%E7%BB%ADmethod-references">继续：Method References</h1>
+<p>Lambda表达式的语法糖，当Lambda只是调用一个已存在的方法时，可以使用更简洁的方法引用。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">list.forEach(s -&gt; System.out.println(s)); <span class="hljs-comment">// Lambda 表达式</span>
+list.forEach(System.out::println); <span class="hljs-comment">// 方法引用</span>
+</code></pre>
+<ul>
+<li>静态方法引用：<code>ClassName::staticMethod</code></li>
+<li>实例方法引用：<code>instance::instanceMethod</code></li>
+<li>类的任意对象方法引用：<code>ClassName::instanceMethod</code></li>
+<li>构造器引用：<code>ClassName::new</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="36" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8">静态方法引用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Function</span>&lt;String, Integer&gt; <span class="hljs-variable">parser1</span> <span class="hljs-operator">=</span> s -&gt; Integer.parseInt(s); <span class="hljs-comment">// Lambda</span>
+<span class="hljs-type">Function</span>&lt;String, Integer&gt; <span class="hljs-variable">parser2</span> <span class="hljs-operator">=</span> Integer::parseInt; <span class="hljs-comment">// 方法引用</span>
+
+<span class="hljs-comment">// 使用</span>
+<span class="hljs-type">Integer</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> parser2.apply(<span class="hljs-string">&quot;123&quot;</span>); <span class="hljs-comment">// 123</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">numbers</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>);
+numbers.stream()
+       .map(Integer::parseInt)  <span class="hljs-comment">// 静态方法引用</span>
+       .forEach(System.out::println);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="37" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8">实例方法引用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">String</span> <span class="hljs-variable">prefix</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello &quot;</span>;
+
+<span class="hljs-comment">// Lambda</span>
+<span class="hljs-type">Function</span>&lt;String, String&gt; <span class="hljs-variable">greeter1</span> <span class="hljs-operator">=</span> name -&gt; prefix.concat(name);
+
+<span class="hljs-comment">// 方法引用</span>
+<span class="hljs-type">Function</span>&lt;String, String&gt; <span class="hljs-variable">greeter2</span> <span class="hljs-operator">=</span> prefix::concat;
+
+System.out.println(greeter2.apply(<span class="hljs-string">&quot;World&quot;</span>)); <span class="hljs-comment">// Hello World</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="38" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%B1%BB%E7%9A%84%E4%BB%BB%E6%84%8F%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8">类的任意对象方法引用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// Lambda</span>
+<span class="hljs-type">Comparator</span>&lt;String&gt; <span class="hljs-variable">comp1</span> <span class="hljs-operator">=</span> (s1, s2) -&gt; s1.compareToIgnoreCase(s2);
+
+<span class="hljs-comment">// 方法引用 - 第一个参数作为方法调用者</span>
+<span class="hljs-type">Comparator</span>&lt;String&gt; <span class="hljs-variable">comp2</span> <span class="hljs-operator">=</span> String::compareToIgnoreCase;
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">names</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>);
+names.sort(String::compareToIgnoreCase);
+<span class="hljs-comment">// [Alice, bob, Charlie]</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="39" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8">构造器引用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// Lambda</span>
+<span class="hljs-type">Supplier</span>&lt;ArrayList&lt;String&gt;&gt; <span class="hljs-variable">list1</span> <span class="hljs-operator">=</span> () -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+
+<span class="hljs-comment">// 构造器引用</span>
+<span class="hljs-type">Supplier</span>&lt;ArrayList&lt;String&gt;&gt; <span class="hljs-variable">list2</span> <span class="hljs-operator">=</span> ArrayList::<span class="hljs-keyword">new</span>;
+
+<span class="hljs-comment">// 带参数的构造器</span>
+<span class="hljs-type">Function</span>&lt;Integer, ArrayList&lt;String&gt;&gt; <span class="hljs-variable">list3</span> <span class="hljs-operator">=</span> ArrayList::<span class="hljs-keyword">new</span>;
+<span class="hljs-type">ArrayList</span>&lt;String&gt; <span class="hljs-variable">myList</span> <span class="hljs-operator">=</span> list3.apply(<span class="hljs-number">10</span>); <span class="hljs-comment">// 初始容量为10</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="40" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E6%95%B0%E7%BB%84%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8">数组构造器引用</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// Lambda</span>
+<span class="hljs-type">Function</span>&lt;Integer, String[]&gt; <span class="hljs-variable">arrayCreator1</span> <span class="hljs-operator">=</span> size -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[size];
+
+<span class="hljs-comment">// 数组构造器引用</span>
+<span class="hljs-type">Function</span>&lt;Integer, String[]&gt; <span class="hljs-variable">arrayCreator2</span> <span class="hljs-operator">=</span> String[]::<span class="hljs-keyword">new</span>;
+
+<span class="hljs-type">String</span>[] <span class="hljs-variable">arr</span> <span class="hljs-operator">=</span> arrayCreator2.apply(<span class="hljs-number">5</span>); <span class="hljs-comment">// 创建长度为5的数组</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="41" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="stream-api">Stream API</h1>
+<p>Stream API是Lambda表达式最重要的应用场景，提供了声明式的数据处理方式。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">names</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>, <span class="hljs-string">&quot;David&quot;</span>);
+
+<span class="hljs-comment">// 传统方式</span>
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">filtered</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+<span class="hljs-keyword">for</span> (String name : names) {
+    <span class="hljs-keyword">if</span> (name.startsWith(<span class="hljs-string">&quot;A&quot;</span>) || name.startsWith(<span class="hljs-string">&quot;B&quot;</span>)) {
+        filtered.add(name.toUpperCase());
+    }
+}
+Collections.sort(filtered);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="42" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="stream%E6%96%B9%E5%BC%8F">Stream方式</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> names.stream()
+    .filter(name -&gt; name.startsWith(<span class="hljs-string">&quot;A&quot;</span>) || name.startsWith(<span class="hljs-string">&quot;B&quot;</span>))
+    .map(String::toUpperCase)
+    .sorted()
+    .collect(Collectors.toList());
+<span class="hljs-comment">// [ALICE, BOB]</span>
+</code></pre>
+<ul>
+<li><strong>声明式</strong>：描述做什么，而不是怎么做</li>
+<li><strong>可组合</strong>：多个操作可以链式调用</li>
+<li><strong>可并行</strong>：轻松切换到并行处理</li>
+<li><strong>延迟执行</strong>：只有遇到终止操作才真正执行</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="43" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="stream%E7%9A%84%E5%88%9B%E5%BB%BA">Stream的创建</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 从集合创建</span>
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+<span class="hljs-type">Stream</span>&lt;String&gt; <span class="hljs-variable">stream1</span> <span class="hljs-operator">=</span> list.stream();
+
+<span class="hljs-comment">// 从数组创建</span>
+<span class="hljs-type">String</span>[] <span class="hljs-variable">arr</span> <span class="hljs-operator">=</span> {<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>};
+<span class="hljs-type">Stream</span>&lt;String&gt; <span class="hljs-variable">stream2</span> <span class="hljs-operator">=</span> Arrays.stream(arr);
+
+<span class="hljs-comment">// 使用Stream.of()</span>
+<span class="hljs-type">Stream</span>&lt;String&gt; <span class="hljs-variable">stream3</span> <span class="hljs-operator">=</span> Stream.of(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+
+<span class="hljs-comment">// 无限流</span>
+<span class="hljs-type">Stream</span>&lt;Integer&gt; <span class="hljs-variable">stream4</span> <span class="hljs-operator">=</span> Stream.iterate(<span class="hljs-number">0</span>, n -&gt; n + <span class="hljs-number">2</span>); <span class="hljs-comment">// 0, 2, 4, 6...</span>
+<span class="hljs-type">Stream</span>&lt;Double&gt; <span class="hljs-variable">stream5</span> <span class="hljs-operator">=</span> Stream.generate(Math::random);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="44" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%B8%AD%E9%97%B4%E6%93%8D%E4%BD%9C---filter--map">中间操作 - filter &amp; map</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getEmployees();
+
+<span class="hljs-comment">// filter - 过滤</span>
+employees.stream()
+    .filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+    .filter(e -&gt; e.getAge() &lt; <span class="hljs-number">40</span>)
+    .forEach(System.out::println);
+
+<span class="hljs-comment">// map - 转换</span>
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">names</span> <span class="hljs-operator">=</span> employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.toList());
+
+<span class="hljs-comment">// mapToInt/mapToDouble/mapToLong - 转换为基本类型流</span>
+<span class="hljs-type">int</span> <span class="hljs-variable">totalSalary</span> <span class="hljs-operator">=</span> employees.stream()
+    .mapToInt(Employee::getSalary)
+    .sum();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="45" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%B8%AD%E9%97%B4%E6%93%8D%E4%BD%9C---flatmap">中间操作 - flatMap</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// flatMap - 扁平化处理</span>
+<span class="hljs-type">List</span>&lt;List&lt;String&gt;&gt; <span class="hljs-variable">listOfLists</span> <span class="hljs-operator">=</span> Arrays.asList(
+    Arrays.asList(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>),
+    Arrays.asList(<span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>),
+    Arrays.asList(<span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;f&quot;</span>)
+);
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">flattened</span> <span class="hljs-operator">=</span> listOfLists.stream()
+    .flatMap(List::stream)  <span class="hljs-comment">// 将每个List&lt;String&gt;展开为Stream&lt;String&gt;</span>
+    .collect(Collectors.toList()); <span class="hljs-comment">// [a, b, c, d, e, f]</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">allSkills</span> <span class="hljs-operator">=</span> employees.stream() <span class="hljs-comment">// 实际应用：获取所有员工的所有技能</span>
+    .flatMap(e -&gt; e.getSkills().stream())
+    .distinct()
+    .collect(Collectors.toList());
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="46" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%B8%AD%E9%97%B4%E6%93%8D%E4%BD%9C---%E5%85%B6%E4%BB%96">中间操作 - 其他</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// distinct - 去重</span>
+Stream.of(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+      .distinct()
+      .forEach(System.out::println); <span class="hljs-comment">// 1, 2, 3</span>
+<span class="hljs-comment">// sorted - 排序</span>
+employees.stream()
+    .sorted(Comparator.comparing(Employee::getSalary).reversed())
+    .forEach(System.out::println);
+<span class="hljs-comment">// limit - 限制数量</span>
+employees.stream()
+    .limit(<span class="hljs-number">5</span>)  <span class="hljs-comment">// 只取前5个</span>
+    .forEach(System.out::println);
+<span class="hljs-comment">// skip - 跳过</span>
+employees.stream()
+    .skip(<span class="hljs-number">10</span>)  <span class="hljs-comment">// 跳过前10个</span>
+    .forEach(System.out::println);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="47" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%BB%88%E6%AD%A2%E6%93%8D%E4%BD%9C---collect">终止操作 - collect</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 转换为List</span>
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> stream.collect(Collectors.toList());
+
+<span class="hljs-comment">// 转换为Set</span>
+<span class="hljs-type">Set</span>&lt;String&gt; <span class="hljs-variable">set</span> <span class="hljs-operator">=</span> stream.collect(Collectors.toSet());
+
+<span class="hljs-comment">// 转换为Map</span>
+<span class="hljs-type">Map</span>&lt;Integer, Employee&gt; <span class="hljs-variable">map</span> <span class="hljs-operator">=</span> employees.stream()
+    .collect(Collectors.toMap(Employee::getId, e -&gt; e));
+
+<span class="hljs-comment">// 连接字符串</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">joined</span> <span class="hljs-operator">=</span> employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.joining(<span class="hljs-string">&quot;, &quot;</span>, <span class="hljs-string">&quot;[&quot;</span>, <span class="hljs-string">&quot;]&quot;</span>));
+<span class="hljs-comment">// [Alice, Bob, Charlie]</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%BB%88%E6%AD%A2%E6%93%8D%E4%BD%9C---%E5%85%B6%E4%BB%96">终止操作 - 其他</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// forEach - 遍历</span>
+stream.forEach(System.out::println);
+
+<span class="hljs-comment">// count - 计数</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> employees.stream()
+    .filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+    .count();
+
+<span class="hljs-comment">// anyMatch/allMatch/noneMatch - 匹配</span>
+<span class="hljs-type">boolean</span> <span class="hljs-variable">hasHighEarner</span> <span class="hljs-operator">=</span> employees.stream()
+    .anyMatch(e -&gt; e.getSalary() &gt; <span class="hljs-number">10000</span>);
+
+<span class="hljs-type">boolean</span> <span class="hljs-variable">allAdults</span> <span class="hljs-operator">=</span> employees.stream()
+    .allMatch(e -&gt; e.getAge() &gt;= <span class="hljs-number">18</span>);
+
+<span class="hljs-comment">// findFirst/findAny - 查找</span>
+<span class="hljs-type">Optional</span>&lt;Employee&gt; <span class="hljs-variable">first</span> <span class="hljs-operator">=</span> employees.stream()
+    .filter(e -&gt; e.getName().startsWith(<span class="hljs-string">&quot;A&quot;</span>))
+    .findFirst();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="49" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E7%BB%88%E6%AD%A2%E6%93%8D%E4%BD%9C---reduce">终止操作 - reduce</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// reduce - 归约操作</span>
+<span class="hljs-type">List</span>&lt;Integer&gt; <span class="hljs-variable">numbers</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>);
+<span class="hljs-comment">// 求和</span>
+<span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> numbers.stream()
+    .reduce(<span class="hljs-number">0</span>, (a, b) -&gt; a + b);  <span class="hljs-comment">// 15</span>
+<span class="hljs-comment">// 也可以使用方法引用</span>
+<span class="hljs-type">int</span> <span class="hljs-variable">sum2</span> <span class="hljs-operator">=</span> numbers.stream()
+    .reduce(<span class="hljs-number">0</span>, Integer::sum);
+<span class="hljs-comment">// 求最大值</span>
+<span class="hljs-type">Optional</span>&lt;Integer&gt; <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> numbers.stream()
+    .reduce(Integer::max);
+<span class="hljs-comment">// 字符串拼接</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">concatenated</span> <span class="hljs-operator">=</span> Stream.of(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>)
+    .reduce(<span class="hljs-string">&quot;&quot;</span>, String::concat); <span class="hljs-comment">// &quot;abc&quot;</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="50" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%B9%B6%E8%A1%8C%E6%B5%81-parallel-streams">并行流 Parallel Streams</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 串行流</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">count1</span> <span class="hljs-operator">=</span> employees.stream()
+    .filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+    .count();
+<span class="hljs-comment">// 并行流 - 利用多核CPU</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">count2</span> <span class="hljs-operator">=</span> employees.parallelStream()
+    .filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+    .count();
+<span class="hljs-comment">// 或者从串行流转换</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">count3</span> <span class="hljs-operator">=</span> employees.stream()
+    .parallel()  <span class="hljs-comment">// 转换为并行流</span>
+    .filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+    .count();
+</code></pre>
+<p>不是所有操作都适合并行，数据量小或操作简单时，并行反而会降低性能。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="stream%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B">Stream综合示例</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 找出年龄大于30岁、工资前3高的员工姓名</span>
+<span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">topEarners</span> <span class="hljs-operator">=</span> employees.stream()
+    .filter(e -&gt; e.getAge() &gt; <span class="hljs-number">30</span>)
+    .sorted(Comparator.comparing(Employee::getSalary).reversed())
+    .limit(<span class="hljs-number">3</span>)
+    .map(Employee::getName)
+    .collect(Collectors.toList());
+
+<span class="hljs-comment">// 按部门统计平均工资</span>
+<span class="hljs-type">Map</span>&lt;String, Double&gt; <span class="hljs-variable">avgSalaryByDept</span> <span class="hljs-operator">=</span> employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.averagingDouble(Employee::getSalary)
+    ));
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="52" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E9%97%AD%E5%8C%85%E4%B8%8E%E5%8F%98%E9%87%8F%E6%8D%95%E8%8E%B7">闭包与变量捕获</h1>
+<p>Lambda表达式可以访问外部变量，形成<strong>闭包（Closure）</strong>。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">int</span> <span class="hljs-variable">baseValue</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">adder</span> <span class="hljs-operator">=</span> x -&gt; x + baseValue;
+
+System.out.println(adder.apply(<span class="hljs-number">5</span>)); <span class="hljs-comment">// 15</span>
+</code></pre>
+<p>但有重要限制：<strong>被Lambda捕获的局部变量必须是final或effectively final的</strong>。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="53" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="effectively-final">Effectively Final</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">int</span> <span class="hljs-variable">baseValue</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">adder</span> <span class="hljs-operator">=</span> x -&gt; x + baseValue; <span class="hljs-comment">// OK</span>
+
+baseValue = <span class="hljs-number">20</span>; <span class="hljs-comment">// 编译错误！Variable used in lambda should be final or effectively final</span>
+</code></pre>
+<p><strong>Effectively Final</strong>: 变量初始化后从未被修改，虽然没有声明为final，但实际上是final的。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">baseValue</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>; <span class="hljs-comment">// 显式final</span>
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">adder</span> <span class="hljs-operator">=</span> x -&gt; x + baseValue; <span class="hljs-comment">// OK</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="54" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E8%BF%99%E4%B8%AA%E9%99%90%E5%88%B6">为什么有这个限制？</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-title function_">createAdder</span><span class="hljs-params">(<span class="hljs-type">int</span> base)</span> {
+    <span class="hljs-keyword">return</span> x -&gt; x + base;  <span class="hljs-comment">// base必须是final的</span>
+}
+
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">adder</span> <span class="hljs-operator">=</span> createAdder(<span class="hljs-number">10</span>);
+<span class="hljs-comment">// base变量已经不在栈上了，但Lambda仍需要访问它</span>
+<span class="hljs-comment">// 所以Lambda会捕获base的值（值拷贝），而不是引用</span>
+</code></pre>
+<p>原因：</p>
+<ol>
+<li>Lambda可能在其他线程执行</li>
+<li>Lambda可能在变量作用域外执行</li>
+<li>避免并发修改问题</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="55" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E8%AE%BF%E9%97%AE%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F">访问实例变量</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;  <span class="hljs-comment">// 实例变量可以修改</span>
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">doCount</span><span class="hljs-params">()</span> {
+        IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>).forEach(i -&gt; {
+            count++;  <span class="hljs-comment">// OK! 实例变量可以修改</span>
+            System.out.println(count);
+        });
+    }
+}
+</code></pre>
+<p><strong>实例变量</strong>和<strong>静态变量</strong>可以在Lambda中修改，因为它们不是局部变量。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="56" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%8F%98%E9%80%9A%E6%96%B9%E6%A1%88">变通方案</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 使用数组或包装对象</span>
+<span class="hljs-type">int</span>[] <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> {<span class="hljs-number">0</span>};
+IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>).forEach(i -&gt; {
+    count[<span class="hljs-number">0</span>]++;  <span class="hljs-comment">// 数组引用是final的，但数组内容可变</span>
+});
+
+<span class="hljs-comment">// 使用AtomicInteger（线程安全）</span>
+<span class="hljs-type">AtomicInteger</span> <span class="hljs-variable">atomicCount</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AtomicInteger</span>(<span class="hljs-number">0</span>);
+IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>).forEach(i -&gt; {
+    atomicCount.incrementAndGet();
+});
+</code></pre>
+<p><strong>不推荐</strong>：这违背了函数式编程的不可变原则。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="57" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88-function-composition">函数组合 Function Composition</h1>
+<p>函数式编程的核心思想之一：将小函数组合成大函数。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">times2</span> <span class="hljs-operator">=</span> x -&gt; x * <span class="hljs-number">2</span>;
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">squared</span> <span class="hljs-operator">=</span> x -&gt; x * x;
+
+<span class="hljs-comment">// andThen - 先执行调用者，再执行参数</span>
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">times2ThenSquared</span> <span class="hljs-operator">=</span> times2.andThen(squared);
+System.out.println(times2ThenSquared.apply(<span class="hljs-number">4</span>)); <span class="hljs-comment">// (4 * 2)^2 = 64</span>
+
+<span class="hljs-comment">// compose - 先执行参数，再执行调用者</span>
+<span class="hljs-type">Function</span>&lt;Integer, Integer&gt; <span class="hljs-variable">squaredThenTimes2</span> <span class="hljs-operator">=</span> times2.compose(squared);
+System.out.println(squaredThenTimes2.apply(<span class="hljs-number">4</span>)); <span class="hljs-comment">// (4^2) * 2 = 32</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="58" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="predicate%E7%BB%84%E5%90%88">Predicate组合</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">startsWithA</span> <span class="hljs-operator">=</span> s -&gt; s.startsWith(<span class="hljs-string">&quot;A&quot;</span>);
+<span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">longString</span> <span class="hljs-operator">=</span> s -&gt; s.length() &gt; <span class="hljs-number">5</span>;
+
+<span class="hljs-comment">// and - 逻辑与</span>
+<span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">combined</span> <span class="hljs-operator">=</span> startsWithA.and(longString);
+System.out.println(combined.test(<span class="hljs-string">&quot;Alice&quot;</span>)); <span class="hljs-comment">// true</span>
+System.out.println(combined.test(<span class="hljs-string">&quot;Amy&quot;</span>));   <span class="hljs-comment">// false</span>
+
+<span class="hljs-comment">// or - 逻辑或</span>
+<span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">either</span> <span class="hljs-operator">=</span> startsWithA.or(longString);
+
+<span class="hljs-comment">// negate - 逻辑非</span>
+<span class="hljs-type">Predicate</span>&lt;String&gt; <span class="hljs-variable">notStartsWithA</span> <span class="hljs-operator">=</span> startsWithA.negate();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="59" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="comparator%E7%BB%84%E5%90%88">Comparator组合</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;Employee&gt; <span class="hljs-variable">employees</span> <span class="hljs-operator">=</span> getEmployees();
+
+<span class="hljs-comment">// 先按部门排序，部门相同再按工资排序</span>
+<span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">comparator</span> <span class="hljs-operator">=</span> 
+    Comparator.comparing(Employee::getDepartment)
+              .thenComparing(Employee::getSalary);
+
+employees.sort(comparator);
+
+<span class="hljs-comment">// 倒序</span>
+employees.sort(comparator.reversed());
+
+<span class="hljs-comment">// 空值处理</span>
+<span class="hljs-type">Comparator</span>&lt;Employee&gt; <span class="hljs-variable">nullSafeComparator</span> <span class="hljs-operator">=</span> 
+    Comparator.nullsLast(
+        Comparator.comparing(Employee::getName)
+    );
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="60" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="consumer%E7%BB%84%E5%90%88">Consumer组合</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Consumer</span>&lt;String&gt; <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> s -&gt; System.out.println(<span class="hljs-string">&quot;First: &quot;</span> + s);
+<span class="hljs-type">Consumer</span>&lt;String&gt; <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> s -&gt; System.out.println(<span class="hljs-string">&quot;Second: &quot;</span> + s);
+
+<span class="hljs-comment">// andThen - 依次执行</span>
+<span class="hljs-type">Consumer</span>&lt;String&gt; <span class="hljs-variable">combined</span> <span class="hljs-operator">=</span> c1.andThen(c2);
+combined.accept(<span class="hljs-string">&quot;Test&quot;</span>);
+<span class="hljs-comment">// 输出：</span>
+<span class="hljs-comment">// First: Test</span>
+<span class="hljs-comment">// Second: Test</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+list.forEach(
+    ((Consumer&lt;String&gt;) String::toUpperCase)
+        .andThen(System.out::println)
+);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="61" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E9%AA%8C%E8%AF%81%E5%99%A8%E9%93%BE">实际应用：验证器链</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Validator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Predicate</span>&lt;Employee&gt; <span class="hljs-title function_">isAdult</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> e -&gt; e.getAge() &gt;= <span class="hljs-number">18</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Predicate</span>&lt;Employee&gt; <span class="hljs-title function_">hasValidSalary</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> e -&gt; e.getSalary() &gt; <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Predicate</span>&lt;Employee&gt; <span class="hljs-title function_">hasValidEmail</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> e -&gt; e.getEmail() != <span class="hljs-literal">null</span> &amp;&amp; e.getEmail().contains(<span class="hljs-string">&quot;@&quot;</span>);
+    }
+}
+
+<span class="hljs-type">Predicate</span>&lt;Employee&gt; <span class="hljs-variable">employeeValidator</span> <span class="hljs-operator">=</span> 
+    Validator.isAdult()
+             .and(Validator.hasValidSalary())
+             .and(Validator.hasValidEmail());
+
+<span class="hljs-type">boolean</span> <span class="hljs-variable">isValid</span> <span class="hljs-operator">=</span> employeeValidator.test(employee);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="62" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="optional-%E4%B8%8E-lambda">Optional 与 Lambda</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 传统方式</span>
+<span class="hljs-type">Employee</span> <span class="hljs-variable">employee</span> <span class="hljs-operator">=</span> findEmployeeById(id);
+<span class="hljs-keyword">if</span> (employee != <span class="hljs-literal">null</span>) {
+    <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> employee.getName();
+    <span class="hljs-keyword">if</span> (name != <span class="hljs-literal">null</span>) {
+        System.out.println(name.toUpperCase());
+    }
+}
+
+<span class="hljs-comment">// Optional方式</span>
+findEmployeeById(id)
+    .map(Employee::getName)
+    .map(String::toUpperCase)
+    .ifPresent(System.out::println);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="63" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%88%9B%E5%BB%BAoptional">创建Optional</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 空Optional</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">empty</span> <span class="hljs-operator">=</span> Optional.empty();
+
+<span class="hljs-comment">// 非空Optional（值不能为null）</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">opt1</span> <span class="hljs-operator">=</span> Optional.of(<span class="hljs-string">&quot;Hello&quot;</span>);
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">opt2</span> <span class="hljs-operator">=</span> Optional.of(<span class="hljs-literal">null</span>); <span class="hljs-comment">// NullPointerException!</span>
+
+<span class="hljs-comment">// 可能为空的Optional</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">opt3</span> <span class="hljs-operator">=</span> Optional.ofNullable(<span class="hljs-string">&quot;Hello&quot;</span>);
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">opt4</span> <span class="hljs-operator">=</span> Optional.ofNullable(<span class="hljs-literal">null</span>); <span class="hljs-comment">// OK，返回empty</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="64" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="optional%E7%9A%84map">Optional的map</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Optional</span>&lt;Employee&gt; <span class="hljs-variable">empOpt</span> <span class="hljs-operator">=</span> findEmployeeById(id);
+
+<span class="hljs-comment">// map - 转换值</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">nameOpt</span> <span class="hljs-operator">=</span> empOpt.map(Employee::getName);
+
+<span class="hljs-comment">// 链式调用</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">upperName</span> <span class="hljs-operator">=</span> empOpt
+    .map(Employee::getName)
+    .map(String::toUpperCase)
+    .orElse(<span class="hljs-string">&quot;UNKNOWN&quot;</span>);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="65" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="optional%E7%9A%84flatmap">Optional的flatMap</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// flatMap - 避免Optional嵌套</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-keyword">private</span> Optional&lt;Address&gt; address;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">Optional</span>&lt;Address&gt; <span class="hljs-title function_">getAddress</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> address; }
+}
+
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">city</span> <span class="hljs-operator">=</span> empOpt
+    .flatMap(Employee::getAddress)  <span class="hljs-comment">// 不是Optional&lt;Optional&lt;Address&gt;&gt;</span>
+    .map(Address::getCity)
+    .orElse(<span class="hljs-string">&quot;Unknown&quot;</span>);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="66" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="optional%E7%9A%84filter">Optional的filter</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Optional</span>&lt;Employee&gt; <span class="hljs-variable">empOpt</span> <span class="hljs-operator">=</span> findEmployeeById(id);
+<span class="hljs-comment">// 只有满足条件才保留</span>
+empOpt.filter(e -&gt; e.getSalary() &gt; <span class="hljs-number">5000</span>)
+      .ifPresent(e -&gt; System.out.println(<span class="hljs-string">&quot;High earner: &quot;</span> + e.getName()));
+<span class="hljs-comment">// 链式过滤</span>
+empOpt.filter(e -&gt; e.getAge() &gt; <span class="hljs-number">25</span>)
+      .filter(e -&gt; e.getDepartment().equals(<span class="hljs-string">&quot;IT&quot;</span>))
+      .map(Employee::getName)
+      .ifPresent(System.out::println);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="67" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="lambda%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">Lambda中的异常处理</h1>
+<p>Lambda表达式不能抛出受检异常（Checked Exception），这是一个常见的痛点。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">files</span> <span class="hljs-operator">=</span> Arrays.asList(<span class="hljs-string">&quot;a.txt&quot;</span>, <span class="hljs-string">&quot;b.txt&quot;</span>, <span class="hljs-string">&quot;c.txt&quot;</span>);
+
+<span class="hljs-comment">// 编译错误！Lambda不能抛出IOException</span>
+files.forEach(file -&gt; {
+    <span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> Files.readString(Path.of(file)); <span class="hljs-comment">// throws IOException</span>
+    System.out.println(content);
+});
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="68" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881try-catch%E5%8C%85%E8%A3%85">解决方案1：Try-Catch包装</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">files.forEach(file -&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> Files.readString(Path.of(file));
+        System.out.println(content);
+    } <span class="hljs-keyword">catch</span> (IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e); <span class="hljs-comment">// 转换为运行时异常</span>
+    }
+});
+</code></pre>
+<p><strong>缺点</strong>：代码冗长，破坏了Lambda的简洁性。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="69" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%882%E5%8C%85%E8%A3%85%E5%87%BD%E6%95%B0">解决方案2：包装函数</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ThrowingConsumer</span>&lt;T&gt; {
+    <span class="hljs-type">void</span> <span class="hljs-title function_">accept</span><span class="hljs-params">(T t)</span> <span class="hljs-keyword">throws</span> Exception;
+    
+    <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-type">Consumer</span>&lt;T&gt; <span class="hljs-title function_">wrap</span><span class="hljs-params">(ThrowingConsumer&lt;T&gt; consumer)</span> {
+        <span class="hljs-keyword">return</span> t -&gt; {
+            <span class="hljs-keyword">try</span> {
+                consumer.accept(t);
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);
+            }
+        };
+    }
+}
+
+<span class="hljs-comment">// 使用</span>
+files.forEach(ThrowingConsumer.wrap(file -&gt; {
+    <span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> Files.readString(Path.of(file));
+    System.out.println(content);
+}));
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="70" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%883%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95">解决方案3：提取方法</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FileProcessor</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">processFile</span><span class="hljs-params">(String file)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> Files.readString(Path.of(file));
+            System.out.println(content);
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);
+        }
+    }
+}
+
+<span class="hljs-comment">// 使用方法引用</span>
+files.forEach(FileProcessor::processFile);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="71" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%884%E4%BD%BF%E7%94%A8try%E7%B1%BB%E5%9E%8B%E5%87%BD%E6%95%B0%E5%BC%8F%E5%BA%93">解决方案4：使用Try类型（函数式库）</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 使用Vavr等函数式库</span>
+<span class="hljs-keyword">import</span> io.vavr.control.Try;
+
+files.forEach(file -&gt; {
+    Try.of(() -&gt; Files.readString(Path.of(file)))
+       .onSuccess(System.out::println)
+       .onFailure(e -&gt; System.err.println(<span class="hljs-string">&quot;Error: &quot;</span> + e.getMessage()));
+});
+
+<span class="hljs-comment">// 或者收集结果</span>
+<span class="hljs-type">List</span>&lt;Try&lt;String&gt;&gt; <span class="hljs-variable">results</span> <span class="hljs-operator">=</span> files.stream()
+    .map(file -&gt; Try.of(() -&gt; Files.readString(Path.of(file))))
+    .collect(Collectors.toList());
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="72" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="%E6%80%A7%E8%83%BD%E8%80%83%E8%99%91">性能考虑</h1>
+<h2 id="lambda-vs-%E5%8C%BF%E5%90%8D%E7%B1%BB">Lambda vs 匿名类</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// Lambda使用invokedynamic，首次调用稍慢，后续调用很快</span>
+<span class="hljs-type">Runnable</span> <span class="hljs-variable">r1</span> <span class="hljs-operator">=</span> () -&gt; System.out.println(<span class="hljs-string">&quot;Lambda&quot;</span>);
+
+<span class="hljs-comment">// 匿名类每次都会生成新的类文件</span>
+<span class="hljs-type">Runnable</span> <span class="hljs-variable">r2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Anonymous&quot;</span>);
+    }
+};
+</code></pre>
+<p>Lambda在性能和内存占用上都优于匿名类。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="73" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="stream%E7%9A%84%E5%BC%80%E9%94%80">Stream的开销</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">List</span>&lt;Integer&gt; <span class="hljs-variable">numbers</span> <span class="hljs-operator">=</span> IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>).boxed().collect(Collectors.toList());
+
+<span class="hljs-comment">// 简单操作，传统循环可能更快</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">sum1</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : numbers) {
+    sum1 += n;
+}
+
+<span class="hljs-comment">// Stream有创建、装箱等开销</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">sum2</span> <span class="hljs-operator">=</span> numbers.stream()
+    .mapToLong(Integer::longValue)
+    .sum();
+
+<span class="hljs-comment">// 对于基本类型，使用IntStream/LongStream/DoubleStream避免装箱</span>
+<span class="hljs-type">long</span> <span class="hljs-variable">sum3</span> <span class="hljs-operator">=</span> IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>).sum();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="74" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h2 id="%E5%B9%B6%E8%A1%8C%E6%B5%81%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">并行流的注意事项</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-comment">// 适合并行：计算密集型、数据量大、无状态操作</span>
+<span class="hljs-type">List</span>&lt;Integer&gt; <span class="hljs-variable">result1</span> <span class="hljs-operator">=</span> IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">1_000_000</span>)
+    .parallel()
+    .map(i -&gt; i * i)  <span class="hljs-comment">// CPU密集</span>
+    .boxed()
+    .collect(Collectors.toList());
+
+<span class="hljs-comment">// 不适合并行：数据量小、有状态操作、线程安全问题</span>
+<span class="hljs-type">List</span>&lt;Integer&gt; <span class="hljs-variable">result2</span> <span class="hljs-operator">=</span> IntStream.range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>)  <span class="hljs-comment">// 数据太少</span>
+    .parallel()
+    .mapToObj(i -&gt; i)
+    .collect(Collectors.toList());
+</code></pre>
+<p>并行流使用<code>ForkJoinPool.commonPool()</code>，线程数默认为CPU核心数。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="75" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="faas-function-as-a-service">FaaS: Function as a service</h1>
+<p>Function as a service is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage application functionalities without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app.</p>
+<p>AWS Lambda was the first FaaS offering by a large public cloud vendor.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Function_as_a_service">https://en.wikipedia.org/wiki/Function_as_a_service</a></small></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="76" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="79" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/springcloudfunction.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="76" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="76" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="79" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1 id="spring-cloud-function">Spring Cloud Function</h1>
+<ul>
+<li><small><a href="https://spring.io/projects/spring-cloud-function">Spring Cloud Function</a> 是来自 Pivotal 的 Spring 团队的新项目，它致力于促进函数作为主要的开发单元。</small></li>
+<li><small>该项目提供了一个通用的模型，用于在各种平台上部署基于函数的软件，包括像 Amazon AWS Lambda 这样的 FaaS（函数即服务，function as a service）平台。</small></li>
+</ul>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="76" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="77" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="demo">Demo</h1>
+<p><a href="https://github.com/sa-spring/spring-cloudfunction">https://github.com/sa-spring/spring-cloudfunction</a></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CloudFunctionApplication</span> {
+    ...
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">Function</span>&lt;String, String&gt; <span class="hljs-title function_">reverseString</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> value -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(value).reverse().toString();
+	}
+}
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">$ curl localhost:8080/reverseString -H <span class="hljs-string">&quot;Content-Type: text/plain&quot;</span> -d  <span class="hljs-string">&quot;hello world&quot;</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="78" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79">
+<h1 id="demo-pojo-function">Demo Pojo Function</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">import</span> java.util.function.Function;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Function</span>&lt;String, String&gt; {
+ 
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">String</span> <span class="hljs-title function_">apply</span><span class="hljs-params">(String s)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello &quot;</span> + s + <span class="hljs-string">&quot;, and welcome to Spring Cloud Function!!!&quot;</span>;
+    }
+}
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">$ curl localhost:8080/greeter -H <span class="hljs-string">&quot;Content-Type: text/plain&quot;</span> -d <span class="hljs-string">&quot;World&quot;</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="79" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/happy.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="79" data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="79" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;" data-marpit-pagination-total="79" data-marpit-advanced-background="content"></section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o),l=Symbol();let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[l];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();a()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[l]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();
+</script></foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" lang="C" data-marpit-pagination="79" style="" data-marpit-pagination-total="79" data-marpit-advanced-background="pseudo"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="71" tabindex="0"><p># Collector 高级用法
+
+`Collectors`提供了丰富的收集器用于Stream的终止操作。
+
+## 基本收集器
+
+```java
+List&lt;Employee&gt; employees = getEmployees();
+
+// toList/toSet
+List&lt;String&gt; names = employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.toList());
+
+// toCollection - 指定集合类型
+TreeSet&lt;String&gt; sortedNames = employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.toCollection(TreeSet::new));
+```
+
+---
+
+## 统计收集器
+
+```java
+// counting
+long count = employees.stream()
+    .collect(Collectors.counting());
+
+// summingInt/summingDouble/summingLong
+int totalSalary = employees.stream()
+    .collect(Collectors.summingInt(Employee::getSalary));
+
+// averagingInt/averagingDouble/averagingLong
+double avgSalary = employees.stream()
+    .collect(Collectors.averagingDouble(Employee::getSalary));
+
+// summarizingInt - 获取统计摘要
+IntSummaryStatistics stats = employees.stream()
+    .collect(Collectors.summarizingInt(Employee::getSalary));
+System.out.println(&quot;Max: &quot; + stats.getMax());
+System.out.println(&quot;Min: &quot; + stats.getMin());
+System.out.println(&quot;Avg: &quot; + stats.getAverage());
+```
+
+---
+
+## 分组 groupingBy
+
+```java
+// 按部门分组
+Map&lt;String, List&lt;Employee&gt;&gt; byDept = employees.stream()
+    .collect(Collectors.groupingBy(Employee::getDepartment));
+
+// 按条件分组
+Map&lt;Boolean, List&lt;Employee&gt;&gt; byHighSalary = employees.stream()
+    .collect(Collectors.partitioningBy(e -&gt; e.getSalary() &gt; 5000));
+
+// 多级分组
+Map&lt;String, Map&lt;Integer, List&lt;Employee&gt;&gt;&gt; byDeptAndAge = 
+    employees.stream()
+        .collect(Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.groupingBy(Employee::getAge)
+        ));
+```
+
+---
+
+## groupingBy + 下游收集器
+
+```java
+// 按部门统计人数
+Map&lt;String, Long&gt; countByDept = employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.counting()
+    ));
+
+// 按部门计算平均工资
+Map&lt;String, Double&gt; avgSalaryByDept = employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.averagingDouble(Employee::getSalary)
+    ));
+
+// 按部门获取工资最高的员工
+Map&lt;String, Optional&lt;Employee&gt;&gt; topByDept = employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.maxBy(Comparator.comparing(Employee::getSalary))
+    ));
+```
+
+---
+
+## 字符串连接
+
+```java
+// joining - 连接字符串
+String names = employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.joining());
+// AliceBobCharlie
+
+String namesWithDelimiter = employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.joining(&quot;, &quot;));
+// Alice, Bob, Charlie
+
+String formatted = employees.stream()
+    .map(Employee::getName)
+    .collect(Collectors.joining(&quot;, &quot;, &quot;Employees: [&quot;, &quot;]&quot;));
+// Employees: [Alice, Bob, Charlie]
+```
+
+---
+
+## toMap
+
+```java
+// 转换为Map
+Map&lt;Integer, String&gt; idToName = employees.stream()
+    .collect(Collectors.toMap(
+        Employee::getId,      // key
+        Employee::getName     // value
+    ));
+
+// 处理重复key
+Map&lt;String, Employee&gt; nameToEmp = employees.stream()
+    .collect(Collectors.toMap(
+        Employee::getName,
+        e -&gt; e,
+        (existing, replacement) -&gt; existing  // 保留现有的
+    ));
+
+// 指定Map类型
+TreeMap&lt;Integer, String&gt; sortedMap = employees.stream()
+    .collect(Collectors.toMap(
+        Employee::getId,
+        Employee::getName,
+        (e1, e2) -&gt; e1,
+        TreeMap::new
+    ));
+```
+
+---
+
+## 自定义Collector
+
+```java
+// 使用Collector.of()创建自定义收集器
+Collector&lt;Employee, ?, String&gt; employeeNameCollector = Collector.of(
+    StringBuilder::new,                              // supplier
+    (sb, emp) -&gt; sb.append(emp.getName()).append(&quot;, &quot;), // accumulator
+    (sb1, sb2) -&gt; sb1.append(sb2),                  // combiner
+    StringBuilder::toString                          // finisher
+);
+
+String allNames = employees.stream()
+    .collect(employeeNameCollector);
+```</p><p>---</p></div><div class="bespoke-marp-note" data-index="74" tabindex="0"><p># Stream调试技巧
+
+## 使用peek()
+
+```java
+List&lt;Integer&gt; result = IntStream.range(0, 10)
+    .peek(x -&gt; System.out.println(&quot;原始值: &quot; + x))
+    .filter(x -&gt; x % 2 == 0)
+    .peek(x -&gt; System.out.println(&quot;过滤后: &quot; + x))
+    .map(x -&gt; x * 2)
+    .peek(x -&gt; System.out.println(&quot;映射后: &quot; + x))
+    .boxed()
+    .collect(Collectors.toList());
+```
+
+**注意**：`peek()`是中间操作，只在有终止操作时才执行。
+
+---
+
+## 设置断点
+
+在IDE中可以在Lambda表达式内部设置断点：
+
+```java
+employees.stream()
+    .filter(e -&gt; {
+        // 在这里设置断点
+        return e.getSalary() &gt; 5000;
+    })
+    .map(e -&gt; {
+        // 或者这里
+        return e.getName();
+    })
+    .collect(Collectors.toList());
+```
+
+---
+
+## 分步执行
+
+```java
+// 不好调试的写法
+List&lt;String&gt; result = employees.stream()
+    .filter(e -&gt; e.getSalary() &gt; 5000)
+    .map(Employee::getName)
+    .sorted()
+    .collect(Collectors.toList());
+
+// 分步执行便于调试
+Stream&lt;Employee&gt; highEarners = employees.stream()
+    .filter(e -&gt; e.getSalary() &gt; 5000);
+
+Stream&lt;String&gt; names = highEarners.map(Employee::getName);
+
+Stream&lt;String&gt; sorted = names.sorted();
+
+List&lt;String&gt; result = sorted.collect(Collectors.toList());
+```
+
+---
+
+## 打印Stream内容（调试用）
+
+```java
+public static &lt;T&gt; void printStream(Stream&lt;T&gt; stream) {
+    System.out.println(
+        stream.collect(Collectors.toList())
+    );
+}
+
+// 注意：Stream只能消费一次
+Stream&lt;Integer&gt; stream = Stream.of(1, 2, 3);
+printStream(stream);  // OK
+printStream(stream);  // 错误！Stream已关闭
+```
+
+---
+
+# Lambda最佳实践总结
+
+1. **保持Lambda简短**：一行最好，最多3-5行
+2. **复杂逻辑提取为方法**：使用方法引用
+3. **避免副作用**：不修改外部状态
+4. **合理使用类型推断**：让代码更简洁
+5. **优先使用方法引用**：更清晰、更简洁
+6. **善用Stream API**：处理集合数据
+7. **谨慎使用并行流**：不是万能的性能提升
+8. **Optional处理null**：避免显式null检查
+9. **组合小函数**：而不是写大Lambda
+10. **异常处理要妥善**：不要吞没异常</p><p>---</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.5.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter(function(e){return e!==t})},l=function(e,t){return(i[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach(function(e){e(u)}),n||c(0),u}}),t),o=e(r);const i=document.body,a=(...e)=>history.replaceState(...e),s="",l="presenter",c="next",d="overview",u=["",l,d,c],f="bespoke-marp-",m=`data-${f}`,g=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},p=()=>i.dataset.bespokeView,v=e=>new URLSearchParams(location.search).get(e),h=(e,t={})=>{const n={location,setter:a,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",g(r,n.location))}catch(e){console.error(e)}},w=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},k=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},E=e=>{e.parent.classList.add(`${f}parent`),e.slides.forEach(e=>e.classList.add(`${f}slide`)),e.on("activate",t=>{const n=`${f}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${m}fragment`,(i?"":"in")+"active");const a=`${m}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)})}),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}}),e.on("prev",({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},L=document,S=()=>!(!L.fullscreenEnabled&&!L.webkitFullscreenEnabled),P=()=>!(!L.fullscreenElement&&!L.webkitFullscreenElement),_=e=>{e.fullscreen=()=>{S()&&(async()=>{P()?(L.exitFullscreen||L.webkitExitFullscreen)?.call(L):((e=L.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!S()||(e.fullscreen(),t.preventDefault())})},O=`${f}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout(()=>{r.add(O),o()},e),r.contains(O)&&(r.remove(O),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},A=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${m}load`,e?"":"hideable")}})},C=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},D=(e=`.${f}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${m}osc=${JSON.stringify(e)}]`).forEach(n)};if(S()||n("fullscreen",e=>e.style.display="none"),!w){const e=(e,t)=>{e.disabled=!0,e.title=`${t} is disabled due to restricted localStorage.`};n("presenter",t=>e(t,"Presenter view")),n("overview",t=>e(t,"Overview view"))}return e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n?e.openPresenterView():"overview"===n&&e.toggleOverviewView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),S()&&(e=>{for(const t of["","webkit"])L.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",S()&&P())))}},N=e=>{if(e.syncKey&&"string"==typeof e.syncKey)return!0;throw new Error("The current instance of Bespoke.js is incompatible with Marp bespoke sync plugin.")},B=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},h({},{setter:(e,...t)=>a({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},i=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),i(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&i(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const a=()=>{const{reference:e}=o();void 0===e||e<=1?k(n):i(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),a()}),e.on("destroy",a)}},K=e=>{w&&document.addEventListener("keydown",t=>{("o"!==t.key||t.altKey||t.ctrlKey||t.metaKey)&&"Escape"!==t.key||(t.preventDefault(),e())})};let q=null;const V=({closeOnSelect:e=!0}={})=>t=>{N(t);const n=n=>{const r=(()=>{if(!q||!q.isConnected){q=document.createElement("div"),q.className=`${f}overview`,q.inert=!0;const n=document.createElement("iframe");n.src=(()=>{const n=new URLSearchParams(location.search);return n.set("view","overview"),n.set("sync",t.syncKey),e&&n.set("closeOnSelect","1"),g(n)})(),q.append(n),document.body.append(q)}return q})(),o=n??!r.dataset.open;setTimeout(()=>{if(r.dataset.open=o?"1":"",r.inert=!o,t.skipTransition=o,o){const e=r.querySelector("iframe");try{e?.contentWindow?.focus()}catch{e?.focus()}}else window.focus()},0)};Object.defineProperties(t,{toggleOverviewView:{enumerable:!0,value:n}}),window.addEventListener("message",e=>{e.origin===window.origin&&"closeOverview"===e.data&&n(!1)}),K(n)},j=e=>{const{title:t}=document;document.title="[Overview]"+(t?` - ${t}`:"");const n=!!v("closeOnSelect"),r=()=>{window.parent.postMessage("closeOverview","null"===window.origin?"*":window.origin)};if(e.slides.forEach((t,o)=>{t.tabIndex=0;const i=()=>{e.slide(o,{fragment:-1}),n&&r()};t.addEventListener("click",i),t.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),i())})}),window.addEventListener("keydown",t=>{const n=e.slide(),r=t=>{const r=t=>{const n=e.slides[t].getBoundingClientRect();return[Math.round((n.left+n.right)/2),Math.round((n.top+n.bottom)/2)]};let o=null,i=n;do{const e=r(i);if(o){if(Math.abs(e[0]-o[0])<2)return i}else o=e;i+=t}while(i>=0&&i<e.slides.length);return n};if("ArrowLeft"===t.key)e.slide(Math.max(n-1,0),{fragment:-1});else if("ArrowRight"===t.key)e.slide(Math.min(n+1,e.slides.length-1),{fragment:-1});else if("ArrowUp"===t.key)e.slide(r(-1),{fragment:-1});else if("ArrowDown"===t.key)e.slide(r(1),{fragment:-1});else if("End"===t.key)e.slide(e.slides.length-1,{fragment:-1});else{if("Home"!==t.key)return;e.slide(0,{fragment:-1})}t.preventDefault();const o=e.slide();e.slides[o]?.focus?.(),e.slides[o]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),e.on("slide",({index:t})=>{e.slides[t]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),window.parent!==window){K(r);const e=document.createElement("header");e.className=`${f}overview-header`;const t=document.createElement("button");t.className=`${f}overview-close`,t.type="button",t.title="Close overview",t.textContent=t.title,t.addEventListener("click",r),e.append(t),document.body.prepend(e)}},F=()=>{const e=p();return{[s]:V(),[l]:V({closeOnSelect:!1}),[d]:j}[e]},U=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}})};var R,X,H,W,J,Y,z,G={exports:{}},Q=(R||(R=1,G.exports=(X=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],H=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+W[e]+";"})},W={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},J="dangerouslySetInnerHTML",Y={className:"class",htmlFor:"for"},z={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var i in t)!1!==t[i]&&null!=t[i]&&i!==J&&(r+=" "+(Y[i]?Y[i]:H(i))+'="'+H(t[i])+'"');r+=">"}if(-1===X.indexOf(e)){if(t[J])r+=t[J].__html;else for(;n.length;){var a=n.pop();if(a)if(a.pop)for(var s=a.length;s--;)n.push(a[s]);else r+=!0===z[a]?a:H(a)}r+=e?"</"+e+">":""}return z[r]=!0,r})),G.exports),Z=e(Q);const ee=({children:e})=>Z(null,null,...e),te=`${f}presenter-`,ne={container:`${te}container`,dragbar:`${te}dragbar-container`,next:`${te}next`,nextContainer:`${te}next-container`,noteContainer:`${te}note-container`,noteWrapper:`${te}note-wrapper`,noteButtons:`${te}note-buttons`,infoContainer:`${te}info-container`,infoPageArea:`${te}info-page-area`,infoPage:`${te}info-page`,infoPagePrev:`${te}info-page-prev`,infoPageNext:`${te}info-page-next`,noteButtonsBigger:`${te}note-bigger`,noteButtonsSmaller:`${te}note-smaller`,infoTime:`${te}info-time`,infoTimer:`${te}info-timer`},re=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=ne.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",Z(ee,null,Z("div",{class:ne.nextContainer},Z("iframe",{class:ne.next,src:"?view=next"})),Z("div",{class:ne.dragbar}),Z("div",{class:ne.noteContainer},Z("div",{class:ne.noteWrapper}),Z("div",{class:ne.noteButtons},Z("button",{class:ne.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),Z("button",{class:ne.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),Z("div",{class:ne.infoContainer},Z("div",{class:ne.infoPageArea},Z("button",{class:ne.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),Z("button",{class:ne.infoPage}),Z("button",{class:ne.infoPageNext,tabindex:"-1",title:"Next"},"Next")),Z("time",{class:ne.infoTime,title:"Current time"}),Z("time",{class:ne.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(ne.dragbar).addEventListener("mousedown",()=>{t=!0,r(ne.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(ne.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(ne.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(ne.nextContainer).addEventListener("click",()=>e.next());const n=r(ne.next),o=(i=n,(e,t)=>i.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var i;n.addEventListener("load",()=>{r(ne.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const a=document.querySelectorAll(".bespoke-marp-note");a.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(ne.noteWrapper).appendChild(e)}),e.on("activate",()=>a.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const l=e=>{s=Math.max(-5,s+e),r(ne.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(ne.noteButtonsBigger),f=r(ne.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),c()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&c(),"-"===e.key&&d()},!0);const m=r(ne.infoPage);e.on("activate",({index:t})=>{m.textContent=`${t+1} / ${e.slides.length}`}),m.addEventListener("click",()=>{m.blur(),e.toggleOverviewView()});const g=r(ne.infoPagePrev),p=r(ne.infoPageNext);g.addEventListener("click",t=>{g.blur(),e.prev({fragment:!t.shiftKey})}),p.addEventListener("click",t=>{p.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{g.disabled=0===t&&0===r,p.disabled=t===e.slides.length-1&&r===n.length-1});let v=new Date;const h=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-v.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(ne.infoTime).textContent=e.toLocaleTimeString(),r(ne.infoTimer).textContent=`${a}:${i}:${o}`};h(),setInterval(h,250),r(ne.infoTimer).addEventListener("click",()=>{v=new Date})})(e)},oe=e=>{N(e),Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:ie},presenterUrl:{enumerable:!0,get:ae}}),w&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function ie(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,te+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function ae(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),g(e)}const se=e=>{const t=p();return t===c&&e.appendChild(document.createElement("span")),{[s]:oe,[l]:re,[c]:U}[t]},le=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},ce=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},de=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?ce(v("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(ce(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],i=r.closest("[data-marpit-fragment]");if(t&&i){const e=t.indexOf(i);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||h({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),h({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},{PI:ue,abs:fe,sqrt:me,atan2:ge}=Math,pe={passive:!0},ve=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?i(e[0]):void 0},pe),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=me(fe(n)**2+fe(o)**2),r.radian=ge(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+ue)%(2*ue)-ue;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},pe)},he=new Map;he.clear(),he.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const we={both:"",outgoing:"outgoing-",incoming:"incoming-"},ye={forward:"",backward:"-backward"},be=e=>`--marp-bespoke-transition-animation-${e}`,ke=e=>`--marp-transition-${e}`,xe=be("name"),Ee=be("duration"),$e=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ke("duration"));i&&Number.parseFloat(i)>=0&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),Le=async e=>he.has(e)?he.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(we))for(const[i,a]of Object.entries(ye)){const s=`marp-${o}transition${a}-${e}`;n.push($e(s).then(e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(he.set(e,t),t)),Se=e=>Object.values(e).flatMap(Object.values).every(e=>!e),Pe=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[xe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[be("direction")]="reverse"),e}})();return!o&&n?Pe(e,{type:t,backward:!1}):o||{[xe]:"__bespoke_marp_transition_no_animation__"}},_e=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},Oe="_tSId",Te="_tA",Ie="bespoke-marp-transition-warming-up",Me=window.matchMedia("(prefers-reduced-motion: reduce)"),Ae="__bespoke_marp_transition_reduced_outgoing__",Ce="__bespoke_marp_transition_reduced_incoming__",De={forward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}},backward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}}},Ne=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ke("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>Le(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=_e(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>i=>{const a=t();if(a)return!!i[Te]||!("object"!=typeof a||(a.skipTransition(),!i.forSync));if(e.skipTransition)return!0;if(!o(i))return!0;const s=e.slides[e.slide()],l=()=>i.back??r,c="data-transition"+(l()?"-back":""),d=s.querySelector(`section[${c}]`);if(!d)return!0;const u=_e(d.getAttribute(c)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await Le(e);if(Se(n)){if(!t)return;return n=await Le(`__builtin__${e}`),Se(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;Me.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=De);const o=document.getElementById(Oe);o&&o.remove();const a=document.createElement("style");a.id=Oe,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ke("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${Ee}:${o};}`);const i=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${i(Pe(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(Pe(e,{...t,type:"incoming"}))}}`),n})(r,{backward:l(),duration:u.duration}).forEach(e=>a.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ie);let c=!1;const d=()=>{c||(n(i),c=!0,s.remove(Ie))},f=()=>{t(!1),a.remove(),s.remove(Ie)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[Te]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[Te]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[Te]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Be;const Ke=()=>(void 0===Be&&(Be="wakeLock"in navigator&&navigator.wakeLock),Be),qe=async()=>{const e=Ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ve=async()=>{if(!Ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&qe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await qe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=v("view");i.dataset.bespokeView=u.some(t=>t&&t===e)?e:""})();const t=(e=>{const t=v(e);return h({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=u.findIndex(e=>p()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,1,0],B({key:t})],[[1,1,0,1],se(e)],[[1,1,0,0],M],[[1,1,1,1],E],[[1,0,0,0],T()],[[1,1,1,1],A],[[1,1,1,1],de({history:!1})],[[1,1,0,0],C()],[[1,1,1,0],_],[[1,0,0,0],le],[[1,1,0,0],ve()],[[1,0,0,0],D()],[[1,1,1,0],F()],[[1,0,0,0],Ne],[[1,1,1,1],$],[[1,1,1,0],Ve]))})()}();</script></body></html>
